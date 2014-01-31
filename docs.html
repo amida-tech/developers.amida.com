@@ -4,6 +4,2301 @@ title: Amida Dev
 overview: true
 ---  
   
-<h2>Amida Dev</h2>
+            <h2>PHIX API Docs</h2>
+            
+            <p>These are working API docs for a sandbox PHIX environment, to show you what is possible with PHIX.</p>
+            
+            <p>To start using this documentation, begin with the Account /login method, authenticate, then you will be ble to use the rest of the methods.</p>
+            
+            <div class="panel-group" id="docs">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseAuthentication">
+                                <strong>Authentication</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseAuthentication" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                             
+                            <p>The PHIX application andn API uses cookies for authentication, this documentation uses API key(s) to access the sandbox API. Visit authentication page for more information.</p>          
+                    
+                            <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-7">
+                                <form role="form">
+                                <div class="form-group">
+                                    <label for="appid">App ID</label>
+                                    <input type="text" class="form-control" id="appid" value="5ed48098">
+                                </div>
+                                <div class="form-group">
+                                    <label for="appkey">App Key</label>
+                                    <input type="text" class="form-control" id="appkey" value="b6c8c8cba92815a6cdfe6e780bb0d2f5">
+                                </div>
+                                <p align="center">(<a href="" target="_blank">These Are Hardcoded For Now</a>)</a>
+                                <div class="form-group">
+                                    <label for="appkey">PHIX ID</label>
+                                    <input type="text" class="form-control" id="phixid" value="">
+                                </div>                                
+                                </form> 
+                                <p align="center">(PHIX ID is set by logging in with account login API)</a>                               
+                            </div>
+                            <div class="col-md-1"></div>
+                            </div>                                       
+                    
+                        </div>
+                    </div>
+                </div>                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseAccount">
+                                <strong>Account</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseAccount" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            
+                            <p>This section provides you with all the API methods you will need to access PHIX user accounts.</p>
+                                        
+                            <!-- Account Methods Begin --->               
+                            <div class="panel-group" id="docsmethods">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountLoginPOST">
+                                                <strong>/login (POST)</strong>
+                                            </a>
+                                             - Logs user in.
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountLoginPOST" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        
+                                           <div class="row" id="AccountLoginPOSTResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountLoginPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountLoginPOSTResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountLoginPOSTResponseDisplayErrortext" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="appid">Username</label>
+                                                        <input type="text" class="form-control" id="username" value="janedoe">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="appkey">Password</label>
+                                                        <input type="password" class="form-control" id="password" value="test">
+                                                    </div>
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 50px;">
+                                                    <button type="button" class="btn btn-success" onclick=" accountLogin();">Make Request</button>
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountLoginPOSTResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountLoginPOSTResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountLoginPOSTResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
 
-<p>This is the developer for Amida Tech and its products, including PHIX.</p>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountLoginPOSTRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountLoginPOSTRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountLoginPOSTResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountLoginPOSTResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountLoginPOSTResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountLoginPOSTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountLoginPOSTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>                                                                                                                                  
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountLoggedInGET">
+                                                <strong>/loggedin (GET)</strong>
+                                            </a>   
+                                             - Performs server lookup to see if an account is logged in.                                
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountLoggedInGET" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /loggedin begin -->
+                                        
+                                           <div class="row" id="AccountLoggedInGETResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountLoggedInGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountLoggedInGETResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountLoggedInGETResponseDisplayErrortext" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="appid">Username</label>
+                                                        <input type="text" class="form-control" id="username" value="janedoe">
+                                                    </div>
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                        <button type="button" class="btn btn-success" onclick=" accountLoggedIn();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountLoggedInGETResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountLoggedInGETResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountLoggedInGETResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountLoggedInGETRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountLoggedInGETRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountLoggedInGETResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountLoggedInGETResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountLoggedInGETResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12"> 
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountLoggedInGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountLoggedInGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /loggedin end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div> 
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountVerifyPOST">
+                                                <strong>/verify (POST)</strong>
+                                            </a>   
+                                             - Checks whether or not an individual is verified by direct email account.                               
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountVerifyPOST" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="AccountVerifyPOSTResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountVerifyPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountVerifyPOSTResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountVerifyPOSTResponseDisplayErrortext" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="appid">Username</label>
+                                                        <input type="text" class="form-control" id="verifyusername" value="janedoe">
+                                                    </div>
+                                                    <div class="form-group" style="text-align:center;"><strong>OR</strong></div>
+                                                    <div class="form-group">
+                                                        <label for="appid">Email</label>
+                                                        <input type="text" class="form-control" id="verifyemail" value="janedoe@hub.amida-demo.com">
+                                                    </div>                                                    
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 60px;">
+                                                        <button type="button" class="btn btn-success" onclick=" accountVerify();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountVerifyPOSTResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountVerifyPOSTResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountVerifyPOSTResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountVerifyPOSTRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountVerifyPOSTRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountVerifyPOSTResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountVerifyPOSTResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountVerifyPOSTResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountVerifyPOSTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountVerifyPOSTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountValidUserPOST">
+                                                <strong>/validuser (POST)</strong>
+                                            </a>   
+                                             - Used to check whether or not a specific user name is valid                               
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountValidUserPOST" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /validuser begin -->
+                                        
+                                           <div class="row" id="AccountValidUserPOSTResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountValidUserPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountValidUserPOSTResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountValidUserPOSTResponseDisplayErrortext" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="appid">Username</label>
+                                                        <input type="text" class="form-control" id="validusername" value="janedoe">
+                                                    </div>
+                                                      
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                        <button type="button" class="btn btn-success" onclick=" accountValidUser();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountValidUserPOSTResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountValidUserPOSTResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountValidUserPOSTResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountValidUserPOSTRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountValidUserPOSTRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountValidUserPOSTResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountValidUserPOSTResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountValidUserPOSTResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountValidUserPOSTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountValidUserPOSTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /validuser end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>    
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountGET">
+                                                <strong>/account (GET)</strong>
+                                            </a>   
+                                             - Returns the current users account.                               
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountGET" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="AccountGETResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountGETResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountGETResponseDisplayErrortext" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-3"></div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                        <button type="button" class="btn btn-success" onclick=" accountGET();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountGETResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountGETResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountGETResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountGETRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountGETRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountGETResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountGETResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountGETResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>    
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountPOST">
+                                                <strong>/account (POST)</strong>
+                                            </a>   
+                                             - Updates account information.                             
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountPOST" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="AccountPOSTResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountPOSTResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountPOSTResponseDisplayErrortext" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="updateusername">Username</label>
+                                                        <input type="text" class="form-control" id="updateusername" value="janedoe">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="updateemail">Email</label>
+                                                        <input type="text" class="form-control" id="updateemail" value="janedoe@hub.amida-demo.com">
+                                                    </div> 
+                                                    <div class="form-group">
+                                                        <label for="updatepassword">Password</label>
+                                                        <input type="password" class="form-control" id="updatepassword" value="test">
+                                                    </div>                                                    
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 70px;">
+                                                        <button type="button" class="btn btn-success" onclick=" accountUpdate();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountPOSTResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountPOSTResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountPOSTResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountPOSTRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountPOSTRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountPOSTResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountPOSTResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountPOSTResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountPOSTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountPOSTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>  
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountPUT">
+                                                <strong>/account (PUT)</strong>
+                                            </a>   
+                                             - Creates a new account.                          
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountPUT" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="AccountPUTResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccountPUTResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccountPUTResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccountPUTResponseDisplayErrorText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="addusername">Username</label>
+                                                        <input type="text" class="form-control" id="addusername" value="janedoe">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="addemail">Email</label>
+                                                        <input type="text" class="form-control" id="addemail" value="janedoe@hub.amida-demo.com">
+                                                    </div> 
+                                                    <div class="form-group">
+                                                        <label for="addpassword">Password</label>
+                                                        <input type="password" class="form-control" id="addpassword" value="test">
+                                                    </div>                                                    
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 70px;">
+                                                        <button type="button" class="btn btn-success" onclick="accountAdd();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccountPUTResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccountPUTResponseHR" style="display:none;" />
+                                            <div class="row" id="AccountPUTResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountPUTRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountPUTRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountPUTResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountPUTResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccountPUTResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccountPUTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccountPUTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>                                                                                                                                                        
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccountLogout">
+                                                <strong>/logout (POST)</strong>
+                                            </a> 
+                                             - Logs user out.                                  
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccountLogout" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                           
+                                            [do it]
+                                    
+                                        </div>
+                                    </div>
+                                </div>                              
+                            </div>                    
+                            <!-- Account Methods End --->       
+                            
+                        </div>
+                    </div>
+                </div> 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseAccess">
+                                <strong>Access</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseAccess" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                                <!-- BEGIN ACCESS PENDING -->
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccessPendingGET">
+                                                <strong>/access/pending (GET)</strong>
+                                            </a>   
+                                             - Returns a list of all pending access requests for a user.                         
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccessPendingGET" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="AccessPendingGETResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccessPendingGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccessPendingGETResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccessPendingGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="addusername">Username</label>
+                                                        <input type="text" class="form-control" id="addusername" value="janedoe">
+                                                    </div>                                                 
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                        <button type="button" class="btn btn-success" onclick="accessPendingGET();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccessPendingGETResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccessPendingGETResponseHR" style="display:none;" />
+                                            <div class="row" id="AccessPendingGETResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccessPendingGETRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccessPendingGETRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccessPendingGETResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccessPendingGETResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccessPendingGETResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccessPendingGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccessPendingGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>                           
+                                
+                                <!-- END ACCESS PENDING -->
+                                
+                                <!-- BEGIN ACCESS -->
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseAccessGET">
+                                                <strong>/access (GET)</strong>
+                                            </a>   
+                                             - Returns a list of providers who have been granted access for a user.                         
+                                        </h4>
+                                    </div>
+                                    <div id="collapseAccessGET" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="AccessGETResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="AccessGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="AccessGETResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="AccessGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="accessusername">Username</label>
+                                                        <input type="text" class="form-control" id="accessusername" value="janedoe">
+                                                    </div>                                                 
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                        <button type="button" class="btn btn-success" onclick="accessGET();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="AccessGETResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="AccessGETResponseHR" style="display:none;" />
+                                            <div class="row" id="AccessGETResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccessGETRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccessGETRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccessGETResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccessGETResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="AccessGETResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="AccessGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="AccessGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>  
+                                
+                                <!-- END ACCESS -->                              
+                                                                
+                        </div>
+                    </div>
+                </div>                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseDelegation">
+                                <strong>Delegation</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseDelegation" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- DELEGATION RECEIVED BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseDelegationReceivedGET">
+                                            <strong>/delegation/received (GET)</strong>
+                                        </a>   
+                                         - Retrieve a list of delegations granted to the user from other accounts.                      
+                                    </h4>
+                                </div>
+                                <div id="collapseDelegationReceivedGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /delegation/received begin -->
+                                    
+                                       <div class="row" id="DelegationReceivedGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="DelegationReceivedGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="DelegationReceivedGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="DelegationReceivedGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top:20px;">
+                                                    <button type="button" class="btn btn-success" onclick="DelegationReceivedGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="DelegationReceivedGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="DelegationReceivedGETResponseHR" style="display:none;" />
+                                        <div class="row" id="DelegationReceivedGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DelegationReceivedGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DelegationReceivedGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DelegationReceivedGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DelegationReceivedGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="DelegationReceivedGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="DelegationReceivedGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="DelegationReceivedGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /delegation/received end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- DELEGATION RECEIVED END -->  
+                                
+                            <!-- DELEGATION GRANTED BEGIN -->   
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseDelegationGrantedGET">
+                                            <strong>/delegation/granted (GET)</strong>
+                                        </a>   
+                                         - Retrieve a list of delegations granted by the user to other accounts.                   
+                                    </h4>
+                                </div>
+                                <div id="collapseDelegationGrantedGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /delegation/granted begin -->
+                                    
+                                       <div class="row" id="DelegationGrantedGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="DelegationGrantedGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="DelegationGrantedGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="DelegationGrantedGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="DelegationGrantedGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="DelegationGrantedGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="DelegationGrantedGETResponseHR" style="display:none;" />
+                                        <div class="row" id="DelegationGrantedGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DelegationGrantedGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DelegationGrantedGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DelegationGrantedGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DelegationGrantedGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="DelegationGrantedGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="DelegationGrantedGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="DelegationGrantedGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /delegation/granted end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- DELEGATION GRANTED END -->                                                      
+                    
+                        </div>
+                    </div>
+                </div> 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseDirect">
+                                <strong>Direct</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseDirect" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- DIRECT INBOX BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseDirectInboxGET">
+                                            <strong>/direct/inbox (GET)</strong>
+                                        </a>   
+                                         - Get contents of the users inbox.                        
+                                    </h4>
+                                </div>
+                                <div id="collapseDirectInboxGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /direct/inbox begin -->
+                                    
+                                       <div class="row" id="DirectInboxGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="DirectInboxGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="DirectInboxGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="DirectInboxGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="directInboxGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="DirectInboxGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="DirectInboxGETResponseHR" style="display:none;" />
+                                        <div class="row" id="DirectInboxGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectInboxGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectInboxGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectInboxGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectInboxGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="DirectInboxGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="DirectInboxGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="DirectInboxGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /direct/inbox end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- DIRECT INBOX END -->  
+                                
+                            <!-- DIRECT OUTBOX BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseDirectOutboxGET">
+                                            <strong>/direct/outbox (GET)</strong>
+                                        </a>   
+                                         - Get contents of the users outbox.                        
+                                    </h4>
+                                </div>
+                                <div id="collapseDirectOutboxGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        <!-- /direct/outbox begin -->
+                                    
+                                       <div class="row" id="DirectOutboxGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="DirectOutboxGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="DirectOutboxGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="DirectOutboxGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="directOutboxGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="DirectOutboxGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="DirectOutboxGETResponseHR" style="display:none;" />
+                                        <div class="row" id="DirectOutboxGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectOutboxGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectOutboxGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectOutboxGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectOutboxGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="DirectOutboxGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="DirectOutboxGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="DirectOutboxGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /direct/outbox end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- DIRECT OUTBOX END -->  
+                                
+                            <!-- DIRECT Message (POST) BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseDirectMessagePOST">
+                                            <strong>/direct/message (POST)</strong>
+                                        </a>   
+                                         - Get contents of the users outbox.                        
+                                    </h4>
+                                </div>
+                                <div id="collapseDirectMessagePOST" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        <!-- /direct/message begin -->
+                                    
+                                       <div class="row" id="DirectMessagePOSTResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="DirectMessagePOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="DirectMessagePOSTResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="DirectMessagePOSTResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form role="form">
+                                                <div class="form-group">
+                                                    <label for="directmessagestatuseid">Message</label>
+                                                    <input type="text" class="form-control" id="directmessagestatuseid" value="janedoe">
+                                                </div>                                                      
+                                                <div class="form-group">
+                                                    <label for="directmessagestatus">Status</label>
+                                                    <input type="text" class="form-control" id="directmessagestatus" value="janedoe">
+                                                </div>                                                 
+                                                </form>                              
+                                            </div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="directMessagePOST();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="DirectMessagePOSTResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="DirectMessagePOSTResponseHR" style="display:none;" />
+                                        <div class="row" id="DirectMessagePOSTResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectMessagePOSTRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectMessagePOSTRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectMessagePOSTResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectMessagePOSTResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="DirectMessagePOSTResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="DirectMessagePOSTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="DirectMessagePOSTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /direct/message end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- DIRECT MESSAGE END -->  
+                                
+                            <!-- DIRECT Message (DELETE) BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseDirectMessageDELETE">
+                                            <strong>/direct/message (DELETE)</strong>
+                                        </a>   
+                                         - Get contents of the users outbox.                        
+                                    </h4>
+                                </div>
+                                <div id="collapseDirectMessageDELETE" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        <!-- /direct/message begin -->
+                                    
+                                       <div class="row" id="DirectMessageDELETEResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="DirectMessageDELETEResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="DirectMessageDELETEResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="DirectMessageDELETEResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form role="form">
+                                                <div class="form-group">
+                                                    <label for="directmessageusername">Username</label>
+                                                    <input type="text" class="form-control" id="directmessageusername" value="janedoe">
+                                                </div>                                                      
+                                                <div class="form-group">
+                                                    <label for="directmessagedeleteid">Message ID</label>
+                                                    <input type="text" class="form-control" id="directmessagedeleteid" value="">
+                                                </div>                                                 
+                                                </form>                              
+                                            </div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 40px;">
+                                                    <button type="button" class="btn btn-success" onclick="directMessageDELETE();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="DirectMessageDELETEResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="DirectMessageDELETEResponseHR" style="display:none;" />
+                                        <div class="row" id="DirectMessageDELETEResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectMessageDELETERequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectMessageDELETERequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="DirectMessageDELETEResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="DirectMessageDELETEResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="DirectMessageDELETEResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="DirectMessageDELETEResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="DirectMessageDELETEResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /direct/message end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- DIRECT MESSAGE END -->                                                                                                                   
+                    
+                        </div>
+                    </div>
+                </div>                 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseHIE">
+                                <strong>Health Information Exchange (HIE)</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseHIE" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            
+                                <!-- HIE Lookup (POST) End -->
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseieLookupPOST">
+                                                <strong>/hie/lookup (POST)</strong>
+                                            </a>   
+                                             - Pass a JSON message query to the server to lookup a patient.                        
+                                        </h4>
+                                    </div>
+                                    <div id="collapseieLookupPOST" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="hieLookupPOSTResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="hieLookupPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="hieLookupPOSTResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="hieLookupPOSTResponseDisplayErrorText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="hielookupfirstname">First Name</label>
+                                                        <input type="text" class="form-control" id="hielookupfirstname" value="Kin">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="adhielookupmiddlenamedemail">Middle Name</label>
+                                                        <input type="text" class="form-control" id="hielookupmiddlename" value="R">
+                                                    </div> 
+                                                    <div class="form-group">
+                                                        <label for="hielookuplastname">Last Name</label>
+                                                        <input type="text" class="form-control" id="hielookuplastname" value="Lane">
+                                                    </div>   
+                                                    <div class="form-group">
+                                                        <label for="hielookupbirthdate">Birthdate</label>
+                                                        <input type="text" class="form-control" id="hielookupbirthdate" value="06/24/1972">
+                                                    </div>                                                                                                         
+                                                    </form>                            
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 110px;">
+                                                        <button type="button" class="btn btn-success" onclick="hieLookupPOST();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="hieLookupPOSTResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="hieLookupPOSTResponseHR" style="display:none;" />
+                                            <div class="row" id="hieLookupPOSTResponseDisplay1" style="display:none;">
+                                                <div class="col-md-6">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="hieLookupPOSTRequestHeaderTitle">Request</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="hieLookupPOSTRequestHeader" style="overflow: auto;">
+                                                            [put request information here]
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="hieLookupPOSTResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="hieLookupPOSTResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="hieLookupPOSTResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="hieLookupPOSTResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="hieLookupPOSTResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>  
+                                
+                                <!-- HIE Lookup (POST) End -->                            
+                                
+                                <!-- HIE (GET) -->    
+                        
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapsehieGET">
+                                                <strong>/hie/{clinician} (GET)</strong>
+                                            </a>   
+                                             - Looks up the outstanding requests for a given clinician.                        
+                                        </h4>
+                                    </div>
+                                    <div id="collapsehieGET" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <!-- /verity begin -->
+                                        
+                                           <div class="row" id="hieGETResponseDisplayMessage" style="display:none;">
+                                                <div class="col-md-12">                        
+                                                    <div class="alert alert-success" id="hieGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>
+                                           <div class="row" id="hieGETResponseDisplayError" style="display:none;">
+                                                <div class="col-md-12">                                          
+                                                    <div class="alert alert-danger" id="hieGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="hieGetClinician">Clinician</label>
+                                                        <input type="text" class="form-control" id="hieGetClinician" value="clinician1">
+                                                    </div>                                                  
+                                                    </form>                              
+                                                </div>
+                                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                        <button type="button" class="btn btn-success" onclick="hieGET();">Make Request</button>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                           <div class="row" id="hieGETResponseDisplayLoading" style="display:none;">
+                                                 <div class="col-md-3"></div>
+                                                <div class="col-md-8">                                            
+                                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                                </div>
+                                            </div>
+                                            <hr id="hieGETResponseHR" style="display:none;" />
+                                            <div class="row" id="hieGETResponseDisplay1" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="hieGETResponseHeadersTitle">Response Headers</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="hieGETResponseHeaders" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+  
+                                                </div>
+                                            </div>  
+                                            <div class="row" id="hieGETResponseDisplay2" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="hieGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="hieGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /verify end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>                        
+                    
+                        </div>
+                    </div>
+                </div>  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseIdentity">
+                                <strong>Identity</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseIdentity" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- IDENTITY ACCOUNT BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseIdentityAccountGET">
+                                            <strong> /identity/account/{token} (GET)</strong>
+                                        </a>   
+                                         - Get contents of the users inbox.                        
+                                    </h4>
+                                </div>
+                                <div id="collapseIdentityAccountGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /identity/account/{token} begin -->
+                                    
+                                       <div class="row" id="IdentityAccountGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="IdentityAccountGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="IdentityAccountGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="IdentityAccountGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form role="form">
+                                                <div class="form-group">
+                                                    <label for="identitytokenget">Token</label>
+                                                    <input type="text" class="form-control" id="identitytokenget" value="">
+                                                </div>                                                  
+                                                </form>                              
+                                            </div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="IdentityAccountGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="IdentityAccountGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="IdentityAccountGETResponseHR" style="display:none;" />
+                                        <div class="row" id="IdentityAccountGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="IdentityAccountGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="IdentityAccountGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="IdentityAccountGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="IdentityAccountGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="IdentityAccountGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="IdentityAccountGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="IdentityAccountGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /identity/account/{token} end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- IDENTITY ACCOUNT END -->                     
+                    
+                        </div>
+                    </div>
+                </div> 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseMaster">
+                                <strong>Master</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseMaster" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- MASTER BEGIN -->   
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterGET">
+                                            <strong>/master (GET)</strong>
+                                        </a>   
+                                         - Retrieve a list of delegations granted by the user to other accounts.                   
+                                    </h4>
+                                </div>
+                                <div id="collapseMasterGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /master begin -->
+                                    
+                                       <div class="row" id="MasterGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="MasterGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="MasterGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="MasterGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="MasterGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="MasterGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="MasterGETResponseHR" style="display:none;" />
+                                        <div class="row" id="MasterGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="MasterGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="MasterGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="MasterGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="MasterGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="MasterGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="MasterGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="MasterGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /master end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- MASTER END --> 
+                                
+                            <!-- MASTER USER ELEMENT BEGIN -->  
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterUsernameElementGET">
+                                            <strong>/master/{username}/{element} (GET)</strong>
+                                        </a>   
+                                         - Retrieve a list of delegations granted by the user to other accounts.                   
+                                    </h4>
+                                </div>
+                                <div id="collapseMasterUsernameElementGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /master/{username}/{element} begin -->
+                                    
+                                       <div class="row" id="MasterUsernameElementGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="MasterUsernameElementGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="MasterUsernameElementGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="MasterUsernameElementGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form role="form">
+                                                <div class="form-group">
+                                                    <label for="masterusername">Username</label>
+                                                    <input type="text" class="form-control" id="masterusername" value="janedoe">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="masterelement">Element</label>
+                                                    <input type="text" class="form-control" id="masterelement" value="demographics">
+                                                </div>                                                    
+                                                </form>                              
+                                            </div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 50px;">
+                                                    <button type="button" class="btn btn-success" onclick="MasterUsernameElementGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="MasterUsernameElementGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="MasterUsernameElementGETResponseHR" style="display:none;" />
+                                        <div class="row" id="MasterUsernameElementGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="MasterUsernameElementGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="MasterUsernameElementGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="MasterUsernameElementGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="MasterUsernameElementGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="MasterUsernameElementGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="MasterUsernameElementGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="MasterUsernameElementGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /master/{username}/{element} end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- MASTER USERNAME ELEMENT END -->                                                       
+                    
+                        </div>
+                    </div>
+                </div>  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseProfile">
+                                <strong>Profile</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseProfile" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- PROFILE BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseProfileGET">
+                                            <strong> /profile (GET)</strong>
+                                        </a>   
+                                         - Retrieves a logged in users profile                        
+                                    </h4>
+                                </div>
+                                <div id="collapseProfileGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /identity/account/{token} begin -->
+                                    
+                                       <div class="row" id="ProfileGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="ProfileGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="ProfileGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="ProfileGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="ProfileGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="ProfileGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="ProfileGETResponseHR" style="display:none;" />
+                                        <div class="row" id="ProfileGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="ProfileGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="ProfileGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="ProfileGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="ProfileGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="ProfileGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="ProfileGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="ProfileGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /identity/account/{token} end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- PROFILE END -->                      
+                    
+                        </div>
+                    </div>
+                </div>  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseProviders">
+                                <strong>Providers</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseProviders" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- PROVIDERS BEGIN -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseProvidersGET">
+                                            <strong>/providers (GET)</strong>
+                                        </a>   
+                                         - Retrieves a list of all providers currently in the system.                         
+                                    </h4>
+                                </div>
+                                <div id="collapseProvidersGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /verity begin -->
+                                    
+                                       <div class="row" id="ProvidersGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="ProvidersGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="ProvidersGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="ProvidersGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="providersGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="ProvidersGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="ProvidersGETResponseHR" style="display:none;" />
+                                        <div class="row" id="ProvidersGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="ProvidersGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="ProvidersGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="ProvidersGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="ProvidersGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="ProvidersGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="ProvidersGETResponseBodyTitle">Response Body</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="ProvidersGETResponseBody" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>            
+                                
+                                        <!-- /verify end -->
+                                
+                                    </div>
+                                </div>
+                            </div>                      
+                            <!-- PROVIDERS END -->
+                            
+                        </div>
+                    </div>
+                </div>  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docs" href="#collapseStorage">
+                                <strong>Storage</strong>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseStorage" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        
+                            <!-- STORAGE BEGIN -->  
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStorageGET">
+                                            <strong>/storage (GET)</strong>
+                                        </a>   
+                                         - Gets a listing of all files stored for a specific user.                  
+                                    </h4>
+                                </div>
+                                <div id="collapseStorageGET" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        
+                                        <!-- /storage begin -->
+                                    
+                                       <div class="row" id="StorageGETResponseDisplayMessage" style="display:none;">
+                                            <div class="col-md-12">                        
+                                                <div class="alert alert-success" id="StorageGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                       <div class="row" id="StorageGETResponseDisplayError" style="display:none;">
+                                            <div class="col-md-12">                                          
+                                                <div class="alert alert-danger" id="StorageGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                            </div>
+                                        </div>                                            
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                                    <button type="button" class="btn btn-success" onclick="StorageGET();">Make Request</button>
+                                                </center> 
+                                            </div>
+                                        </div> 
+                                       <div class="row" id="StorageGETResponseDisplayLoading" style="display:none;">
+                                             <div class="col-md-3"></div>
+                                            <div class="col-md-8">                                            
+                                                <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                            </div>
+                                        </div>
+                                        <hr id="StorageGETResponseHR" style="display:none;" />
+                                        <div class="row" id="StorageGETResponseDisplay1" style="display:none;">
+                                            <div class="col-md-6">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="StorageGETRequestHeaderTitle">Request</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="StorageGETRequestHeader" style="overflow: auto;">
+                                                        [put request information here]
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="col-md-6">
+  
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title" id="StorageGETResponseHeadersTitle">Response Headers</h3>
+                                                    </div>
+                                                    <div class="panel-body" id="StorageGETResponseHeaders" style="overflow: auto;">
+                                                        [put response information here]
+                                                    </div>
+                                                </div>
+  
+                                                </div>
+                                        </div>  
+                                        <div class="row" id="StorageGETResponseDisplay2" style="display:none;">
+                                            <div class="col-md-12">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title" id="StorageGETResponseBodyTitle">Response Body</h3>
+                                                        </div>
+                                                        <div class="panel-body" id="StorageGETResponseBody" style="overflow: auto;">
+                                                            [put response information here]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>            
+                                    
+                                            <!-- /storage end -->
+                                    
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- MASTER USERNAME ELEMENT END -->                     
+                    
+                        </div>
+                    </div>
+                </div>                                                                                                                                              
+            </div>
