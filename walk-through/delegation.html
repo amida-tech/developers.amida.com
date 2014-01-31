@@ -1,5 +1,30 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Delegation
 overview: true
 ---  
+
+<br /><br />
+<h3>Delegation</h3>
+
+<p><img src="images/bw-handshake.jpg" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>In addition to control which providers have access to their personal health information exchange, PHIX users can allow other users to have access to their accounts. All delegation endpoints provide you with the resources you need to create, view and remove requests for access to individual PHIX user personal health information accounts by other user.</p>
+
+<ul>
+<li>/delegation (PUT) - Establishes access to the authenticated user for another user account.</li>
+<li>/delegation (DELETE) - Removes access to the authenticated user for another user account that already has access.</li>
+<li>/delegation/received (GET) - Retrieve a list of delegations granted to the authenticated user from other accounts.</li>
+<li>/delegation/granted (GET) - Retrieve a list of delegations granted by the authenticateduser to other accounts.</li>
+</ul>
+
+<p>You can access, and play with all the delegation methods, using the PHIX interactive documentation. </p>
+
+<p>Read additional updates about PHIX API delegation endpoint:</p>    
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="access.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="delegation.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

@@ -1,5 +1,32 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Master
 overview: true
 ---  
+
+<br /><br />
+<h3>Master</h3>
+
+<p><img src="images/bw-documentation-interactive.png " align="right" width="200" style="padding: 15px;" /></p>
+
+<p>The goal of working with PHIX is to assemble a master view of an individuals healthcare record. The master endpoints allow you interact with the healthcare record for a PHIX users, allowing you to get the master record, as well as add, update and work with individual elements of the users record.</p>
+
+<ul>
+<li>/master (GET) - Returns the master record for the authenticated user.</li>
+<li>/master/ (POST) - Catch all method used to update a specific element in the authenticated users record.</li> 
+<li>/master/ccda (POST) - Takes a JSON object used to filter the master record, and returns a master ccda.</li>
+<li>/master/{username}/{element} (GET) - Retrieves a specific element in the currently authenticated users record.</li>
+<li>/master/{username}/{element} (POST) - Updates a specific element in the currently authenticated users record.</li>
+<li>/master/{username}/{element} (PUT) - Adds a specific element in the currently authenticated users record.</li>
+</ul>
+
+<p>You can access, and play with all the master methods, using the PHIX interactive documentation.</p>
+
+<p>Read additional updates about PHIX API master endpoint:</p>
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="identity.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="profile.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

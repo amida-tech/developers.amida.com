@@ -1,5 +1,36 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Accounts
 overview: true
 ---  
+
+<br /><br />
+<h3>Accounts</h3>
+
+<p><img src="images/bw-accounts.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>Each user of PHIX is assigned an account, which are available via the /account grouping. All account endpoints provide you with the resources you need to manage all users of a particular installed PHIX system.</p>
+
+<p>There are 9 separate methods you can use to integrate with PHIX accounts:</p>
+<ul>
+<li>/login (POST) - Initial login for all API integrations.</li>
+<li>/loggedin (GET) - Checks to see if a user is logged in.</li>
+<li>/verify (POST) - Checks to see if an individual is a verified PHIX user.</li>
+<li>/validuser (POST) - Checks to see if a users is a valid user in the PHIX system.</li>
+<li>/switch/:user (GET) - Switch from one user to another.</li>
+<li>/account (GET) - Retrieves the account information for the currently logged in user.</li>
+<li>/account (POST) - Updates the logged in users account information.</li>
+<li>/account (PUT) - Adds a new user account into the PHIX system.</li>
+<li>/logout (POST) - Loggs out the current existing users.</li>
+</ul>
+
+<p>You can access, and play with all the account methods, using the PHIX interactive documentation. </p>
+
+<p>Read additional updates about PHIX API account endpoint:</p>
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="authentication.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="access.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

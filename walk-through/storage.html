@@ -1,5 +1,33 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Storage
 overview: true
 ---  
+
+<br /><br />
+<h3>Storage</h3>
+
+<p><img src="images/bw-dataset.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>In the PHIX system, an individuals healthcare information is stored in the PHIX filesystem. The storage group of endpoints gives you access to all the endpoints for managing storage files. Before healthcare records can be made an active part of an individuals record, the files need to be added to storage, parsed and made part of a users healthcare information store.</p> 
+
+<ul>
+<li>/storage (GET) - Gets a listing of all files stored for a specific user.</li> 
+<li>/storage (PUT) - Loads a record into the storage grid, JSON body 'file' contains file data</li> 
+<li>/storage (POST) - Allows parsed flag to be passed to trigger parsing of CCDA files.</li> 
+<li>/storage/record (GET) - Takes a JSON object containing file id and returns the file's contents in JSON.</li> 
+<li>/storage/record/{identifier} (GET) - Returns the object associated with the identifier as a file download.</li> 
+<li>/storage/{identifier} (DELETE) - Removes a record from the file store.</li> 
+<li>/storage/preview (POST) - Takes a JSON object of identifier and returns that record for preview.</li> 
+</ul>
+
+<p>You can access, and play with all the storage methods, using the PHIX interactive documentation.</p> 
+
+<p>Read additional updates about PHIX API storage endpoint:</p>   
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="providers.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="security.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

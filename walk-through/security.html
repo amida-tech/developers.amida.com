@@ -1,5 +1,34 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Security
 overview: true
 ---  
+
+<br /><br />
+<h3>Security</h3>
+
+<p><img src="images/bw-padlock.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>While PHIX is a prototype that intends to show the viability of building Personal Health Information Exchanges, using health IT standards like DIRECT project for secure messaging and BlueButton/CCDA for data format/model, it is up to you, the developer and technology specialist to secure the deployment of your users.</p>
+
+<p>There are six main areas to consider when securing your PHIX deployment:</p>
+
+<ul>
+<li>Patient Front-End - The front-end user interface should require HTTPS for all requests, which is not present by default.</li>
+<li>Internal Verification Page - Current PHIX implementation doesn't include any security for the verification page. All deployments should add another layer to verification, so that not just ANY user can register. Example, some existing patient database or invitation list.  Public registration without verification is not recommended.</li>
+<li>Clinician Front-End - A clinician front-end ideally would be deploy as part of existing healthcare solution, requiring some sort of single sign on(SS) verifying that each provider is truly verified through existing health IT standards.</li>
+<li>Back-End APIs - The PHIX API is not currently secured, beyond just a session cookie. Requiring HTTPS for all communications as well as possible addition of application keys for all applications that access PHIX APIs should be considered.</li>
+<li>Back-End Database - The default PHIX installation uses localhost, this should change for all production deployments requiring allocated address and unique set of credentials. Localhost has been used in default instance for ease of deployment.</li>
+<li>DIRECT Gateways - All messaging via PHIX DIRECT gateways need to be secured per health IT standards, secure messaging will be the core of PHIX system.
+</ul>
+
+<p>Ultimately the securing of each PHIX deployment is the responsibility of you the developer and technologists. The success of individual healthcare exchanges, as well as the overall healthcare exchange movement is dependent on the privacy and security of individuals healthcare information.</p>
+
+<p>This site will be providing regular, additional updates around security, here are some of the updates currently available:</p>
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="storage.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="code.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

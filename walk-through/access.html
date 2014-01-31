@@ -1,5 +1,32 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Access
 overview: true
 ---  
+
+<br /><br />
+<h3>Access</h3>
+
+<p><img src="images/bw-key.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>Each individual PHIX user gets control over which providers have access to their personal health information exchange. All access endpoints provide you with the resources you need to make, accept and remove provider requests for access to individual PHIX user personal health information accounts.</p>
+
+<ul>
+<li>/access/pending (GET) - Return a list of any pending provider request for the authenticated account.</li>
+<li>/access/pending (POST) - Approves a pending provider request for access for the authenticated account.</li>
+<li>/access/pending (DELETE) - Removes a pending provider request for access for the authenticated account.</li>
+<li>/access  (GET) -  Returns a list of providers who have been granted access to the authenticated account.</li>
+<li>/access  (POST) - Updates the access for a provider who has been granted access to the authenticated account.</li>
+<li>/access  (DELETE) - Removes the access for a provider who has been granted access to the authenticated account.</li>
+</ul>
+
+<p>You can access, and play with all the access methods, using the PHIX interactive documentation. </p>
+
+<p>Read additional updates about PHIX API access endpoint:</p>  
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="accounts.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="delegation.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

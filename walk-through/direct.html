@@ -1,5 +1,31 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Direct
 overview: true
 ---  
+
+<br /><br />
+<h3>Direct</h3>
+
+<p><img src="images/bw-email.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>A significant aspect of each PHIX user’s account is the ability to communicate with their healthcare provider(s). PHIX provides a mailbox for each user to communicate directly with their designated provider(s) using healthcare IT DIRECT standards. The direct endpoints provide you with the resources you need to send, receive and manage messages in the users mailbox.</p>
+
+<ul>
+<li>/direct/message (PUT) - Creates a new message for a user to a provider in the system.</li>
+<li>/direct/message (POST) - Updates an existing message to a status of read or archived.</li>
+<li>/direct/message (DELETE) - Removes a message in the inbox by setting the archive flag to true.</li>
+<li>/direct/inbox (GET) - Retrieves the content of the authenticated users inbox.</li>
+<li>/direct/outbox (GET) - Retrieves the content of the authenticated users outbox.</li>
+</ul>
+
+<p>You can access, and play with all the direct methods, using the PHIX interactive documentation.</p> 
+
+<p>Read additional updates about PHIX API direct endpoint:</p>     
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="delegation.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="hie.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

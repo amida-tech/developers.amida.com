@@ -1,5 +1,23 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Authentication
 overview: true
 ---  
+
+<br /><br />
+<h3>Authentication</h3>
+
+<p><img src="images/bw-identification.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>The authentication for PHIX is currently a cookie based authentication. All API access begins with the account /login API endpoint, which doesn’t require authentication, but upon a valid request will return a cookie in the response named phix.sid.</p>
+
+<p>This cookie will need to be returned as a header with all future API calls, otherwise you will receive a 401 response status code. You should be able to pass this phis.id as a header in any programming language.</p>
+
+<p>This PHIX support site uses an additional layer of authentication by requiring an app key and secret, which allows the interactive documentation to securely interact with a proxy of a sandbox version of the PHIX platform. You will not need the second layer of security for your own PHIX installation, unless you so choose as part of your security strategy.</p>
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="phix-api.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="accounts.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>

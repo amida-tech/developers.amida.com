@@ -1,5 +1,28 @@
 ---
 layout: default
-title: What Is PHIX?
+title: Identity
 overview: true
 ---  
+
+<br /><br />
+<h3>Identity</h3>
+
+<p><img src="images/bw-identity.png" align="right" width="200" style="padding: 15px;" /></p>
+
+<p>Before any PHIX user can fully take advantage of the system, they need to have their profile and account validated. The identity endpoints allows you to see if a user is validated as well as pull the identity of a PHIX user. Identity endpoints uses a token received as part of any users profile, when pulled via account endpoints.</p>
+
+<ul>
+<li>/identity/account (GET) - Takes an input token and displays the demographic information for identity verification.</li>
+<li>/identity/validate (PUT) - Takes an input token with a boolean value to indicate whether or not an individual is verified.</li>
+</ul>
+
+<p>You can access, and play with all the identity methods, using the PHIX interactive documentation.</p> 
+
+<p>Read additional updates about PHIX API identity endpoint:</p> 
+
+<table cellpadding="5" width="100%" style="border: 0px;">
+    <tr>
+        <td><a href="hie.html"><button type="button" class="btn btn-primary btn-lg"><< Previous</button></a></td>
+        <td align="right"><a href="master.html"><button type="button" class="btn btn-primary btn-lg">Next >></button></a></td>
+    </tr>
+</table>
