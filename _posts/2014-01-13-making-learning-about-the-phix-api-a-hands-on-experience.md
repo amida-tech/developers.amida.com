@@ -5,8 +5,6 @@ url: 'http://amida-dev.publicprivatesector.org/2014/01/13/making-learning-about-
 image: 'http://amida-dev.publicprivatesector.org/img/hands-on.png'
 ---
 
-#Making Learning About The PHIX API A Hands On Experience
-
 <img src="http://amida-dev.publicprivatesector.org/img/hands-on.png" align="right" width="250" />
 Learning about any API can be a time consuming process, and when APIs involve classic, static documentation, this process is anything but exciting. The quickest way to improve the user experience of learning about any API is making it a hands on experience.
 

@@ -5,8 +5,6 @@ url: 'http://amida-dev.publicprivatesector.org/2014/01/15/a-step-by-step-walk-th
 image: 'http://amida-dev.publicprivatesector.org/walk-through/images/bw-walking.png'
 ---
 
-#A Step-By-Step Walk-Through Of The PHIX Platform
-
 <img src="http://amida-dev.publicprivatesector.org/walk-through/images/bw-walking.png" align="right" width="125" />
 
 If you are just getting rolling with the PHIX platform, it is best to get a personal walk through of how the platform works. To help on-board developers with the overall platform, we have developed a multi-step walk through of every aspect of PHIX development.

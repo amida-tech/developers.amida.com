@@ -5,8 +5,6 @@ url: 'http://amida-dev.publicprivatesector.org/2014/01/10/building-a-community-o
 image: 'http://amida-dev.publicprivatesector.org/img/bw-community.jpg'
 ---
 
-#Building A Community Of PHIX Developers
-
 <img src="http://amida-dev.publicprivatesector.org/img/bw-community.jpg" align="right" width="250" />
 Personal Health Information eXchange or PHIX is looking to provide everyone with their own, private solution for securely storing their health information, providing them with a platform in which they can communicate and interact with their healthcare providers.
 
