@@ -47,9 +47,17 @@
             
             document.getElementById('AccountLoginPOSTResponseDisplayLoading').style.display='none';
             document.getElementById('AccountLoginPOSTResponseHR').style.display='';
-            
-            document.getElementById('AccountLoginPOSTResponseDisplayMessage').style.display = '';
-            document.getElementById('AccountLoginPOSTResponseDisplayMessageText').innerHTML = 'You are now logged in with the PHIX system!'; 
+            //alert(body);
+            if(body!=false)
+            	{
+            	document.getElementById('AccountLoginPOSTResponseDisplayMessage').style.display = '';
+            	document.getElementById('AccountLoginPOSTResponseDisplayMessageText').innerHTML = 'You are now logged in with the PHIX system!';
+            	}
+            else
+            	{
+                document.getElementById('AccountLoginPOSTResponseDisplayError').style.display = '';
+                document.getElementById('AccountLoginPOSTResponseDisplayErrortext').innerHTML = "ERROR: Login was unsuccessful!";
+            	}             
             
             if(body=='OK'){
                 console.log("OK DOKY!");

@@ -112,6 +112,69 @@
         }             
     } 
     
+    function DirectMessagePUT()
+        {
+         $phixid = $("#phixid").val();    
+            
+         if($phixid!=''){
+             
+            document.getElementById('DirectMessagePUTResponseDisplayLoading').style.display='';
+                
+            $url = "http://phix.proxy.publicprivatesector.org/direct/message/";    
+            
+            // API app id and key    
+            var appid = $( "#appid" ).val();
+            var appkey = $( "#appkey" ).val();  
+            
+            var recipient = $( "#DirectMessagePUTRecipient" ).val(); 
+            var subject = $( "#DirectMessagePUTSubject" ).val();
+            var contents = $( "#DirectMessagePUTContent" ).val();              
+            var $method = "PUT";
+ 
+            var formData = {appid:"" + appid + "",appkey:"" + appkey + "",recipient:"" + recipient + "",subject:"" + subject + "",contents:"" + contents + "",phixid:"" + $phixid + "",_METHOD:"" + $method + ""}; 
+            
+            // populate request fields
+            document.getElementById('DirectMessagePUTRequestHeaderTitle').innerHTML = "PUT";
+            document.getElementById('DirectMessagePUTRequestHeader').innerHTML = $url;  
+            
+            $.ajax
+              ({
+                url: $url,   
+                type: "post",        
+                data: formData,                
+                error: function(xhRequest, ErrorText, thrownError){
+                    //console.log("ERROR: "+ JSON.stringify(xhRequest));
+                    document.getElementById('DirectMessagePUTResponseDisplayError').style.display = '';
+                    document.getElementById('DirectMessagePUTResponseDisplayErrorText').innerHTML = "ERROR: "+ JSON.stringify(xhRequest);          
+                  },        
+              success: function(data, textStatus, request){
+                         
+                // get headers      
+                var headers = request.getAllResponseHeaders().toLowerCase();
+                
+                // return the body;
+                var obj = jQuery.parseJSON(data);
+                body = obj.body;
+                phixid = obj.phix_id;
+                
+                $("#phixid").val(phixid);
+                document.getElementById('DirectMessagePUTResponseHeaders').innerHTML = headers;
+                document.getElementById('DirectMessagePUTResponseBody').innerHTML = body;    
+                
+                document.getElementById('DirectMessagePUTResponseDisplay1').style.display = '';
+                document.getElementById('DirectMessagePUTResponseDisplay2').style.display = '';
+                
+                document.getElementById('DirectMessagePUTResponseDisplayLoading').style.display='none';
+                document.getElementById('DirectMessagePUTResponseHR').style.display='';
+                
+                document.getElementById('DirectMessagePUTResponseDisplayMessage').style.display = '';
+                document.getElementById('DirectMessagePUTResponseDisplayMessageText').innerHTML = 'Message Semt!'; 
+
+               }
+            }); 
+        }             
+    }     
+    
     function directMessagePOST()
         {
          $phixid = $("#phixid").val();    
@@ -168,7 +231,7 @@
                 document.getElementById('DirectMessagePOSTResponseHR').style.display='';
                 
                 document.getElementById('DirectMessagePOSTResponseDisplayMessage').style.display = '';
-                document.getElementById('DirectMessagePOSTResponseDisplayMessageText').innerHTML = 'Providers Pulled!'; 
+                document.getElementById('DirectMessagePOSTResponseDisplayMessageText').innerHTML = 'Message Updated!'; 
 
                }
             }); 
@@ -191,17 +254,15 @@
             
             var messageid = $( "#directmessagedeleteid" ).val();  
             var username = $( "#directmessageusername" ).val();  
+            var $method = "DELETE";
             
             $url = $url + "/" + messageid;
             
-            $url = $url + "?appid=" + appid + "&appkey=" + appkey + "&phixid=" + $phixid + "&username=" + username;
-            
-            console.log($url);
-            
+            var formData = {appid:"" + appid + "",appkey:"" + appkey + "",username:"" + username + "",phixid:"" + $phixid + "",_METHOD:"" + $method + ""}; 
+
             // populate request fields
-            document.getElementById('DirectMessageDELETERequestHeaderTitle').innerHTML = "GET";
-            document.getElementById('DirectMessageDELETERequestHeader').innerHTML = $url;  
-            
+            document.getElementById('DirectMessageDELETERequestHeaderTitle').innerHTML = "DELETE";
+            document.getElementById('DirectMessageDELETERequestHeader').innerHTML = $url;              
             
             $.ajax
               ({
@@ -233,7 +294,7 @@
                 document.getElementById('DirectMessageDELETEResponseHR').style.display='';
                 
                 document.getElementById('DirectMessageDELETEResponseDisplayMessage').style.display = '';
-                document.getElementById('DirectMessageDELETEResponseDisplayMessageText').innerHTML = 'Providers Pulled!'; 
+                document.getElementById('DirectMessageDELETEResponseDisplayMessageText').innerHTML = 'Message Deleted!'; 
 
                }
             }); 
