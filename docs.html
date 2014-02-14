@@ -2802,21 +2802,18 @@ overview: true
         <div id="collapseMaster" class="panel-collapse collapse">
             <div class="panel-body">
             
-                <!-- MASTER BEGIN -->   
+                <!-- MASTER (GET) BEGIN -->   
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterGET">
                                 <strong>/master (GET)</strong>
                             </a>   
-                             - Retrieve a list of delegations granted by the user to other accounts.                   
+                             - Returns master record as assembled by patient.                  
                         </h4>
                     </div>
                     <div id="collapseMasterGET" class="panel-collapse collapse">
                         <div class="panel-body">
-                            
-                            <!-- /master begin -->
-                        
                            <div class="row" id="MasterGETResponseDisplayMessage" style="display:none;">
                                 <div class="col-md-12">                        
                                     <div class="alert alert-success" id="MasterGETResponseDisplayMessageText" style="text-align:center;"></div>
@@ -2843,7 +2840,6 @@ overview: true
                             <hr id="MasterGETResponseHR" style="display:none;" />
                             <div class="row" id="MasterGETResponseDisplay1" style="display:none;">
                                 <div class="col-md-6">
-
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h3 class="panel-title" id="MasterGETRequestHeaderTitle">Request</h3>
@@ -2852,11 +2848,9 @@ overview: true
                                             [put request information here]
                                         </div>
                                     </div>
-            
                                 </div>
                                 <div class="col-md-6">
-  
-                                                    <div class="panel panel-default">
+                                    <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h3 class="panel-title" id="MasterGETResponseHeadersTitle">Response Headers</h3>
                                         </div>
@@ -2864,8 +2858,7 @@ overview: true
                                             [put response information here]
                                         </div>
                                     </div>
-  
-                                                </div>
+                                </div>
                             </div>  
                             <div class="row" id="MasterGETResponseDisplay2" style="display:none;">
                                 <div class="col-md-12">
@@ -2879,22 +2872,160 @@ overview: true
                                         </div>
                                     </div>
                                 </div>            
-                        
-                                <!-- /master end -->
-                        
                             </div>
                         </div>
                     </div>   
-                    <!-- MASTER END --> 
+                    <!-- MASTER (GET) END --> 
                     
-                <!-- MASTER USER ELEMENT BEGIN -->  
+                <!-- MASTER/CCDA (POST) BEGIN -->   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterCCDAPOST">
+                                <strong>/master/ccda (POST)</strong>
+                            </a>   
+                             - Filter the master record, and returns a master ccda.                  
+                        </h4>
+                    </div>
+                    <div id="collapseMasterCCDAPOST" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="MasterCCDAPOSTResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="MasterCCDAPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="MasterCCDAPOSTResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="MasterCCDAPOSTResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form"> 
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">All</label>
+                                        <select id="MasterCCDAPOSTAll">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>                                                      
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Demographics</label>
+                                        <select id="MasterCCDAPOSTDemographics">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>   
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Procedures</label>
+                                        <select id="MasterCCDAPOSTProcedures">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>                                                                                                             
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Medications</label>
+                                        <select id="MasterCCDAPOSTMedications">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>                                                     
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Allergies</label>
+                                        <select id="MasterCCDAPOSTAllergies">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Vitals</label>
+                                        <select id="MasterCCDAPOSTVitals">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>   
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Immunizations</label>
+                                        <select id="MasterCCDAPOSTImmunizations">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Encounters</label>
+                                        <select id="MasterCCDAPOSTEncounters">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label for="hieGetClinician">Results</label>
+                                        <select id="MasterCCDAPOSTResults">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>                                                                                                                                                                                                                                                            
+                                    </form>                              
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="MasterCCDAPOST();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="MasterCCDAPOSTResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="MasterCCDAPOSTResponseHR" style="display:none;" />
+                            <div class="row" id="MasterCCDAPOSTResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="MasterCCDAPOSTRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="MasterCCDAPOSTRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="MasterCCDAPOSTResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="MasterCCDAPOSTResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row" id="MasterCCDAPOSTResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="MasterCCDAPOSTResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="MasterCCDAPOSTResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- MASTER/CCDA (POST) END -->                                 
+                    
+                <!-- MASTER USER ELEMENT (GET) BEGIN -->  
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterUsernameElementGET">
                                 <strong>/master/{username}/{element} (GET)</strong>
                             </a>   
-                             - Retrieve a list of delegations granted by the user to other accounts.                   
+                             - Retrieve a specific element for authenticated user.                  
                         </h4>
                     </div>
                     <div id="collapseMasterUsernameElementGET" class="panel-collapse collapse">
@@ -2975,13 +3106,174 @@ overview: true
                                         </div>
                                     </div>
                                 </div>            
-                        
-                                <!-- /master/{username}/{element} end -->
-                        
                             </div>
                         </div>
                     </div>   
-                    <!-- MASTER USERNAME ELEMENT END -->                                                       
+                    <!-- MASTER USERNAME ELEMENT (GET) END -->  
+                    
+                <!-- MASTER/{USERNAME]/{ELEMENT] (POST) BEGIN -->   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterUsernameElementPOST">
+                                <strong>/master/{username}/{element} (POST)</strong>
+                            </a>   
+                             - Updates a specific element for a authenticated user.                   
+                        </h4>
+                    </div>
+                    <div id="collapseMasterUsernameElementPOST" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="MasterUsernameElementPOSTResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="MasterUsernameElementPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="MasterUsernameElementPOSTResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="MasterUsernameElementPOSTResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">                                                
+                                    <div class="form-group">
+                                        <label for="directmessagestatus">Element</label>
+                                        <textarea class="form-control" id="MasterUsernameElementPOSTContent">{}</textarea>
+                                    </div>                                                 
+                                    </form>
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="MasterUsernameElementPOST();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="MasterUsernameElementPOSTResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="MasterUsernameElementPOSTResponseHR" style="display:none;" />
+                            <div class="row" id="MasterUsernameElementPOSTResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="MasterUsernameElementPOSTRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="MasterUsernameElementPOSTRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="MasterUsernameElementPOSTResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="MasterUsernameElementPOSTResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row" id="MasterUsernameElementPOSTResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="MasterUsernameElementPOSTResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="MasterUsernameElementPOSTResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- MASTER/{USERNAME]/{ELEMENT] (POST) END --> 
+                        
+                <!-- MASTER/{USERNAME]/{ELEMENT] (PUT) BEGIN -->   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseMasterUsernameElementPUT">
+                                <strong>/master/{username}/{element} (PUT)</strong>
+                            </a>   
+                             - Generate a specific element for authenticated user.                 
+                        </h4>
+                    </div>
+                    <div id="collapseMasterUsernameElementPUT" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="MasterUsernameElementPUTResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="MasterUsernameElementPUTResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="MasterUsernameElementPUTResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="MasterUsernameElementPUTResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">                                                
+                                    <div class="form-group">
+                                        <label for="directmessagestatus">Element</label>
+                                        <textarea class="form-control" id="MasterUsernameElementPUTContent">{}</textarea>
+                                    </div>                                                 
+                                    </form>
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="MasterUsernameElementPUT();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="MasterUsernameElementPUTResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="MasterUsernameElementPUTResponseHR" style="display:none;" />
+                            <div class="row" id="MasterUsernameElementPUTResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="MasterUsernameElementPUTRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="MasterUsernameElementPUTRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="MasterUsernameElementPUTResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="MasterUsernameElementPUTResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row" id="MasterUsernameElementPUTResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="MasterUsernameElementPUTResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="MasterUsernameElementPUTResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- MASTER/{USERNAME]/{ELEMENT] (PUT) END -->                                                                                                                          
         
             </div>
         </div>
@@ -3634,9 +3926,6 @@ overview: true
                     </div>
                     <div id="collapseStorageGET" class="panel-collapse collapse">
                         <div class="panel-body">
-                            
-                            <!-- /storage begin -->
-                        
                            <div class="row" id="StorageGETResponseDisplayMessage" style="display:none;">
                                 <div class="col-md-12">                        
                                     <div class="alert alert-success" id="StorageGETResponseDisplayMessageText" style="text-align:center;"></div>
@@ -3663,7 +3952,6 @@ overview: true
                             <hr id="StorageGETResponseHR" style="display:none;" />
                             <div class="row" id="StorageGETResponseDisplay1" style="display:none;">
                                 <div class="col-md-6">
-
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h3 class="panel-title" id="StorageGETRequestHeaderTitle">Request</h3>
@@ -3672,20 +3960,17 @@ overview: true
                                             [put request information here]
                                         </div>
                                     </div>
-            
                                 </div>
-                                <div class="col-md-6">
-  
-                                                    <div class="panel panel-default">
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h3 class="panel-title" id="StorageGETResponseHeadersTitle">Response Headers</h3>
                                         </div>
                                         <div class="panel-body" id="StorageGETResponseHeaders" style="overflow: auto;">
                                             [put response information here]
                                         </div>
-                                    </div>
-  
-                                                </div>
+                                    </div
+                                </div>
                             </div>  
                             <div class="row" id="StorageGETResponseDisplay2" style="display:none;">
                                 <div class="col-md-12">
@@ -3699,13 +3984,502 @@ overview: true
                                         </div>
                                     </div>
                                 </div>            
-                        
-                                <!-- /storage end -->
-                        
                             </div>
                         </div>
                     </div>   
-                    <!-- MASTER USERNAME ELEMENT END -->                     
+                    <!-- MASTER USERNAME ELEMENT END -->  
+                    
+                <!-- /STORAGE/RECORD (GET) BEGIN -->  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStorageRecordGET">
+                                <strong>/storage/record (GET)</strong>
+                            </a>   
+                             - Takes a JSON object containing file id and returns the file's contents in JSON.                 
+                        </h4>
+                    </div>
+                    <div id="collapseStorageRecordGET" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="StorageRecordGETResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="StorageRecordGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="StorageRecordGETResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="StorageRecordGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">  
+                                    <div class="form-group">
+                                        <label for="masterelement">Identifier</label>
+                                        <input type="text" class="form-control" id="StorageRecordGETIdentifier" value="52d764b7a10de1840c47882f">
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                    </form>                                                 
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="StorageRecordGET();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="StorageRecordGETResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="StorageRecordGETResponseHR" style="display:none;" />
+                            <div class="row" id="StorageRecordGETResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StorageRecordGETRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="StorageRecordGETRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StorageRecordGETResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="StorageRecordGETResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div
+                                </div>
+                            </div>  
+                            <div class="row" id="StorageRecordGETResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="StorageRecordGETResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="StorageRecordGETResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- /STORAGE/RECORD (GET) END -->         
+                    
+                <!-- /STORAGE/RECORD/{identifier} (GET) BEGIN -->  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStorageRecordIdentifierGET">
+                                <strong>/storage/record/{identifier} (GET)</strong>
+                            </a>   
+                             - Returns the object associated with the identifier as a file download.                
+                        </h4>
+                    </div>
+                    <div id="collapseStorageRecordIdentifierGET" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="StorageRecordIdentifierGETResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="StorageRecordIdentifierGETResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="StorageRecordIdentifierGETResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="StorageRecordIdentifierGETResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">  
+                                    <div class="form-group">
+                                        <label for="masterelement">Identifier</label>
+                                        <input type="text" class="form-control" id="StorageRecordIdentifierGETIdentifier" value="52d764b7a10de1840c47882f">
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                    </form>                                                 
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="StorageRecordIdentifierGET();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="StorageRecordIdentifierGETResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="StorageRecordIdentifierGETResponseHR" style="display:none;" />
+                            <div class="row" id="StorageRecordIdentifierGETResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StorageRecordIdentifierGETRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="StorageRecordIdentifierGETRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StorageRecordIdentifierGETResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="StorageRecordIdentifierGETResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div
+                                </div>
+                            </div>  
+                            <div class="row" id="StorageRecordIdentifierGETResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="StorageRecordIdentifierGETResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="StorageRecordIdentifierGETResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- /STORAGE/RECORD/{identifier} (GET) END -->  
+                    
+                <!-- /STORAGE (PUT) BEGIN -->  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStoragePUT">
+                                <strong>/storage (PUT)</strong>
+                            </a>   
+                             - Loads a record into the storage grid, JSON body 'file' contains file data.              
+                        </h4>
+                    </div>
+                    <div id="collapseStoragePUT" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="StoragePUTResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="StoragePUTResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="StoragePUTResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="StoragePUTResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">  
+                                    <div class="form-group">
+                                        <label for="masterelement">File Path</label>
+                                        <input type="text" class="form-control" id="StoragePUTFile" value="https://s3.amazonaws.com/kinlane-productions/phix/allergies.xml">
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                    </form>                             
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="StoragePUT();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="StoragePUTResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="StoragePUTResponseHR" style="display:none;" />
+                            <div class="row" id="StoragePUTResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StoragePUTRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="StoragePUTRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StoragePUTResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="StoragePUTResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div
+                                </div>
+                            </div>  
+                            <div class="row" id="StoragePUTResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="StoragePUTResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="StoragePUTResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- /STORAGE (PUT) END --> 
+                    
+                <!-- /STORAGE (POST) BEGIN -->  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStoragePOST">
+                                <strong>/storage (POST)</strong>
+                            </a>   
+                             - Allows parsed flag to be passed to trigger parsing of CCDA files.              
+                        </h4>
+                    </div>
+                    <div id="collapseStoragePOST" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="StoragePOSTResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="StoragePOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="StoragePOSTResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="StoragePOSTResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">  
+                                    <div class="form-group">
+                                        <label for="masterelement">Identifier</label>
+                                        <input type="text" class="form-control" id="StoragePOSTIdentifier" value="52d764b7a10de1840c47882f">
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                    </form>                                                 
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="StoragePOST();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="StoragePOSTResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="StoragePOSTResponseHR" style="display:none;" />
+                            <div class="row" id="StoragePOSTResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StoragePOSTRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="StoragePOSTRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StoragePOSTResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="StoragePOSTResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div
+                                </div>
+                            </div>  
+                            <div class="row" id="StoragePOSTResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="StoragePOSTResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="StoragePOSTResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- /STORAGE (POST) END -->
+                    
+                <!-- /STORAGE/PREVIEW (POST) BEGIN -->  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStoragePreviewPOST">
+                                <strong>/storage/preview (POST)</strong>
+                            </a>   
+                             - Takes a JSON object of identifier and returns that record for preview.               
+                        </h4>
+                    </div>
+                    <div id="collapseStoragePreviewPOST" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="StoragePreviewPOSTResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="StoragePreviewPOSTResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="StoragePreviewPOSTResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="StoragePreviewPOSTResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">  
+                                    <div class="form-group">
+                                        <label for="masterelement">Identifier</label>
+                                        <input type="text" class="form-control" id="StoragePreviewPOSTIdentifier" value="52d764b7a10de1840c47882f">
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                    </form>                                                 
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="StoragePreviewPOST();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="StoragePreviewPOSTResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="StoragePreviewPOSTResponseHR" style="display:none;" />
+                            <div class="row" id="StoragePreviewPOSTResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StoragePreviewPOSTRequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="StoragePreviewPOSTRequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StoragePreviewPOSTResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="StoragePreviewPOSTResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div
+                                </div>
+                            </div>  
+                            <div class="row" id="StoragePreviewPOSTResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="StoragePreviewPOSTResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="StoragePreviewPOSTResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- /STORAGE/PREVIEW (POST) END --> 
+                    
+                <!-- /STORAGE (DELETE) BEGIN -->  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#docsmethods" href="#collapseStorageDELETE">
+                                <strong>/storage (DELETE)</strong>
+                            </a>   
+                             - Removes a record from the file store              
+                        </h4>
+                    </div>
+                    <div id="collapseStorageDELETE" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           <div class="row" id="StorageDELETEResponseDisplayMessage" style="display:none;">
+                                <div class="col-md-12">                        
+                                    <div class="alert alert-success" id="StorageDELETEResponseDisplayMessageText" style="text-align:center;"></div>
+                                </div>
+                            </div>
+                           <div class="row" id="StorageDELETEResponseDisplayError" style="display:none;">
+                                <div class="col-md-12">                                          
+                                    <div class="alert alert-danger" id="StorageDELETEResponseDisplayErrorText" style="text-align:center;"></div>
+                                </div>
+                            </div>                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">  
+                                    <div class="form-group">
+                                        <label for="masterelement">Identifier</label>
+                                        <input type="text" class="form-control" id="StorageDELETEIdentifier" value="52d764b7a10de1840c47882f">
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                    </form>                                                 
+                                </div>
+                                <div class="col-md-6" style="text-align:center; padding-top: 20px;">
+                                        <button type="button" class="btn btn-success" onclick="StorageDELETE();">Make Request</button>
+                                    </center> 
+                                </div>
+                            </div> 
+                           <div class="row" id="StorageDELETEResponseDisplayLoading" style="display:none;">
+                                 <div class="col-md-3"></div>
+                                <div class="col-md-8">                                            
+                                    <img src="https://s3.amazonaws.com/kinlane-productions/phix/load_bar.gif" align="center" style="padding:5px 5px 15px 5px;" />
+                                </div>
+                            </div>
+                            <hr id="StorageDELETEResponseHR" style="display:none;" />
+                            <div class="row" id="StorageDELETEResponseDisplay1" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StorageDELETERequestHeaderTitle">Request</h3>
+                                        </div>
+                                        <div class="panel-body" id="StorageDELETERequestHeader" style="overflow: auto;">
+                                            [put request information here]
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="StorageDELETEResponseHeadersTitle">Response Headers</h3>
+                                        </div>
+                                        <div class="panel-body" id="StorageDELETEResponseHeaders" style="overflow: auto;">
+                                            [put response information here]
+                                        </div>
+                                    </div
+                                </div>
+                            </div>  
+                            <div class="row" id="StorageDELETEResponseDisplay2" style="display:none;">
+                                <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="StorageDELETEResponseBodyTitle">Response Body</h3>
+                                            </div>
+                                            <div class="panel-body" id="StorageDELETEResponseBody" style="overflow: auto;">
+                                                [put response information here]
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- /STORAGE (DELETE) END -->                                                                                                                                                                                                   
         
             </div>
         </div>
