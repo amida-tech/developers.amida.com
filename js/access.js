@@ -61,7 +61,12 @@
                 }
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('AccessGETResponseDisplayError').style.display = '';
+        document.getElementById('AccessGETResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }          
     }  
     
     function accessPendingGET()
@@ -128,7 +133,12 @@
                 }
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('AccessPendingGETResponseDisplayError').style.display = '';
+        document.getElementById('AccessPendingGETResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                   
     }  
     
     function AccessPendingPOST()
@@ -192,7 +202,12 @@
                 document.getElementById('AccessPendingPOSTResponseDisplayMessageText').innerHTML = body; 
                }
             }); 
-        }             
+        } 
+        else
+        {
+        document.getElementById('AccessPendingPOSTResponseDisplayError').style.display = '';
+        document.getElementById('AccessPendingPOSTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                    
     }  
     
     function AccessPendingDELETE()
@@ -259,7 +274,12 @@
                 document.getElementById('AccessPendingPOSTResponseDisplayMessageText').innerHTML = body; 
                }
             }); 
-        }             
+        } 
+        else
+        {
+        document.getElementById('AccessPendingDELETEResponseDisplayError').style.display = '';
+        document.getElementById('AccessPendingDELETEResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                     
     }  
     
     function AccessPOST()
@@ -323,7 +343,12 @@
                 document.getElementById('AccessPOSTResponseDisplayMessageText').innerHTML = body; 
                }
             }); 
-        }             
+        }
+        else
+        {
+        document.getElementById('AccessPOSTResponseDisplayError').style.display = '';
+        document.getElementById('AccessPOSTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                      
     }  
     
     function AccessDELETE()
@@ -390,5 +415,10 @@
                 document.getElementById('AccessPOSTResponseDisplayMessageText').innerHTML = body; 
                }
             }); 
-        }             
+        } 
+        else
+        {
+        document.getElementById('AccessDELETEResponseDisplayError').style.display = '';
+        document.getElementById('AccessDELETEResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                     
     }  
