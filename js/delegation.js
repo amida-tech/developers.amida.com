@@ -52,7 +52,12 @@
 
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('DelegationReceivedGETResponseDisplayError').style.display = '';
+        document.getElementById('DelegationReceivedGETResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                    
     } 
     
     function DelegationGrantedGET()
@@ -109,7 +114,12 @@
 
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('DelegationGrantedGETResponseDisplayError').style.display = '';
+        document.getElementById('DelegationGrantedGETResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                    
     } 
     
     function DelegationPUT()
@@ -171,7 +181,12 @@
 
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('DelegationPUTResponseDisplayError').style.display = '';
+        document.getElementById('DelegationPUTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                   
     } 
     
     function DelegationDELETE()
@@ -234,5 +249,10 @@
 
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('DelegationDELETEResponseDisplayError').style.display = '';
+        document.getElementById('DelegationDELETEResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                   
     } 

@@ -129,7 +129,12 @@
                 }
                }
             }); 
-        }             
+        }  
+        else
+        {
+        document.getElementById('AccountLoggedInGETResponseDisplayError').style.display = '';
+        document.getElementById('AccountLoggedInGETResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                    
     } 
     
     function accountVerify()
@@ -205,7 +210,12 @@
                }
                
             });  
-        }            
+        } 
+        else
+        {
+        document.getElementById('AccountVerifyPOSTResponseDisplayError').style.display = '';
+        document.getElementById('AccountVerifyPOSTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                    
     }     
     
     function accountValidUser()
@@ -274,7 +284,12 @@
                 }
                }
             }); 
-        }             
+        }   
+        else
+        {
+        document.getElementById('AccountValidUserPOSTResponseDisplayError').style.display = '';
+        document.getElementById('AccountValidUserPOSTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                  
     }    
     
     function accountGET()
@@ -333,7 +348,12 @@
                     
                }
             }); 
-        }             
+        }     
+        else
+        {
+        document.getElementById('AccountGETResponseDisplayError').style.display = '';
+        document.getElementById('AccountGETResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                 
     }      
     
     function accountUpdate()
@@ -403,7 +423,12 @@
                 }
                }
             }); 
-        }             
+        } 
+        else
+        {
+        document.getElementById('AccountPOSTResponseDisplayError').style.display = '';
+        document.getElementById('AccountPOSTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                     
     } 
     
     function accountAdd()
@@ -479,5 +504,10 @@
                 }
                }
             }); 
-        }             
+        } 
+        else
+        {
+        document.getElementById('AccountPUTResponseDisplayError').style.display = '';
+        document.getElementById('AccountPUTResponseDisplayErrorText').innerHTML = "You need to loging using profile /login endpoint first!";         
+        }                     
     } 
