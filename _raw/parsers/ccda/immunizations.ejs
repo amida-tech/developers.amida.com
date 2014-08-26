@@ -1,0 +1,338 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>CCDA XML</h2><pre><code class="xml" style="font-size:10px;">&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;substanceAdministration classCode=&quot;SBADM&quot; moodCode=&quot;EVN&quot; negationInd=&quot;false&quot;&gt;
+    &lt;!-- ** Immunization activity ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.52&quot;/&gt;
+    &lt;id root=&quot;e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92&quot;/&gt;
+    &lt;text&gt;
+      &lt;reference value=&quot;#immun1&quot;/&gt;
+    &lt;/text&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime xsi:type=&quot;IVL_TS&quot; value=&quot;199911&quot;/&gt;
+    &lt;routeCode code=&quot;C28161&quot; codeSystem=&quot;2.16.840.1.113883.3.26.1.1&quot; codeSystemName=&quot;National Cancer Institute (NCI) Thesaurus&quot; displayName=&quot;Intramuscular injection&quot;/&gt;
+    &lt;doseQuantity value=&quot;50&quot; unit=&quot;mcg&quot;/&gt;
+    &lt;consumable&gt;
+      &lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+        &lt;!-- ** Immunization medication information ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.54&quot;/&gt;
+        &lt;manufacturedMaterial&gt;
+          &lt;code code=&quot;88&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot; displayName=&quot;Influenza virus vaccine&quot; codeSystemName=&quot;CVX&quot;&gt;
+            &lt;originalText&gt;
+              &lt;reference value=&quot;#immi1&quot;/&gt;
+            &lt;/originalText&gt;
+            &lt;translation code=&quot;141&quot; displayName=&quot;Influenza, seasonal, injectable&quot; codeSystemName=&quot;CVX&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot;/&gt;
+          &lt;/code&gt;
+          &lt;lotNumberText&gt;1&lt;/lotNumberText&gt;
+        &lt;/manufacturedMaterial&gt;
+        &lt;manufacturerOrganization&gt;
+          &lt;name&gt;Health LS - Immuno Inc.&lt;/name&gt;
+        &lt;/manufacturerOrganization&gt;
+      &lt;/manufacturedProduct&gt;
+    &lt;/consumable&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19.5.9999.456&quot; extension=&quot;2981824&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;1021 Health Drive&lt;/streetAddressLine&gt;
+          &lt;city&gt;Ann Arbor&lt;/city&gt;
+          &lt;state&gt;MI&lt;/state&gt;
+          &lt;postalCode&gt;99099&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;assignedPerson&gt;
+          &lt;name&gt;
+            &lt;given&gt;Amanda&lt;/given&gt;
+            &lt;family&gt;Assigned&lt;/family&gt;
+          &lt;/name&gt;
+        &lt;/assignedPerson&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5.9999.1394&quot;/&gt;
+          &lt;name&gt;Good Health Clinic&lt;/name&gt;
+          &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+          &lt;addr nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;false&quot;&gt;
+      &lt;act classCode=&quot;ACT&quot; moodCode=&quot;INT&quot;&gt;
+        &lt;!-- ** Instructions ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.20&quot;/&gt;
+        &lt;code code=&quot;171044003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;immunization education&quot;/&gt;
+        &lt;text&gt;
+          &lt;reference value=&quot;#immunSect&quot;/&gt; Possible flu-like symptoms
+ for three days. 
+        &lt;/text&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+      &lt;/act&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/substanceAdministration&gt;
+&lt;/entry&gt;,
+&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;substanceAdministration classCode=&quot;SBADM&quot; moodCode=&quot;EVN&quot; negationInd=&quot;true&quot;&gt;
+    &lt;!-- ** Immunization activity ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.52&quot;/&gt;
+    &lt;id root=&quot;e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92&quot;/&gt;
+    &lt;text&gt;
+      &lt;reference value=&quot;#immun2&quot;/&gt;
+    &lt;/text&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime xsi:type=&quot;IVL_TS&quot; value=&quot;19981215&quot;/&gt;
+    &lt;routeCode code=&quot;C28161&quot; codeSystem=&quot;2.16.840.1.113883.3.26.1.1&quot; codeSystemName=&quot;National Cancer Institute (NCI) Thesaurus&quot; displayName=&quot;Intramuscular injection&quot;/&gt;
+    &lt;doseQuantity value=&quot;50&quot; unit=&quot;mcg&quot;/&gt;
+    &lt;consumable&gt;
+      &lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+        &lt;!-- ** Immunization medication information ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.54&quot;/&gt;
+        &lt;manufacturedMaterial&gt;
+          &lt;code code=&quot;88&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot; displayName=&quot;Influenza virus vaccine&quot; codeSystemName=&quot;CVX&quot;&gt;
+            &lt;originalText&gt;
+              &lt;reference value=&quot;#immi2&quot;/&gt;
+            &lt;/originalText&gt;
+            &lt;translation code=&quot;141&quot; displayName=&quot;Influenza, seasonal, injectable&quot; codeSystemName=&quot;CVX&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot;/&gt;
+          &lt;/code&gt;
+          &lt;lotNumberText&gt;1&lt;/lotNumberText&gt;
+        &lt;/manufacturedMaterial&gt;
+        &lt;manufacturerOrganization&gt;
+          &lt;name&gt;Health LS - Immuno Inc.&lt;/name&gt;
+        &lt;/manufacturerOrganization&gt;
+      &lt;/manufacturedProduct&gt;
+    &lt;/consumable&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19.5.9999.456&quot; extension=&quot;2981824&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;1021 Health Drive&lt;/streetAddressLine&gt;
+          &lt;city&gt;Ann Arbor&lt;/city&gt;
+          &lt;state&gt;MI&lt;/state&gt;
+          &lt;postalCode&gt;99099&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;assignedPerson&gt;
+          &lt;name&gt;
+            &lt;given&gt;Amanda&lt;/given&gt;
+            &lt;family&gt;Assigned&lt;/family&gt;
+          &lt;/name&gt;
+        &lt;/assignedPerson&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5.9999.1394&quot;/&gt;
+          &lt;name&gt;Good Health Clinic&lt;/name&gt;
+          &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+          &lt;addr nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+      &lt;act classCode=&quot;ACT&quot; moodCode=&quot;INT&quot;&gt;
+        &lt;!-- ** Instructions ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.20&quot;/&gt;
+        &lt;code code=&quot;171044003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;immunization education&quot;/&gt;
+        &lt;text&gt;
+          &lt;reference value=&quot;#immunSect&quot;/&gt; Possible flu-like symptoms
+ for three days. 
+        &lt;/text&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+      &lt;/act&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/substanceAdministration&gt;
+&lt;/entry&gt;,
+&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;substanceAdministration classCode=&quot;SBADM&quot; moodCode=&quot;EVN&quot; negationInd=&quot;false&quot;&gt;
+    &lt;!-- ** Immunization activity ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.52&quot;/&gt;
+    &lt;id root=&quot;e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92&quot;/&gt;
+    &lt;text&gt;
+      &lt;reference value=&quot;#immun3&quot;/&gt;
+    &lt;/text&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime xsi:type=&quot;IVL_TS&quot; value=&quot;19981215&quot;/&gt;
+    &lt;routeCode code=&quot;C28161&quot; codeSystem=&quot;2.16.840.1.113883.3.26.1.1&quot; codeSystemName=&quot;National Cancer Institute (NCI) Thesaurus&quot; displayName=&quot;Intramuscular injection&quot;/&gt;
+    &lt;doseQuantity value=&quot;50&quot; unit=&quot;mcg&quot;/&gt;
+    &lt;consumable&gt;
+      &lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+        &lt;!-- ** Immunization medication information ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.54&quot;/&gt;
+        &lt;manufacturedMaterial&gt;
+          &lt;code code=&quot;33&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot; displayName=&quot;Pneumococcal polysaccharide vaccine&quot; codeSystemName=&quot;CVX&quot;&gt;
+            &lt;originalText&gt;
+              &lt;reference value=&quot;#immi3&quot;/&gt;
+            &lt;/originalText&gt;
+            &lt;translation code=&quot;109&quot; displayName=&quot;Pneumococcal NOS&quot; codeSystemName=&quot;CVX&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot;/&gt;
+          &lt;/code&gt;
+          &lt;lotNumberText&gt;1&lt;/lotNumberText&gt;
+        &lt;/manufacturedMaterial&gt;
+        &lt;manufacturerOrganization&gt;
+          &lt;name&gt;Health LS - Immuno Inc.&lt;/name&gt;
+        &lt;/manufacturerOrganization&gt;
+      &lt;/manufacturedProduct&gt;
+    &lt;/consumable&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19.5.9999.456&quot; extension=&quot;2981824&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;1021 Health Drive&lt;/streetAddressLine&gt;
+          &lt;city&gt;Ann Arbor&lt;/city&gt;
+          &lt;state&gt;MI&lt;/state&gt;
+          &lt;postalCode&gt;99099&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;assignedPerson&gt;
+          &lt;name&gt;
+            &lt;given&gt;Amanda&lt;/given&gt;
+            &lt;family&gt;Assigned&lt;/family&gt;
+          &lt;/name&gt;
+        &lt;/assignedPerson&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5.9999.1394&quot;/&gt;
+          &lt;name&gt;Good Health Clinic&lt;/name&gt;
+          &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+          &lt;addr nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+  &lt;/substanceAdministration&gt;
+&lt;/entry&gt;,
+&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;substanceAdministration classCode=&quot;SBADM&quot; moodCode=&quot;EVN&quot; negationInd=&quot;true&quot;&gt;
+    &lt;!-- ** Immunization activity ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.52&quot;/&gt;
+    &lt;id root=&quot;e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92&quot;/&gt;
+    &lt;text&gt;
+      &lt;reference value=&quot;#immun4&quot;/&gt;
+    &lt;/text&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime xsi:type=&quot;IVL_TS&quot; value=&quot;19981215&quot;/&gt;
+    &lt;routeCode code=&quot;C28161&quot; codeSystem=&quot;2.16.840.1.113883.3.26.1.1&quot; codeSystemName=&quot;National Cancer Institute (NCI) Thesaurus&quot; displayName=&quot;Intramuscular injection&quot;/&gt;
+    &lt;doseQuantity value=&quot;50&quot; unit=&quot;mcg&quot;/&gt;
+    &lt;consumable&gt;
+      &lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+        &lt;!-- ** Immunization medication Iinformation ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.54&quot;/&gt;
+        &lt;manufacturedMaterial&gt;
+          &lt;code code=&quot;103&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot; displayName=&quot;Tetanus and diphtheria toxoids - preservative free&quot; codeSystemName=&quot;CVX&quot;&gt;
+            &lt;originalText&gt;
+              &lt;reference value=&quot;#immi4&quot;/&gt;
+            &lt;/originalText&gt;
+            &lt;translation code=&quot;09&quot; displayName=&quot;Tetanus and diphtheria toxoids - preservative free&quot; codeSystemName=&quot;CVX&quot; codeSystem=&quot;2.16.840.1.113883.12.292&quot;/&gt;
+          &lt;/code&gt;
+          &lt;lotNumberText&gt;1&lt;/lotNumberText&gt;
+        &lt;/manufacturedMaterial&gt;
+        &lt;manufacturerOrganization&gt;
+          &lt;name&gt;Health LS - Immuno Inc.&lt;/name&gt;
+        &lt;/manufacturerOrganization&gt;
+      &lt;/manufacturedProduct&gt;
+    &lt;/consumable&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19.5.9999.456&quot; extension=&quot;2981824&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;1021 Health Drive&lt;/streetAddressLine&gt;
+          &lt;city&gt;Ann Arbor&lt;/city&gt;
+          &lt;state&gt;MI&lt;/state&gt;
+          &lt;postalCode&gt;99099&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;assignedPerson&gt;
+          &lt;name&gt;
+            &lt;given&gt;Amanda&lt;/given&gt;
+            &lt;family&gt;Assigned&lt;/family&gt;
+          &lt;/name&gt;
+        &lt;/assignedPerson&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5.9999.1394&quot;/&gt;
+          &lt;name&gt;Good Health Clinic&lt;/name&gt;
+          &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+          &lt;addr nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+    &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+      &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;!-- ** Immunization refusal ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.53&quot;/&gt;
+        &lt;id root=&quot;2a620155-9d11-439e-92b3-5d9815ff4dd8&quot;/&gt;
+        &lt;code displayName=&quot;Patient Objection&quot; code=&quot;PATOBJ&quot; codeSystemName=&quot;HL7 ActNoImmunizationReason&quot; codeSystem=&quot;2.16.840.1.113883.5.8&quot;/&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+      &lt;/observation&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/substanceAdministration&gt;
+&lt;/entry&gt;</code></pre></div><div class="col-sm-6"><h2>BB JSON</h2><pre><code class="json" style="font-size:10px;">{
+    "date": [
+        {
+            "date": "1999-11-01T00:00:00.000Z",
+            "precision": "month"
+        }
+    ],
+    "identifiers": [
+        {
+            "identifier": "e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92"
+        }
+    ],
+    "status": "complete",
+    "product": {
+        "product": {
+            "name": "Influenza virus vaccine",
+            "code": "88",
+            "code_system_name": "CVX",
+            "translations": [
+                {
+                    "name": "Influenza, seasonal, injectable",
+                    "code": "141",
+                    "code_system_name": "CVX"
+                }
+            ]
+        },
+        "lot_number": "1",
+        "manufacturer": "Health LS - Immuno Inc."
+    },
+    "administration": {
+        "route": {
+            "name": "Intramuscular injection",
+            "code": "C28161",
+            "code_system_name": "Medication Route FDA"
+        },
+        "dose": {
+            "value": 50,
+            "unit": "mcg"
+        }
+    },
+    "performer": {
+        "identifiers": [
+            {
+                "identifier": "2.16.840.1.113883.19.5.9999.456",
+                "identifier_type": "2981824"
+            }
+        ],
+        "name": [
+            {
+                "last": "Assigned",
+                "first": "Amanda"
+            }
+        ],
+        "address": [
+            {
+                "streetLines": [
+                    "1021 Health Drive"
+                ],
+                "city": "Ann Arbor",
+                "state": "MI",
+                "zip": "99099",
+                "country": "US"
+            }
+        ],
+        "organization": [
+            {
+                "identifiers": [
+                    {
+                        "identifier": "2.16.840.1.113883.19.5.9999.1394"
+                    }
+                ],
+                "name": [
+                    "Good Health Clinic"
+                ]
+            }
+        ]
+    }
+}</code></pre></div></div><% include _templates/foot %>

@@ -1,0 +1,40 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "properties": {
+        "smoking_statuses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/properties/cda_date"
+                        }
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                "value"
+            ]
+            }
+            
+        }
+    },
+    "additionalPropertes": true
+}</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+    "value": "Former smoker",
+    "date_time": {
+        "low": {
+            "date": "2005-05-01T00:00:00Z",
+            "precision": "day"
+        },
+        "high": {
+            "date": "2009-02-27T13:00:00Z",
+            "precision": "subsecond"
+        }
+    }
+}</code></pre></div></div><% include _templates/foot %>

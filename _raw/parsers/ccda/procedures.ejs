@@ -1,0 +1,244 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>CCDA XML</h2><pre><code class="xml" style="font-size:10px;">&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;procedure classCode=&quot;PROC&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- ** Procedure activity procedure ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.14&quot;/&gt;
+    &lt;id root=&quot;d68b7e32-7810-4f5b-9cc2-acd54b0fd85d&quot;/&gt;
+    &lt;code code=&quot;73761001&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot; displayName=&quot;Colonoscopy&quot;&gt;
+      &lt;originalText&gt;
+        &lt;reference value=&quot;#Proc1&quot;/&gt;
+      &lt;/originalText&gt;
+    &lt;/code&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime value=&quot;20120512&quot;/&gt;
+    &lt;methodCode nullFlavor=&quot;UNK&quot;/&gt;
+    &lt;targetSiteCode code=&quot;appropriate_code&quot; displayName=&quot;colon&quot; codeSystem=&quot;2.16.840.1.113883.3.88.12.3221.8.9&quot; codeSystemName=&quot;Body Site Value Set&quot;/&gt;
+    &lt;specimen typeCode=&quot;SPC&quot;&gt;
+      &lt;specimenRole classCode=&quot;SPEC&quot;&gt;
+        &lt;id root=&quot;c2ee9ee9-ae31-4628-a919-fec1cbb58683&quot;/&gt;
+        &lt;specimenPlayingEntity&gt;
+          &lt;code code=&quot;309226005&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;colonic polyp sample&quot;/&gt;
+        &lt;/specimenPlayingEntity&gt;
+      &lt;/specimenRole&gt;
+    &lt;/specimen&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19.5.9999.456&quot; extension=&quot;2981823&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;1001 Village Avenue&lt;/streetAddressLine&gt;
+          &lt;city&gt;Portland&lt;/city&gt;
+          &lt;state&gt;OR&lt;/state&gt;
+          &lt;postalCode&gt;99123&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom use=&quot;WP&quot; value=&quot;555-555-5000&quot;/&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5.9999.1393&quot;/&gt;
+          &lt;name&gt;Community Health and Hospitals&lt;/name&gt;
+          &lt;telecom use=&quot;WP&quot; value=&quot;555-555-5000&quot;/&gt;
+          &lt;addr&gt;
+            &lt;streetAddressLine&gt;1001 Village
+ Avenue&lt;/streetAddressLine&gt;
+            &lt;city&gt;Portland&lt;/city&gt;
+            &lt;state&gt;OR&lt;/state&gt;
+            &lt;postalCode&gt;99123&lt;/postalCode&gt;
+            &lt;country&gt;US&lt;/country&gt;
+          &lt;/addr&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+    &lt;participant typeCode=&quot;DEV&quot;&gt;
+      &lt;participantRole classCode=&quot;MANU&quot;&gt;
+        &lt;!-- ** Product instance ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.37&quot;/&gt;
+        &lt;id root=&quot;742aee30-21c5-11e1-bfc2-0800200c9a66&quot;/&gt;
+        &lt;playingDevice&gt;
+          &lt;code code=&quot;90412006&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Colonoscope&quot;/&gt;
+        &lt;/playingDevice&gt;
+        &lt;scopingEntity&gt;
+          &lt;id root=&quot;eb936010-7b17-11db-9fe1-0800200c9b65&quot;/&gt;
+        &lt;/scopingEntity&gt;
+      &lt;/participantRole&gt;
+    &lt;/participant&gt;
+  &lt;/procedure&gt;
+&lt;/entry&gt;,
+&lt;entry&gt;
+  &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- ** Procedure activity observation ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.13&quot;/&gt;
+    &lt;id extension=&quot;123456789&quot; root=&quot;2.16.840.1.113883.19&quot;/&gt;
+    &lt;code code=&quot;274025005&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Colonic polypectomy&quot; codeSystemName=&quot;SNOMED-CT&quot;&gt;
+      &lt;originalText&gt;
+        &lt;reference value=&quot;#Proc1&quot;/&gt;
+      &lt;/originalText&gt;
+    &lt;/code&gt;
+    &lt;statusCode code=&quot;aborted&quot;/&gt;
+    &lt;effectiveTime value=&quot;20110203&quot;/&gt;
+    &lt;priorityCode code=&quot;CR&quot; codeSystem=&quot;2.16.840.1.113883.5.7&quot; codeSystemName=&quot;ActPriority&quot; displayName=&quot;Callback results&quot;/&gt;
+    &lt;value xsi:type=&quot;CD&quot;/&gt;
+    &lt;methodCode nullFlavor=&quot;UNK&quot;/&gt;
+    &lt;targetSiteCode code=&quot;416949008&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot; displayName=&quot;Abdomen and pelvis&quot;/&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19.5&quot; extension=&quot;1234&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;17 Daws Rd.&lt;/streetAddressLine&gt;
+          &lt;city&gt;Blue Bell&lt;/city&gt;
+          &lt;state&gt;MA&lt;/state&gt;
+          &lt;postalCode&gt;02368&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom use=&quot;WP&quot; value=&quot;(555)555-555-1234&quot;/&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5&quot;/&gt;
+          &lt;name&gt;Community Health and Hospitals&lt;/name&gt;
+          &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+          &lt;addr nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+    &lt;participant typeCode=&quot;LOC&quot;&gt;
+      &lt;participantRole classCode=&quot;SDLOC&quot;&gt;
+        &lt;!-- ** Service delivery location ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.32&quot;/&gt;
+        &lt;code code=&quot;1118-9&quot; codeSystem=&quot;2.16.840.1.113883.6.259&quot; codeSystemName=&quot;HealthcareServiceLocation&quot; displayName=&quot;Gastroenterology Clinic&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;17 Daws Rd.&lt;/streetAddressLine&gt;
+          &lt;city&gt;Blue Bell&lt;/city&gt;
+          &lt;state&gt;MA&lt;/state&gt;
+          &lt;postalCode&gt;02368&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;playingEntity classCode=&quot;PLC&quot;&gt;
+          &lt;name&gt;Community Gastroenterology Clinic&lt;/name&gt;
+        &lt;/playingEntity&gt;
+      &lt;/participantRole&gt;
+    &lt;/participant&gt;
+  &lt;/observation&gt;
+&lt;/entry&gt;,
+&lt;entry&gt;
+  &lt;act classCode=&quot;ACT&quot; moodCode=&quot;INT&quot;&gt;
+    &lt;!-- Procedure activity act --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.12&quot;/&gt;
+    &lt;id root=&quot;1.2.3.4.5.6.7.8&quot; extension=&quot;1234567&quot;/&gt;
+    &lt;code code=&quot;274025005&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot; displayName=&quot;Colonic polypectomy&quot;&gt;
+      &lt;originalText&gt;
+        &lt;reference value=&quot;#Proc1&quot;/&gt;
+      &lt;/originalText&gt;
+    &lt;/code&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime value=&quot;20110203&quot;/&gt;
+    &lt;priorityCode code=&quot;CR&quot; codeSystem=&quot;2.16.840.1.113883.5.7&quot; codeSystemName=&quot;ActPriority&quot; displayName=&quot;Callback results&quot;/&gt;
+    &lt;performer&gt;
+      &lt;assignedEntity&gt;
+        &lt;id root=&quot;2.16.840.1.113883.19&quot; extension=&quot;1234&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;17 Daws Rd.&lt;/streetAddressLine&gt;
+          &lt;city&gt;Blue Bell&lt;/city&gt;
+          &lt;state&gt;MA&lt;/state&gt;
+          &lt;postalCode&gt;02368&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom use=&quot;WP&quot; value=&quot;(555)555-555-1234&quot;/&gt;
+        &lt;representedOrganization&gt;
+          &lt;id root=&quot;2.16.840.1.113883.19.5&quot;/&gt;
+          &lt;name&gt;Community Health and Hospitals&lt;/name&gt;
+          &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+          &lt;addr nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;/representedOrganization&gt;
+      &lt;/assignedEntity&gt;
+    &lt;/performer&gt;
+    &lt;participant typeCode=&quot;LOC&quot;&gt;
+      &lt;participantRole classCode=&quot;SDLOC&quot;&gt;
+        &lt;!-- ** Service delivery location ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.32&quot;/&gt;
+        &lt;code code=&quot;1118-9&quot; codeSystem=&quot;2.16.840.1.113883.6.259&quot; codeSystemName=&quot;HealthcareServiceLocation&quot; displayName=&quot;Gastroenterology Clinic&quot;/&gt;
+        &lt;addr&gt;
+          &lt;streetAddressLine&gt;17 Daws Rd.&lt;/streetAddressLine&gt;
+          &lt;city&gt;Blue Bell&lt;/city&gt;
+          &lt;state&gt;MA&lt;/state&gt;
+          &lt;postalCode&gt;02368&lt;/postalCode&gt;
+          &lt;country&gt;US&lt;/country&gt;
+        &lt;/addr&gt;
+        &lt;telecom nullFlavor=&quot;UNK&quot;/&gt;
+        &lt;playingEntity classCode=&quot;PLC&quot;&gt;
+          &lt;name&gt;Community Gastroenterology Clinic&lt;/name&gt;
+        &lt;/playingEntity&gt;
+      &lt;/participantRole&gt;
+    &lt;/participant&gt;
+  &lt;/act&gt;
+&lt;/entry&gt;</code></pre></div><div class="col-sm-6"><h2>BB JSON</h2><pre><code class="json" style="font-size:10px;">{
+    "procedure": {
+        "name": "Colonoscopy",
+        "code": "73761001",
+        "code_system_name": "SNOMED CT"
+    },
+    "identifiers": [
+        {
+            "identifier": "d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"
+        }
+    ],
+    "status": "Completed",
+    "date": [
+        {
+            "date": "2012-05-12T00:00:00.000Z",
+            "precision": "day"
+        }
+    ],
+    "body_sites": [
+        {
+            "name": "colon",
+            "code": "appropriate_code",
+            "code_system_name": "OID 2.16.840.1.113883.3.88.12.3221.8.9"
+        }
+    ],
+    "providers": [
+        {
+            "address": {
+                "streetLines": [
+                    "1001 Village Avenue"
+                ],
+                "city": "Portland",
+                "state": "OR",
+                "zip": "99123",
+                "country": "US"
+            },
+            "identifiers": [
+                {
+                    "identifier": "2.16.840.1.113883.19.5.9999.456",
+                    "identifier_type": "2981823"
+                }
+            ],
+            "phone": [
+                {
+                    "number": "555-555-5000",
+                    "type": "work place"
+                }
+            ],
+            "organization": {
+                "name": "Community Health and Hospitals",
+                "address": {
+                    "streetLines": [
+                        "1001 Village Avenue"
+                    ],
+                    "city": "Portland",
+                    "state": "OR",
+                    "zip": "99123",
+                    "country": "US"
+                },
+                "identifiers": [
+                    {
+                        "identifier": "2.16.840.1.113883.19.5.9999.1393"
+                    }
+                ],
+                "phone": [
+                    {
+                        "number": "555-555-5000",
+                        "type": "work place"
+                    }
+                ]
+            }
+        }
+    ],
+    "procedure_type": "procedure"
+}</code></pre></div></div><% include _templates/foot %>

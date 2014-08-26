@@ -1,0 +1,299 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>CCDA XML</h2><pre><code class="xml" style="font-size:10px;">&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- ** Allergy problem act ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.30&quot;/&gt;
+    &lt;id root=&quot;36e3e930-7b14-11db-9fe1-0800200c9a66&quot;/&gt;
+    &lt;code code=&quot;48765-2&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Allergies, adverse reactions, alerts&quot;/&gt;
+    &lt;statusCode code=&quot;active&quot;/&gt;
+    &lt;effectiveTime value=&quot;20070501&quot;/&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+      &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;!-- ** Allergy observation ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.7&quot;/&gt;
+        &lt;id root=&quot;4adc1020-7b14-11db-9fe1-0800200c9a66&quot;/&gt;
+        &lt;code code=&quot;ASSERTION&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot;/&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+        &lt;effectiveTime&gt;
+          &lt;low value=&quot;20070501&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;value xsi:type=&quot;CD&quot; code=&quot;419511003&quot; displayName=&quot;Propensity to adverse reactions to drug&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;&gt;
+          &lt;originalText&gt;
+            &lt;reference value=&quot;#reaction1&quot;/&gt;
+          &lt;/originalText&gt;
+        &lt;/value&gt;
+        &lt;participant typeCode=&quot;CSM&quot;&gt;
+          &lt;participantRole classCode=&quot;MANU&quot;&gt;
+            &lt;playingEntity classCode=&quot;MMAT&quot;&gt;
+              &lt;code code=&quot;314422&quot; displayName=&quot;ALLERGENIC EXTRACT, PENICILLIN&quot; codeSystem=&quot;2.16.840.1.113883.6.88&quot; codeSystemName=&quot;RxNorm&quot;&gt;
+                &lt;originalText&gt;
+                  &lt;reference value=&quot;#reaction1&quot;/&gt;
+                &lt;/originalText&gt;
+              &lt;/code&gt;
+            &lt;/playingEntity&gt;
+          &lt;/participantRole&gt;
+        &lt;/participant&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Allergy status observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.28&quot;/&gt;
+            &lt;code code=&quot;33999-4&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Status&quot;/&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CE&quot; code=&quot;73425007&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Inactive&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;MFST&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Reaction observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.9&quot;/&gt;
+            &lt;id root=&quot;4adc1020-7b14-11db-9fe1-0800200c9a64&quot;/&gt;
+            &lt;code nullFlavor=&quot;NA&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#reaction1&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;effectiveTime&gt;
+              &lt;low value=&quot;20070501&quot;/&gt;
+              &lt;high value=&quot;20090227130000+0500&quot;/&gt;
+            &lt;/effectiveTime&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;422587007&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Nausea&quot;/&gt;
+            &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+              &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                &lt;!-- ** Severity observation ** --&gt;
+                &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.8&quot;/&gt;
+                &lt;code code=&quot;SEV&quot; displayName=&quot;Severity Observation&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot; codeSystemName=&quot;ActCode&quot;/&gt;
+                &lt;text&gt;
+                  &lt;reference value=&quot;#severity4&quot;/&gt;
+                &lt;/text&gt;
+                &lt;statusCode code=&quot;completed&quot;/&gt;
+                &lt;value xsi:type=&quot;CD&quot; code=&quot;255604002&quot; displayName=&quot;Mild&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;/&gt;
+                &lt;interpretationCode code=&quot;S&quot; displayName=&quot;Suceptible&quot; codeSystem=&quot;2.16.840.1.113883.1.11.78&quot; codeSystemName=&quot;Observation Interpretation&quot;/&gt;
+              &lt;/observation&gt;
+            &lt;/entryRelationship&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Severity observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.8&quot;/&gt;
+            &lt;code code=&quot;SEV&quot; displayName=&quot;Severity Observation&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot; codeSystemName=&quot;ActCode&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#severity2&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;371924009&quot; displayName=&quot;Moderate to severe&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;/&gt;
+            &lt;interpretationCode code=&quot;N&quot; displayName=&quot;Normal&quot; codeSystem=&quot;2.16.840.1.113883.1.11.78&quot; codeSystemName=&quot;Observation Interpretation&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+      &lt;/observation&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/act&gt;
+&lt;/entry&gt;,
+&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- ** Allergy problem act ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.30&quot;/&gt;
+    &lt;id root=&quot;36e3e930-7b14-11db-9fe1-0800200c9a66&quot;/&gt;
+    &lt;code code=&quot;48765-2&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Allergies, adverse reactions, alerts&quot;/&gt;
+    &lt;statusCode code=&quot;active&quot;/&gt;
+    &lt;effectiveTime value=&quot;20060501&quot;/&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+      &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;!-- ** Allergy observation ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.7&quot;/&gt;
+        &lt;id root=&quot;4adc1020-7b14-11db-9fe1-0800200c9a66&quot;/&gt;
+        &lt;code code=&quot;ASSERTION&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot;/&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+        &lt;effectiveTime&gt;
+          &lt;low value=&quot;20060501&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;value xsi:type=&quot;CD&quot; code=&quot;419511003&quot; displayName=&quot;Propensity to adverse reactions to drug&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;&gt;
+          &lt;originalText&gt;
+            &lt;reference value=&quot;#reaction2&quot;/&gt;
+          &lt;/originalText&gt;
+        &lt;/value&gt;
+        &lt;participant typeCode=&quot;CSM&quot;&gt;
+          &lt;participantRole classCode=&quot;MANU&quot;&gt;
+            &lt;playingEntity classCode=&quot;MMAT&quot;&gt;
+              &lt;code code=&quot;2670&quot; displayName=&quot;Codeine&quot; codeSystem=&quot;2.16.840.1.113883.6.88&quot; codeSystemName=&quot;RxNorm&quot;&gt;
+                &lt;originalText&gt;
+                  &lt;reference value=&quot;#reaction2&quot;/&gt;
+                &lt;/originalText&gt;
+              &lt;/code&gt;
+            &lt;/playingEntity&gt;
+          &lt;/participantRole&gt;
+        &lt;/participant&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Allergy status observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.28&quot;/&gt;
+            &lt;code code=&quot;33999-4&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Status&quot;/&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CE&quot; code=&quot;55561003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Active&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;MFST&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Reaction observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.9&quot;/&gt;
+            &lt;id root=&quot;4adc1020-7b14-11db-9fe1-0800200c9a64&quot;/&gt;
+            &lt;code nullFlavor=&quot;NA&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#reaction2&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;effectiveTime&gt;
+              &lt;low value=&quot;20060501&quot;/&gt;
+              &lt;high value=&quot;20090227130000+0500&quot;/&gt;
+            &lt;/effectiveTime&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;56018004&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Wheezing&quot;/&gt;
+            &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+              &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                &lt;!-- ** Severity observation ** --&gt;
+                &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.8&quot;/&gt;
+                &lt;code code=&quot;SEV&quot; displayName=&quot;Severity Observation&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot; codeSystemName=&quot;ActCode&quot;/&gt;
+                &lt;text&gt;
+                  &lt;reference value=&quot;#severity5&quot;/&gt;
+                &lt;/text&gt;
+                &lt;statusCode code=&quot;completed&quot;/&gt;
+                &lt;value xsi:type=&quot;CD&quot; code=&quot;255604002&quot; displayName=&quot;Mild&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;/&gt;
+                &lt;interpretationCode code=&quot;S&quot; displayName=&quot;Suceptible&quot; codeSystem=&quot;2.16.840.1.113883.1.11.78&quot; codeSystemName=&quot;Observation Interpretation&quot;/&gt;
+              &lt;/observation&gt;
+            &lt;/entryRelationship&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Severity observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.8&quot;/&gt;
+            &lt;code code=&quot;SEV&quot; displayName=&quot;Severity Observation&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot; codeSystemName=&quot;ActCode&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#severity2&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;6736007&quot; displayName=&quot;Moderate&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;/&gt;
+            &lt;interpretationCode code=&quot;N&quot; displayName=&quot;Normal&quot; codeSystem=&quot;2.16.840.1.113883.1.11.78&quot; codeSystemName=&quot;Observation Interpretation&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+      &lt;/observation&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/act&gt;
+&lt;/entry&gt;,
+&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- ** Allergy problem act ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.30&quot;/&gt;
+    &lt;id root=&quot;36e3e930-7b14-11db-9fe1-0800200c9a66&quot;/&gt;
+    &lt;code code=&quot;48765-2&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Allergies, adverse reactions, alerts&quot;/&gt;
+    &lt;statusCode code=&quot;active&quot;/&gt;
+    &lt;effectiveTime value=&quot;20080501&quot;/&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+      &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;!-- ** Allergy observation ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.7&quot;/&gt;
+        &lt;id root=&quot;4adc1020-7b14-11db-9fe1-0800200c9a66&quot;/&gt;
+        &lt;code code=&quot;ASSERTION&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot;/&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+        &lt;effectiveTime&gt;
+          &lt;low value=&quot;20080501&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;value xsi:type=&quot;CD&quot; code=&quot;59037007&quot; displayName=&quot;Drug intolerance&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;&gt;
+          &lt;originalText&gt;
+            &lt;reference value=&quot;#reaction3&quot;/&gt;
+          &lt;/originalText&gt;
+        &lt;/value&gt;
+        &lt;participant typeCode=&quot;CSM&quot;&gt;
+          &lt;participantRole classCode=&quot;MANU&quot;&gt;
+            &lt;playingEntity classCode=&quot;MMAT&quot;&gt;
+              &lt;code code=&quot;1191&quot; displayName=&quot;Aspirin&quot; codeSystem=&quot;2.16.840.1.113883.6.88&quot; codeSystemName=&quot;RxNorm&quot;&gt;
+                &lt;originalText&gt;
+                  &lt;reference value=&quot;#reaction3&quot;/&gt;
+                &lt;/originalText&gt;
+              &lt;/code&gt;
+            &lt;/playingEntity&gt;
+          &lt;/participantRole&gt;
+        &lt;/participant&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Allergy status observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.28&quot;/&gt;
+            &lt;code code=&quot;33999-4&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Status&quot;/&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CE&quot; code=&quot;55561003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Active&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;MFST&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Reaction observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.9&quot;/&gt;
+            &lt;id root=&quot;4adc1020-7b14-11db-9fe1-0800200c9a64&quot;/&gt;
+            &lt;code nullFlavor=&quot;NA&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#reaction3&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;effectiveTime&gt;
+              &lt;low value=&quot;20080501&quot;/&gt;
+              &lt;high value=&quot;20090227130000+0500&quot;/&gt;
+            &lt;/effectiveTime&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;247472004&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Hives&quot;/&gt;
+            &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+              &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                &lt;!-- ** Severity observation ** --&gt;
+                &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.8&quot;/&gt;
+                &lt;code code=&quot;SEV&quot; displayName=&quot;Severity Observation&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot; codeSystemName=&quot;ActCode&quot;/&gt;
+                &lt;text&gt;
+                  &lt;reference value=&quot;#severity6&quot;/&gt;
+                &lt;/text&gt;
+                &lt;statusCode code=&quot;completed&quot;/&gt;
+                &lt;value xsi:type=&quot;CD&quot; code=&quot;371923003&quot; displayName=&quot;Mild to moderate&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;/&gt;
+                &lt;interpretationCode code=&quot;S&quot; displayName=&quot;Suceptible&quot; codeSystem=&quot;2.16.840.1.113883.1.11.78&quot; codeSystemName=&quot;Observation Interpretation&quot;/&gt;
+              &lt;/observation&gt;
+            &lt;/entryRelationship&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Severity observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.8&quot;/&gt;
+            &lt;code code=&quot;SEV&quot; displayName=&quot;Severity Observation&quot; codeSystem=&quot;2.16.840.1.113883.5.4&quot; codeSystemName=&quot;ActCode&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#severity3&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;371923003&quot; displayName=&quot;Mild to moderate&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot;/&gt;
+            &lt;interpretationCode code=&quot;N&quot; displayName=&quot;Normal&quot; codeSystem=&quot;2.16.840.1.113883.1.11.78&quot; codeSystemName=&quot;Observation Interpretation&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+      &lt;/observation&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/act&gt;
+&lt;/entry&gt;</code></pre></div><div class="col-sm-6"><h2>BB JSON</h2><pre><code class="json" style="font-size:10px;">{
+    "date": [
+        {
+            "date": "2007-05-01T00:00:00.000Z",
+            "precision": "day"
+        }
+    ],
+    "identifiers": [
+        {
+            "identifier": "4adc1020-7b14-11db-9fe1-0800200c9a66"
+        }
+    ],
+    "allergen": {
+        "name": "ALLERGENIC EXTRACT, PENICILLIN",
+        "code": "314422",
+        "code_system_name": "RXNORM"
+    },
+    "severity": "Moderate to severe",
+    "status": "Inactive",
+    "reaction": [
+        {
+            "reaction": {
+                "name": "Nausea",
+                "code": "422587007",
+                "code_system_name": "SNOMED CT"
+            },
+            "severity": "Mild"
+        }
+    ]
+}</code></pre></div></div><% include _templates/foot %>

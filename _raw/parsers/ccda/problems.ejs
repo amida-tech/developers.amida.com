@@ -1,0 +1,167 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>CCDA XML</h2><pre><code class="xml" style="font-size:10px;">&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- ** Problem concern act ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.3&quot;/&gt;
+    &lt;id root=&quot;ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7&quot;/&gt;
+    &lt;code code=&quot;CONC&quot; codeSystem=&quot;2.16.840.1.113883.5.6&quot; displayName=&quot;Concern&quot;/&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime&gt;
+      &lt;low value=&quot;20080103&quot;/&gt;
+      &lt;high value=&quot;20080103&quot;/&gt;
+    &lt;/effectiveTime&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+      &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;!-- ** Problem observation ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.4&quot;/&gt;
+        &lt;id root=&quot;ab1791b0-5c71-11db-b0de-0800200c9a66&quot;/&gt;
+        &lt;code code=&quot;409586006&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Complaint&quot;/&gt;
+        &lt;text&gt;
+          &lt;reference value=&quot;#problem1&quot;/&gt;
+        &lt;/text&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+        &lt;effectiveTime&gt;
+          &lt;low value=&quot;20080103&quot;/&gt;
+          &lt;high value=&quot;20080103&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;value xsi:type=&quot;CD&quot; code=&quot;233604007&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Pneumonia&quot;/&gt;
+        &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Problem status observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.6&quot;/&gt;
+            &lt;id root=&quot;ab1791b0-5c71-11db-b0de-0800200c9a66&quot;/&gt;
+            &lt;code code=&quot;33999-4&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; displayName=&quot;Status&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#STAT1&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;effectiveTime&gt;
+              &lt;low value=&quot;20080103&quot;/&gt;
+              &lt;high value=&quot;20090227130000+0500&quot;/&gt;
+            &lt;/effectiveTime&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;413322009&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Resolved&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- Age observation template --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.31&quot;/&gt;
+            &lt;code code=&quot;445518008&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Age At Onset&quot;/&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;PQ&quot; value=&quot;57&quot; unit=&quot;a&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- Health status observation template --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.5&quot;/&gt;
+            &lt;code code=&quot;11323-3&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Health status&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#problems&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;81323004&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot; displayName=&quot;Alive and well&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+      &lt;/observation&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/act&gt;
+&lt;/entry&gt;,
+&lt;entry typeCode=&quot;DRIV&quot;&gt;
+  &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;!-- Problem concern act ** --&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.3&quot;/&gt;
+    &lt;id root=&quot;ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7&quot;/&gt;
+    &lt;code code=&quot;CONC&quot; codeSystem=&quot;2.16.840.1.113883.5.6&quot; displayName=&quot;Concern&quot;/&gt;
+    &lt;statusCode code=&quot;completed&quot;/&gt;
+    &lt;effectiveTime&gt;
+      &lt;low value=&quot;20070103&quot;/&gt;
+      &lt;high value=&quot;20070103&quot;/&gt;
+    &lt;/effectiveTime&gt;
+    &lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+      &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;!-- ** Problem observation ** --&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.4&quot;/&gt;
+        &lt;id root=&quot;ab1791b0-5c71-11db-b0de-0800200c9a66&quot;/&gt;
+        &lt;code code=&quot;409586006&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Complaint&quot;/&gt;
+        &lt;text&gt;
+          &lt;reference value=&quot;#problem2&quot;/&gt;
+        &lt;/text&gt;
+        &lt;statusCode code=&quot;completed&quot;/&gt;
+        &lt;effectiveTime&gt;
+          &lt;low value=&quot;20070103&quot;/&gt;
+          &lt;high value=&quot;20080103&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;value xsi:type=&quot;CD&quot; code=&quot;195967001&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Asthma&quot;/&gt;
+        &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Problem status observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.6&quot;/&gt;
+            &lt;id root=&quot;ab1791b0-5c71-11db-b0de-0800200c9a66&quot;/&gt;
+            &lt;code code=&quot;33999-4&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; displayName=&quot;Status&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#STAT2&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;effectiveTime&gt;
+              &lt;low value=&quot;20080103&quot;/&gt;
+              &lt;high value=&quot;20090227130000+0500&quot;/&gt;
+            &lt;/effectiveTime&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;55561003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Active&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;SUBJ&quot; inversionInd=&quot;true&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Age observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.31&quot;/&gt;
+            &lt;code code=&quot;445518008&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Age At Onset&quot;/&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;PQ&quot; value=&quot;57&quot; unit=&quot;a&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+        &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+          &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;!-- ** Health status observation ** --&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.20.22.4.5&quot;/&gt;
+            &lt;code code=&quot;11323-3&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Health status&quot;/&gt;
+            &lt;text&gt;
+              &lt;reference value=&quot;#problems&quot;/&gt;
+            &lt;/text&gt;
+            &lt;statusCode code=&quot;completed&quot;/&gt;
+            &lt;value xsi:type=&quot;CD&quot; code=&quot;81323004&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; codeSystemName=&quot;SNOMED CT&quot; displayName=&quot;Alive and well&quot;/&gt;
+          &lt;/observation&gt;
+        &lt;/entryRelationship&gt;
+      &lt;/observation&gt;
+    &lt;/entryRelationship&gt;
+  &lt;/act&gt;
+&lt;/entry&gt;</code></pre></div><div class="col-sm-6"><h2>BB JSON</h2><pre><code class="json" style="font-size:10px;">{
+    "date": [
+        {
+            "date": "2008-01-03T00:00:00.000Z",
+            "precision": "day"
+        },
+        {
+            "date": "2008-01-03T00:00:00.000Z",
+            "precision": "day"
+        }
+    ],
+    "identifiers": [
+        {
+            "identifier": "ab1791b0-5c71-11db-b0de-0800200c9a66"
+        }
+    ],
+    "negation_indicator": false,
+    "problem": {
+        "name": "Pneumonia",
+        "code": "233604007",
+        "code_system_name": "SNOMED CT"
+    },
+    "onset_age": "57",
+    "onset_age_unit": "Year",
+    "status": "Resolved",
+    "patient_status": "Alive and well",
+    "source_list_identifiers": [
+        {
+            "identifier": "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
+        }
+    ]
+}</code></pre></div></div><% include _templates/foot %>
