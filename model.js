@@ -77,8 +77,10 @@ for (var i = 0; i < meta.supported_sections.length; i++) {
 		sample = JSON.stringify(bb_json, undefined, 4);
     }
 
-    var st = '<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">'+schema+'</code></pre></div><div class="col-sm-6"><h2>Example ('+id+')</h2><pre><code class="json" style="font-size:10px;">'+sample+'</code></pre></div></div><% include _templates/foot %>';
-
+    var st = '<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">'+schema+'</code></pre></div>';
+    if (sample) {
+    	st += '<div class="col-sm-6"><h2>Example ('+id+')</h2><pre><code class="json" style="font-size:10px;">'+sample+'</code></pre></div></div><% include _templates/foot %>';
+	}
     var o = fs.writeFileSync("_raw/models/"+meta.supported_sections[i].id+".ejs", st);
 
 }
