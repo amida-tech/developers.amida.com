@@ -142,9 +142,9 @@ body {
         </div>
         <!--div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/model.html">Data Model</a></li>
-            <li><a href="/parsers.html">Parsers</a></li>
-            <li><a href="/apis.html">APIs</a></li>
+            <li><a href="model.html">Data Model</a></li>
+            <li><a href="parsers.html">Parsers</a></li>
+            <li><a href="apis.html">APIs</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar-fixed-top/"> smth </a></li>
@@ -158,14 +158,12 @@ body {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-                    
-          <h3>Blue Button (JSON) Data Model </h3>
-                      
+                  <h3>Blue Button (JSON) Data Model </h3>
           <ul class="nav nav-sidebar">
             
                <li><a href="document_model.html">Main</a></li>
             
-               <li><a href="shared.html">Shared Schemas</a></li>
+               <li><a href="common_models.html">Shared Schemas</a></li>
             
                <li><a href="demographics.html">Demographics</a></li>
             
@@ -183,13 +181,15 @@ body {
             
                <li><a href="result.html">Results</a></li>
             
-               <li><a href="social_history.html">Social History</a></li>
+               <li><a href="social_history_entry.html">Social History</a></li>
+            
+               <li><a href="plan_of_care_entry.html">Plan of Care</a></li>
             
                <li><a href="vital.html">Vitals</a></li>
             
-               <li><a href="insurance.html">Insurance</a></li>
+               <li><a href="payer.html">Payers</a></li>
             
-               <li><a href="claims.html">Claims</a></li>
+               <li><a href="claim.html">Claims</a></li>
                       
           </ul>
 
@@ -197,32 +197,39 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "encounters",
+    "type": "array",
+    "items": {
+        "$ref": "encounter"
+    }
+}
+
+{
+    "id": "encounter",
     "type": "object",
-    "$schema": "http://json-schema.org/draft-04/schema",
     "properties": {
         "date_time": {
-            "$ref": "http://local.com/common_models#/properties/cda_date"
+            "$ref": "cda_date"
         },
         "encounter": {
-            "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+            "$ref": "cda_coded_entry"
         },
         "findings": {
             "type": "array",
             "items": {
                 "type": "object",
-                "properties": {                    
+                "properties": {
                     "value": {
-                        "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                        "$ref": "cda_coded_entry"
                     },
                     "identifiers": {
                         "type": "array",
                         "items": {
-                            "$ref": "http://local.com/common_models#/properties/cda_id"
-
+                            "$ref": "cda_id"
                         }
                     },
                     "date_time": {
-                        "$ref": "http://local.com/common_models#/properties/cda_date"
+                        "$ref": "cda_date"
                     }
                 },
                 "additionalProperties": false
@@ -231,27 +238,27 @@ body {
         "identifiers": {
             "type": "array",
             "items": {
-                "$ref": "http://local.com/common_models#/properties/cda_id"
-
+                "$ref": "cda_id"
             }
         },
         "performers": {
             "type": "array",
             "items": {
-                "$ref": "http://local.com/common_models#/properties/cda_performer"
+                "$ref": "cda_performer"
             }
         },
         "locations": {
             "type": "array",
             "items": {
-                "$ref": "http://local.com/common_models#/properties/cda_location"
+                "$ref": "cda_location"
             }
         }
     },
     "additionalProperties": false,
-    "required": ["encounter"]
-}
-</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+    "required": [
+        "encounter"
+    ]
+}</code></pre></div><div class="col-sm-6"><h2>Example (encounter)</h2><pre><code class="json" style="font-size:10px;">{
     "encounter": {
         "name": "Office outpatient visit 15 minutes",
         "code": "99213",
@@ -260,7 +267,7 @@ body {
             {
                 "name": "Ambulatory",
                 "code": "AMB",
-                "code_system_name": "HL7ActCode"
+                "code_system_name": "ActCode"
             }
         ]
     },
@@ -271,7 +278,7 @@ body {
     ],
     "date_time": {
         "point": {
-            "date": "2009-02-27T13:00:00Z",
+            "date": "2009-02-27T08:00:00.000Z",
             "precision": "second"
         }
     },
@@ -327,7 +334,7 @@ body {
             },
             "date_time": {
                 "low": {
-                    "date": "2007-01-03T00:00:00Z",
+                    "date": "2007-01-03T00:00:00.000Z",
                     "precision": "day"
                 }
             }
