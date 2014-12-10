@@ -1,0 +1,353 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "payers",
+    "type": "array",
+    "items": {
+        "$ref": "payer"
+    }
+}
+
+{
+    "id": "payer",
+    "type": "object",
+    "properties": {
+        "identifiers": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_id"
+            },
+            "minItems": 1
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "identifiers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_id"
+                    },
+                    "minItems": 1
+                },
+                "code": {
+                    "$ref": "cda_coded_entry"
+                },
+                "insurance": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "$ref": "cda_coded_entry"
+                        },
+                        "performer": {
+                            "$ref": "cda_performer"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "guarantor": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "$ref": "cda_coded_entry"
+                },
+                "identifiers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_id"
+                    },
+                    "minItems": 1
+                },
+                "address": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_address"
+                    }
+                },
+                "phone": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_phone"
+                    }
+                },
+                "name": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "participant": {
+            "type": "object",
+            "properties": {
+                "date_time": {
+                    "$ref": "cda_date"
+                },
+                "code": {
+                    "$ref": "cda_coded_entry"
+                },
+                "performer": {
+                    "$ref": "cda_performer"
+                },
+                "name": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "policy_holder": {
+            "type": "object",
+            "properties": {
+                "performer": {
+                    "type": "object",
+                    "properties": {
+                        "identifiers": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "cda_id"
+                            },
+                            "minItems": 1
+                        },
+                        "address": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "cda_address"
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "authorization": {
+            "type": "object",
+            "properties": {
+                "identifiers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_id"
+                    },
+                    "minItems": 1
+                },
+                "procedure": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "$ref": "cda_coded_entry"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    "required": [
+        "policy",
+        "participant"
+    ],
+    "additionalProperties": false
+}</code></pre></div><div class="col-sm-6"><h2>Example (payer)</h2><pre><code class="json" style="font-size:10px;">{
+    "identifiers": [
+        {
+            "identifier": "1fe2cdd0-7aad-11db-9fe1-0800200c9a66"
+        }
+    ],
+    "policy": {
+        "identifiers": [
+            {
+                "identifier": "3e676a50-7aac-11db-9fe1-0800200c9a66"
+            }
+        ],
+        "code": {
+            "code": "SELF",
+            "code_system_name": "HL7 RoleCode"
+        },
+        "insurance": {
+            "code": {
+                "code": "PAYOR",
+                "code_system_name": "HL7 RoleCode"
+            },
+            "performer": {
+                "identifiers": [
+                    {
+                        "identifier": "2.16.840.1.113883.19"
+                    }
+                ],
+                "address": [
+                    {
+                        "street_lines": [
+                            "123 Insurance Road"
+                        ],
+                        "city": "Blue Bell",
+                        "state": "MA",
+                        "zip": "02368",
+                        "country": "US",
+                        "use": "work place"
+                    }
+                ],
+                "phone": [
+                    {
+                        "number": "(781)555-1515",
+                        "type": "work place"
+                    }
+                ],
+                "organization": [
+                    {
+                        "name": [
+                            "Good Health Insurance"
+                        ],
+                        "address": [
+                            {
+                                "street_lines": [
+                                    "123 Insurance Road"
+                                ],
+                                "city": "Blue Bell",
+                                "state": "MA",
+                                "zip": "02368",
+                                "country": "US",
+                                "use": "work place"
+                            }
+                        ],
+                        "phone": [
+                            {
+                                "number": "(781)555-1515",
+                                "type": "work place"
+                            }
+                        ]
+                    }
+                ],
+                "code": [
+                    {
+                        "code": "PAYOR",
+                        "code_system_name": "HL7 RoleCode"
+                    }
+                ]
+            }
+        }
+    },
+    "guarantor": {
+        "code": {
+            "code": "GUAR",
+            "code_system_name": "HL7 Role"
+        },
+        "identifiers": [
+            {
+                "identifier": "329fcdf0-7ab3-11db-9fe1-0800200c9a66"
+            }
+        ],
+        "name": [
+            {
+                "prefix": "Mr.",
+                "middle": [
+                    "Frankie"
+                ],
+                "last": "Everyman",
+                "first": "Adam"
+            }
+        ],
+        "address": [
+            {
+                "street_lines": [
+                    "17 Daws Rd."
+                ],
+                "city": "Blue Bell",
+                "state": "MA",
+                "zip": "02368",
+                "country": "US",
+                "use": "primary home"
+            }
+        ],
+        "phone": [
+            {
+                "number": "(781)555-1212",
+                "type": "primary home"
+            }
+        ]
+    },
+    "participant": {
+        "code": {
+            "name": "Self",
+            "code": "SELF",
+            "code_system_name": "HL7 Role"
+        },
+        "performer": {
+            "identifiers": [
+                {
+                    "identifier": "14d4a520-7aae-11db-9fe1-0800200c9a66",
+                    "extension": "1138345"
+                }
+            ],
+            "address": [
+                {
+                    "street_lines": [
+                        "17 Daws Rd."
+                    ],
+                    "city": "Blue Bell",
+                    "state": "MA",
+                    "zip": "02368",
+                    "country": "US",
+                    "use": "primary home"
+                }
+            ],
+            "code": [
+                {
+                    "name": "Self",
+                    "code": "SELF",
+                    "code_system_name": "HL7 Role"
+                }
+            ]
+        },
+        "name": [
+            {
+                "prefix": "Mr.",
+                "middle": [
+                    "A."
+                ],
+                "last": "Everyman",
+                "first": "Frank"
+            }
+        ]
+    },
+    "policy_holder": {
+        "performer": {
+            "identifiers": [
+                {
+                    "identifier": "2.16.840.1.113883.19",
+                    "extension": "1138345"
+                }
+            ],
+            "address": [
+                {
+                    "street_lines": [
+                        "17 Daws Rd."
+                    ],
+                    "city": "Blue Bell",
+                    "state": "MA",
+                    "zip": "02368",
+                    "country": "US",
+                    "use": "primary home"
+                }
+            ]
+        }
+    },
+    "authorization": {
+        "identifiers": [
+            {
+                "identifier": "f4dce790-8328-11db-9fe1-0800200c9a66"
+            }
+        ],
+        "procedure": {
+            "code": {
+                "name": "Colonoscopy",
+                "code": "73761001",
+                "code_system_name": "SNOMED CT"
+            }
+        }
+    }
+}</code></pre></div></div><% include _templates/foot %>

@@ -1,18 +1,17 @@
 <% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "social_history",
     "type": "array",
-    "$schema": "http://json-schema.org/draft-04/schema",
-
     "items": {
         "type": "object",
         "properties": {
             "date_time": {
-                "$ref": "http://local.com/common_models#/properties/cda_date"
+                "$ref": "cda_date"
             },
             "value": {
                 "type": "string"
             },
             "code": {
-                "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                "$ref": "cda_coded_entry"
             },
             "observation_value": {
                 "type": "string"
@@ -20,7 +19,7 @@
             "identifiers": {
                 "type": "array",
                 "items": {
-                    "$ref": "http://local.com/common_models#/properties/cda_id"
+                    "$ref": "cda_id"
                 }
             }
         },
@@ -29,17 +28,15 @@
         ],
         "additionalProperties": false
     },
-
-    "additionalPropertes": true
-}
-</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+    "additionalProperties": true
+}</code></pre></div><div class="col-sm-6"><h2>Example (social_history)</h2><pre><code class="json" style="font-size:10px;">{
     "date_time": {
         "low": {
-            "date": "2005-05-01T00:00:00Z",
+            "date": "2005-05-01T00:00:00.000Z",
             "precision": "day"
         },
         "high": {
-            "date": "2009-02-27T13:00:00Z",
+            "date": "2009-02-27T08:00:00.000Z",
             "precision": "second"
         }
     },
@@ -50,7 +47,7 @@
         }
     ],
     "code": {
-        "code": "Smoking Status"
+        "name": "Smoking Status"
     },
     "value": "Former smoker"
 }</code></pre></div></div><% include _templates/foot %>

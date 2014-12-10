@@ -142,9 +142,9 @@ body {
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/model.html">Data Model</a></li>
-            <li><a href="/parsers.html">Parsers</a></li>
-            <li><a href="/apis.html">APIs</a></li>
+            <li><a href="model.html">Data Model</a></li>
+            <li><a href="parsers.html">Parsers</a></li>
+            <li><a href="apis.html">APIs</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar-fixed-top/"> smth </a></li>
@@ -162,7 +162,7 @@ body {
             
                <li><a href="document_model.html">Main</a></li>
             
-               <li><a href="shared.html">Shared Schemas</a></li>
+               <li><a href="common_models.html">Shared Schemas</a></li>
             
                <li><a href="demographics.html">Demographics</a></li>
             
@@ -180,13 +180,15 @@ body {
             
                <li><a href="result.html">Results</a></li>
             
-               <li><a href="social_history.html">Social History</a></li>
+               <li><a href="social_history_entry.html">Social History</a></li>
+            
+               <li><a href="plan_of_care_entry.html">Plan of Care</a></li>
             
                <li><a href="vital.html">Vitals</a></li>
             
-               <li><a href="insurance.html">Insurance</a></li>
+               <li><a href="payer.html">Payers</a></li>
             
-               <li><a href="claims.html">Claims</a></li>
+               <li><a href="claim.html">Claims</a></li>
                       
           </ul>
 
@@ -194,47 +196,48 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "social_history",
     "type": "array",
-    "$schema": "http://json-schema.org/draft-04/schema",
-
     "items": {
-        "type": "object",
-        "properties": {
-            "date_time": {
-                "$ref": "http://local.com/common_models#/properties/cda_date"
-            },
-            "value": {
-                "type": "string"
-            },
-            "code": {
-                "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
-            },
-            "observation_value": {
-                "type": "string"
-            },
-            "identifiers": {
-                "type": "array",
-                "items": {
-                    "$ref": "http://local.com/common_models#/properties/cda_id"
-                }
-            }
-        },
-        "required": [
-            "value"
-        ],
-        "additionalProperties": false
-    },
-
-    "additionalPropertes": true
+        "$ref": "social_history_entry"
+    }
 }
-</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+
+{
+    "id": "social_history_entry",
+    "type": "object",
+    "properties": {
+        "date_time": {
+            "$ref": "cda_date"
+        },
+        "value": {
+            "type": "string"
+        },
+        "code": {
+            "$ref": "cda_coded_entry"
+        },
+        "observation_value": {
+            "type": "string"
+        },
+        "identifiers": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_id"
+            }
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "additionalProperties": false
+}</code></pre></div><div class="col-sm-6"><h2>Example (social_history_entry)</h2><pre><code class="json" style="font-size:10px;">{
     "date_time": {
         "low": {
-            "date": "2005-05-01T00:00:00Z",
+            "date": "2005-05-01T00:00:00.000Z",
             "precision": "day"
         },
         "high": {
-            "date": "2009-02-27T13:00:00Z",
+            "date": "2009-02-27T08:00:00.000Z",
             "precision": "second"
         }
     },
@@ -245,7 +248,7 @@ body {
         }
     ],
     "code": {
-        "code": "Smoking Status"
+        "name": "Smoking Status"
     },
     "value": "Former smoker"
 }</code></pre></div></div>

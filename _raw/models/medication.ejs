@@ -1,14 +1,22 @@
 <% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "medications",
+    "type": "array",
+    "items": {
+        "$ref": "medication"
+    }
+}
+
+{
+    "id": "medication",
     "type": "object",
-    "$schema": "http://json-schema.org/draft-04/schema",
     "properties": {
         "date_time": {
-            "$ref": "http://local.com/common_models#/properties/cda_date"
+            "$ref": "cda_date"
         },
         "identifiers": {
             "type": "array",
             "items": {
-                "$ref": "http://local.com/common_models#/properties/cda_id"
+                "$ref": "cda_id"
             },
             "minItems": 1
         },
@@ -22,22 +30,22 @@
             "type": "object",
             "properties": {
                 "dose": {
-                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                    "$ref": "cda_physical_quantity"
                 },
                 "form": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "rate": {
-                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                    "$ref": "cda_physical_quantity"
                 },
                 "route": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "dose_restriction": {
-                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                    "$ref": "cda_physical_quantity"
                 },
                 "site": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "interval": {
                     "type": "object",
@@ -46,10 +54,10 @@
                             "type": "string"
                         },
                         "phase": {
-                            "$ref": "http://local.com/common_models#/properties/cda_date"
+                            "$ref": "cda_date"
                         },
                         "period": {
-                            "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                            "$ref": "cda_physical_quantity"
                         },
                         "frequency": {
                             "type": "boolean"
@@ -64,39 +72,35 @@
                             "type": "object",
                             "properties": {
                                 "low": {
-                                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                                    "$ref": "cda_physical_quantity"
                                 },
                                 "high": {
-                                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                                    "$ref": "cda_physical_quantity"
                                 },
                                 "center": {
-                                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                                    "$ref": "cda_physical_quantity"
                                 },
                                 "width": {
-                                    "$ref": "http://local.com/common_models#/properties/cda_physical_quantity"
+                                    "$ref": "cda_physical_quantity"
                                 }
-
                             },
                             "additionalProperties": false
-
                         }
                     },
                     "additionalProperties": false
                 }
-
             },
             "additionalProperties": false,
             "minProperties": 1
         },
-
         "precondition": {
             "type": "object",
             "properties": {
                 "code": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "value": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 }
             },
             "additionalProperties": false
@@ -107,12 +111,12 @@
                 "identifiers": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://local.com/common_models#/properties/cda_id"
+                        "$ref": "cda_id"
                     },
                     "minItems": 1
                 },
                 "product": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "unencoded_name": {
                     "type": "string"
@@ -131,7 +135,7 @@
             "type": "object",
             "properties": {
                 "date_time": {
-                    "$ref": "http://local.com/common_models#/properties/cda_date"
+                    "$ref": "cda_date"
                 },
                 "repeatNumber": {
                     "type": "string"
@@ -145,20 +149,22 @@
                         "identifiers": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://local.com/common_models#/properties/cda_id"
+                                "$ref": "cda_id"
                             },
                             "minItems": 1
                         },
                         "date_time": {
-                            "$ref": "http://local.com/common_models#/properties/cda_date"
+                            "$ref": "cda_date"
                         },
                         "name": {
-                            "$ref": "http://local.com/common_models#/properties/cda_name"
+                            "$ref": "cda_name"
+                        },
+                        "organization": {
+                            "$ref": "cda_organization"
                         }
                     },
                     "additionalProperties": false
-                },
-                "additionalProperties": false
+                }
             },
             "additionalProperties": false
         },
@@ -168,27 +174,27 @@
                 "identifiers": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://local.com/common_models#/properties/cda_id"
+                        "$ref": "cda_id"
                     },
                     "minItems": 1
                 },
                 "code": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "date_time": {
-                    "$ref": "http://local.com/common_models#/properties/cda_date"
+                    "$ref": "cda_date"
                 },
                 "value": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 }
             },
             "additionalProperties": false
         },
         "performer": {
-            "$ref": "http://local.com/common_models#/properties/cda_performer"
+            "$ref": "cda_performer"
         },
         "drug_vehicle": {
-            "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+            "$ref": "cda_coded_entry"
         },
         "dispense": {
             "type": "object",
@@ -196,12 +202,12 @@
                 "identifiers": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://local.com/common_models#/properties/cda_id"
+                        "$ref": "cda_id"
                     },
                     "minItems": 1
                 },
                 "performer": {
-                    "$ref": "http://local.com/common_models#/properties/cda_performer"
+                    "$ref": "cda_performer"
                 }
             },
             "additionalProperties": false
@@ -213,15 +219,14 @@
         "product",
         "status"
     ]
-}
-</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+}</code></pre></div><div class="col-sm-6"><h2>Example (medication)</h2><pre><code class="json" style="font-size:10px;">{
     "date_time": {
         "low": {
-            "date": "2007-01-03T00:00:00Z",
+            "date": "2007-01-03T00:00:00.000Z",
             "precision": "day"
         },
         "high": {
-            "date": "2012-05-15T00:00:00Z",
+            "date": "2012-05-15T00:00:00.000Z",
             "precision": "day"
         }
     },
@@ -256,16 +261,13 @@
     "supply": {
         "date_time": {
             "low": {
-                "date": "2007-01-03T00:00:00Z",
+                "date": "2007-01-03T00:00:00.000Z",
                 "precision": "day"
             }
         },
         "repeatNumber": "1",
         "quantity": "75",
         "author": {
-            "date_time": {
-                "null_flavor": "UNK"
-            },
             "identifiers": [
                 {
                     "identifier": "2a620155-9d11-439e-92b3-5d9815fe4de8"
@@ -327,7 +329,7 @@
     "precondition": {
         "code": {
             "code": "ASSERTION",
-            "code_system_name": "HL7ActCode"
+            "code_system_name": "ActCode"
         },
         "value": {
             "name": "Wheezing",
@@ -349,7 +351,7 @@
         },
         "date_time": {
             "low": {
-                "date": "2007-01-03T00:00:00Z",
+                "date": "2007-01-03T00:00:00.000Z",
                 "precision": "day"
             }
         },

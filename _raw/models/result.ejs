@@ -1,16 +1,24 @@
 <% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "results",
+    "type": "array",
+    "items": {
+        "$ref": "result"
+    }
+}
+
+{
+    "id": "result",
     "type": "object",
-    "$schema": "http://json-schema.org/draft-04/schema",
     "properties": {
         "identifiers": {
             "type": "array",
             "items": {
-                "$ref": "http://local.com/common_models#/properties/cda_id"
+                "$ref": "cda_id"
             },
             "minItems": 1
         },
         "result_set": {
-            "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+            "$ref": "cda_coded_entry"
         },
         "results": {
             "type": "array",
@@ -18,12 +26,13 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "date_time": { "$ref": "http://local.com/common_models#/properties/cda_date"
+                    "date_time": {
+                        "$ref": "cda_date"
                     },
                     "identifiers": {
                         "type": "array",
                         "items": {
-                            "$ref": "http://local.com/common_models#/properties/cda_id"
+                            "$ref": "cda_id"
                         }
                     },
                     "interpretations": {
@@ -33,7 +42,7 @@
                         }
                     },
                     "result": {
-                        "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                        "$ref": "cda_coded_entry"
                     },
                     "status": {
                         "type": "string"
@@ -43,6 +52,9 @@
                     },
                     "value": {
                         "type": "number"
+                    },
+                    "text": {
+                        "type": "string"
                     },
                     "reference_range": {
                         "type": "object",
@@ -66,20 +78,19 @@
                     }
                 },
                 "required": [
-                "result",
-                "date_time",
-                "status"
-            ],
-            "additionalProperties":false
+                    "result",
+                    "date_time",
+                    "status"
+                ],
+                "additionalProperties": false
             }
-            
         }
     },
-    "additionalProperties":false,
+    "additionalProperties": false,
     "required": [
         "results"
     ]
-}</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+}</code></pre></div><div class="col-sm-6"><h2>Example (result)</h2><pre><code class="json" style="font-size:10px;">{
     "identifiers": [
         {
             "identifier": "7d5a02b0-67a4-11db-bd13-0800200c9a66"
@@ -104,8 +115,8 @@
             },
             "date_time": {
                 "point": {
-                    "date": "2000-03-23T14:30:00Z",
-                    "precision": "minute"
+                    "date": "2000-03-23T00:00:00.000Z",
+                    "precision": "day"
                 }
             },
             "status": "completed",
@@ -131,8 +142,8 @@
             },
             "date_time": {
                 "point": {
-                    "date": "2000-03-23T14:30:00Z",
-                    "precision": "minute"
+                    "date": "2000-03-23T00:00:00.000Z",
+                    "precision": "day"
                 }
             },
             "status": "completed",
@@ -160,8 +171,8 @@
             },
             "date_time": {
                 "point": {
-                    "date": "2000-03-23T14:30:00Z",
-                    "precision": "minute"
+                    "date": "2000-03-23T00:00:00.000Z",
+                    "precision": "day"
                 }
             },
             "status": "completed",

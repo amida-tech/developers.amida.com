@@ -1,0 +1,57 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "social_history",
+    "type": "array",
+    "items": {
+        "$ref": "social_history_entry"
+    }
+}
+
+{
+    "id": "social_history_entry",
+    "type": "object",
+    "properties": {
+        "date_time": {
+            "$ref": "cda_date"
+        },
+        "value": {
+            "type": "string"
+        },
+        "code": {
+            "$ref": "cda_coded_entry"
+        },
+        "observation_value": {
+            "type": "string"
+        },
+        "identifiers": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_id"
+            }
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "additionalProperties": false
+}</code></pre></div><div class="col-sm-6"><h2>Example (social_history_entry)</h2><pre><code class="json" style="font-size:10px;">{
+    "date_time": {
+        "low": {
+            "date": "2005-05-01T00:00:00.000Z",
+            "precision": "day"
+        },
+        "high": {
+            "date": "2009-02-27T08:00:00.000Z",
+            "precision": "second"
+        }
+    },
+    "identifiers": [
+        {
+            "identifier": "2.16.840.1.113883.19",
+            "extension": "123456789"
+        }
+    ],
+    "code": {
+        "name": "Smoking Status"
+    },
+    "value": "Former smoker"
+}</code></pre></div></div><% include _templates/foot %>

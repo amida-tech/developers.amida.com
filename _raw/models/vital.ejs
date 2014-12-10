@@ -1,21 +1,30 @@
 <% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "vitals",
+    "type": "array",
+    "items": {
+        "$ref": "vital"
+    }
+}
+
+{
+    "id": "vital",
     "type": "object",
     "properties": {
         "identifiers": {
             "type": "array",
             "items": {
-            "$ref": "http://local.com/common_models#/properties/cda_id"
-        },
-        "minItems":1
+                "$ref": "cda_id"
+            },
+            "minItems": 1
         },
         "vital": {
-            "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+            "$ref": "cda_coded_entry"
         },
         "status": {
             "type": "string"
         },
-        "date_time": {"$ref": "http://local.com/common_models#/properties/cda_date"
+        "date_time": {
+            "$ref": "cda_date"
         },
         "interpretations": {
             "type": "array",
@@ -30,9 +39,11 @@
             "type": "string"
         }
     },
-    "additionalProperties":false,
-    "required":["vital"]
-}</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+    "additionalProperties": false,
+    "required": [
+        "vital"
+    ]
+}</code></pre></div><div class="col-sm-6"><h2>Example (vital)</h2><pre><code class="json" style="font-size:10px;">{
     "identifiers": [
         {
             "identifier": "c6f88321-67ad-11db-bd13-0800200c9a66"
@@ -46,7 +57,7 @@
     "status": "completed",
     "date_time": {
         "point": {
-            "date": "1999-11-14T00:00:00Z",
+            "date": "1999-11-14T00:00:00.000Z",
             "precision": "day"
         }
     },

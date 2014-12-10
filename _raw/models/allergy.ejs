@@ -1,15 +1,23 @@
 <% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "allergies",
+    "type": "array",
+    "items": {
+        "$ref": "allergy"
+    }
+}
+
+{
+    "id": "allergy",
     "type": "object",
-    "$schema": "http://json-schema.org/draft-04/schema",
     "properties": {
         "date_time": {
-            "$ref": "http://local.com/common_models#/properties/cda_date"
+            "$ref": "cda_date"
         },
         "identifiers": {
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "http://local.com/common_models#/properties/cda_id"
+                "$ref": "cda_id"
             }
         },
         "observation": {
@@ -19,77 +27,77 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "http://local.com/common_models#/properties/cda_id"
+                        "$ref": "cda_id"
                     }
                 },
-
                 "negation_indicator": {
                     "type": "boolean"
                 },
-
                 "allergen": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "intolerance": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
                 "date_time": {
-                    "$ref": "http://local.com/common_models#/properties/cda_date"
+                    "$ref": "cda_date"
                 },
                 "status": {
-                    "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                    "$ref": "cda_coded_entry"
                 },
-
                 "reactions": {
                     "type": "array",
                     "minItems": 1,
                     "items": {
                         "type": "object",
                         "properties": {
+                            "identifiers": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                    "$ref": "cda_id"
+                                }
+                            },
                             "date_time": {
-                                "$ref": "http://local.com/common_models#/properties/cda_date"
+                                "$ref": "cda_date"
                             },
                             "reaction": {
-                                "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                                "$ref": "cda_coded_entry"
                             },
                             "severity": {
                                 "type": "object",
                                 "properties": {
                                     "code": {
-                                        "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                                        "$ref": "cda_coded_entry"
                                     },
                                     "interpretation": {
-                                        "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                                        "$ref": "cda_coded_entry"
                                     }
                                 },
                                 "additionalProperties": false
                             }
                         },
                         "additionalProperties": false
-
-
                     }
                 },
                 "severity": {
                     "type": "object",
                     "properties": {
                         "code": {
-                            "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                            "$ref": "cda_coded_entry"
                         },
                         "interpretation": {
-                            "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
+                            "$ref": "cda_coded_entry"
                         }
                     },
                     "additionalProperties": false
                 }
             },
             "additionalProperties": false
-        },
-        "additionalProperties": false
+        }
     },
     "additionalProperties": false
-}
-</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
+}</code></pre></div><div class="col-sm-6"><h2>Example (allergy)</h2><pre><code class="json" style="font-size:10px;">{
     "identifiers": [
         {
             "identifier": "36e3e930-7b14-11db-9fe1-0800200c9a66"
@@ -97,7 +105,7 @@
     ],
     "date_time": {
         "point": {
-            "date": "2007-05-01T00:00:00Z",
+            "date": "2007-05-01T00:00:00.000Z",
             "precision": "day"
         }
     },
@@ -119,7 +127,7 @@
         },
         "date_time": {
             "low": {
-                "date": "2007-05-01T00:00:00Z",
+                "date": "2007-05-01T00:00:00.000Z",
                 "precision": "day"
             }
         },
@@ -130,13 +138,18 @@
         },
         "reactions": [
             {
+                "identifiers": [
+                    {
+                        "identifier": "4adc1020-7b14-11db-9fe1-0800200c9a64"
+                    }
+                ],
                 "date_time": {
                     "low": {
-                        "date": "2007-05-01T00:00:00Z",
+                        "date": "2007-05-01T00:00:00.000Z",
                         "precision": "day"
                     },
                     "high": {
-                        "date": "2009-02-27T13:00:00Z",
+                        "date": "2009-02-27T08:00:00.000Z",
                         "precision": "second"
                     }
                 },
@@ -154,7 +167,7 @@
                     "interpretation": {
                         "name": "Suceptible",
                         "code": "S",
-                        "code_system_name": "OID 2.16.840.1.113883.1.11.78"
+                        "code_system_name": "Observation Interpretation"
                     }
                 }
             }
@@ -168,7 +181,7 @@
             "interpretation": {
                 "name": "Normal",
                 "code": "N",
-                "code_system_name": "OID 2.16.840.1.113883.1.11.78"
+                "code_system_name": "Observation Interpretation"
             }
         }
     }
