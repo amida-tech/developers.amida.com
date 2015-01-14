@@ -16,6 +16,9 @@
     "produces": [
         "application/json"
     ],
+    "apis": [
+        {"accountHistory": "operations for account events"}
+    ],
     "paths": {
         "/add": {
             "get": {
