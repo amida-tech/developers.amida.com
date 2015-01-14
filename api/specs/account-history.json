@@ -16,11 +16,8 @@
     "produces": [
         "application/json"
     ],
-    "apis": [
-        {"accountHistory": "operations for account events"}
-    ],
     "paths": {
-        "/add": {
+        "/accountEvents/add": {
             "get": {
                 "summary": "Add an event to a user's account history",
                 "description": "Save event for register, log in/out, up/download file, lab results, password change, personal information changed",
@@ -68,7 +65,7 @@
                 }
             }
         },
-        "/all": {
+        "/accountEvents/all": {
             "get": {
                 "summary": "Returns all events in a user's account history",
                 "description": "Shows registered, logged in/out, file up/downloaded, lab results received, password changed, info updated",
