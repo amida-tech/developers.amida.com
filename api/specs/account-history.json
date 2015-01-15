@@ -25,6 +25,7 @@
                 "produces": [
                     "text/plain"
                 ],
+                "tags": ["history"], 
                 "parameters": [
                     {
                         "name": "userID",
@@ -70,6 +71,7 @@
                 "summary": "Returns all events in a user's account history",
                 "description": "Shows registered, logged in/out, file up/downloaded, lab results received, password changed, info updated",
                 "operationId": "allEventsInOrder",
+                "tags": ["history"], 
                 "responses": {
                     "200": {
                         "description": "event history returned",
