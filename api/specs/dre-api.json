@@ -1,16 +1,16 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "0.0.1",
-        "title": "Account History for PHR/DRE",
-        "description": "Manages events in a user's account history"
+        "version": "1.0.0",
+        "title": "Data Reconciliation Engine API",
+        "description": "Handles data services for DRE UI"
     },
     "tags": [{
         "name": "history",
         "description": "DRE account history methods"
     }],
 
-    "host": "localhost:3005",
+    "host": "dre.amida-demo.com:3000",
     "basePath": "/api/v1",
     "schemes": [
         "http"
@@ -22,8 +22,8 @@
         "application/json"
     ],
     "paths": {
-        "/accountEvents/add": {
-            "get": {
+        "/account_history": {
+            "post": {
                 "summary": "Add an event to a user's account history",
                 "description": "Save event for register, log in/out, up/download file, lab results, password change, personal information changed",
                 "operationId": "addEvent",
@@ -66,7 +66,7 @@
                 }
             }
         },
-        "/accountEvents/all": {
+        "/account_history/all": {
             "get": {
                 "summary": "Returns all events in a user's account history",
                 "description": "Shows registered, logged in/out, file up/downloaded, lab results received, password changed, info updated",
@@ -85,6 +85,27 @@
                 }
             }
         }
+
+        "/storage": {
+            "get": {
+                "summary": "Get list of files in patient record",
+                "description": "Files and metadata from My Files",
+                "operationId": "allFiles",
+                "tags": ["storage"],
+                "responses": {
+                    "200": {
+                        "description": "files returned",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/eventSchema"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     },
 
     "definitions": {
