@@ -5,11 +5,33 @@
         "title": "Data Reconciliation Engine API",
         "description": "Handles data services for DRE UI"
     },
-    "tags": [{
-        "name": "history",
-        "description": "DRE account history methods"
-    }],
-
+    "tags": [
+        {
+            "name": "account"
+        },
+        {
+            "name": "history",
+            "description": "DRE account history methods"
+        },
+        {
+            "name": "matches"
+        },
+        {
+            "name": "merges"
+        },
+        {
+            "name": "notes"
+        },
+        {
+            "name": "notifications"
+        },
+        {
+            "name": "record"
+        },
+        {
+            "name": "storage"
+        }
+    ],
     "host": "dre.amida-demo.com:3000",
     "basePath": "/api/v1",
     "schemes": [
@@ -27,35 +49,26 @@
                 "summary": "Add an event to a user's account history",
                 "description": "Save event for register, log in/out, up/download file, lab results, password change, personal information changed",
                 "operationId": "addEvent",
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "application/json"
                 ],
-                "tags": ["history"],
-                "parameters": [{
-                    "name": "userID",
-                    "in": "query",
-                    "type": "string",
-                    "description": "user identifier",
-                    "required": true
-                }, {
-                    "name": "event_type",
-                    "in": "query",
-                    "type": "string",
-                    "description": "user identifier",
-                    "required": true
-                }, {
-                    "name": "note",
-                    "in": "query",
-                    "type": "string",
-                    "description": "additional info for event",
-                    "required": false
-                }, {
-                    "name": "fileRef",
-                    "in": "query",
-                    "type": "string",
-                    "description": "file reference string",
-                    "required": false
-                }],
+                "tags": [
+                    "history"
+                ],
+                "parameters": [
+                    {
+                        "name": "event",
+                        "description": "Event to be added",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/eventSchema"
+                        },
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "201": {
                         "description": "event succesfully created and added",
@@ -71,7 +84,9 @@
                 "summary": "Returns all events in a user's account history",
                 "description": "Shows registered, logged in/out, file up/downloaded, lab results received, password changed, info updated",
                 "operationId": "allEventsInOrder",
-                "tags": ["history"],
+                "tags": [
+                    "history"
+                ],
                 "responses": {
                     "200": {
                         "description": "event history returned",
@@ -85,29 +100,321 @@
                 }
             }
         },
-
         "/storage": {
             "get": {
                 "summary": "Get list of files in patient record",
                 "description": "Files and metadata from My Files",
                 "operationId": "allFiles",
-                "tags": ["storage"],
+                "tags": [
+                    "storage"
+                ],
                 "responses": {
                     "200": {
                         "description": "files returned",
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/eventSchema"
+                                "schema": {
+                                    "type": "file"
+                                }
                             }
                         }
                     }
                 }
+            },
+            "put": {
+                "summary": "Uploads a file",
+                "description": "Upload, match, merge",
+                "operationId": "processUpload",
+                "tags": [
+                    "storage"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "file uploaded"
+                    },
+                    "400": {
+                        "description": "error"
+                    }
+                }
+            }
+        },
+        "/storage/record/{identifier}": {
+            "get": {
+                "summary": "Downloads a file",
+                "description": "Retrieves a specific file for download",
+                "operationId": "getSource",
+                "tags": [
+                    "storage"
+                ],
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "description": "Event to be added",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "file"
+                    }
+                }
+            }
+        },
+        "/account": {
+            "get": {
+                "tags": [
+                    "account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Account is authenticated"
+                    }
+                }
+            }
+        },
+        "/account/register": {
+            "post": {
+                "tags": [
+                    "account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "account created"
+                    }
+                }
+            }
+        },
+        "/account/login": {
+            "post": {
+                "tags": [
+                    "account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "login successful"
+                    }
+                }
+            }
+        },
+        "/account/logout": {
+            "post": {
+                "tags": [
+                    "account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "logout successful"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "logout successful"
+                    }
+                }
+            }
+        },
+        "/record/{component}": {
+            "get": {
+                "tags": [
+                    "record"
+                ],
+                "summary": "View entries for component",
+                "parameters": [
+                    {
+                        "name": "component",
+                        "description": "area of health",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "component retrieved"
+                    }
+                }
+            }
+        },
+        "/record/master": {
+            "get": {
+                "tags": [
+                    "record"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Master record retrieved"
+                    }
+                }
+            }
+        },
+        "/matches/{component}/{record_id}": {
+            "parameters": [
+                {
+                    "name": "component",
+                    "in": "path",
+                    "description": "area of health",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "record_id",
+                    "in": "path",
+                    "description": "ID for component",
+                    "type": "string",
+                    "required": true
+                }
+            ],
+            "get": {
+                "tags": [
+                    "matches"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get single match API"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "matches"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Partial record updates"
+                    }
+                }
+            }
+        },
+        "/matches/{component}/{record_id}/{record_index}": {
+            "parameters": [
+                {
+                    "name": "component",
+                    "in": "path",
+                    "description": "area of health",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "record_id",
+                    "in": "path",
+                    "description": "ID for component",
+                    "type": "string"
+                },
+                {
+                    "name": "record_index",
+                    "in": "path",
+                    "description": "specific ID entry",
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "tags": [
+                    "matches"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Partial record updates"
+                    }
+                }
+            }
+        },
+        "/merges": {
+            "get": {
+                "tags": [
+                    "merges"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all merges"
+                    }
+                }
+            }
+        },
+        "/merges/{component}": {
+            "get": {
+                "summary": "Get merges by component",
+                "description": "Get merges by component",
+                "parameters": [
+                    {
+                        "name": "component",
+                        "description": "area of health",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Merges successful"
+                    }
+                },
+                "tags": [
+                    "merges"
+                ]
+            }
+        },
+        "/notification": {
+            "get": {
+                "summary": "All notifications",
+                "description": "includes new record count from merge",
+                "responses": {
+                    "200": {
+                        "description": "Notifications counted",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "notifications"
+                ]
+            }
+        },
+        "/notes": {
+            "post": {
+                "tags": [
+                    "notes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note added to account"
+                    }
+                }
+            }
+        },
+        "/notes/{component}": {
+            "post": {
+                "tags": [
+                    "notes"
+                ],
+                "parameters": [
+                    {
+                        "name": "component",
+                        "description": "area of health",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note added to component"
+                    }
+                }
             }
         }
-
     },
-
     "definitions": {
         "eventSchema": {
             "required": [
@@ -136,6 +443,10 @@
                 },
                 "fileRef": {
                     "type": "string"
+                },
+                "time": {
+                    "type": "string",
+                    "format": "date-time"
                 }
             }
         }
