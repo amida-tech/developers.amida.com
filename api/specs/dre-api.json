@@ -3,47 +3,32 @@
     "info": {
         "version": "1.0.0",
         "title": "Data Reconciliation Engine API",
-        "description": "Handles data services for DRE UI",
-        "contact": {
-            "url": "http://github.com/amida-tech"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
+        "description": "Handles data services for DRE UI"
     },
     "tags": [
         {
-            "name": "account",
-            "description": "register, login, logout"
+            "name": "account"
         },
         {
             "name": "history",
-            "description": "DRE account history methods"
         },
         {
-            "name": "matches",
-            "description": "matching components to existing records"
+            "name": "matches"
         },
         {
-            "name": "merges",
-            "description": "reconciling existing and new records"
+            "name": "merges"
         },
         {
-            "name": "notes",
-            "description": "notes added by patient to record"
+            "name": "notes"
         },
         {
-            "name": "notifications",
-            "description": "counts for updates for new record merges"
+            "name": "notifications"
         },
         {
-            "name": "record",
-            "description": "manages aspects of master health record"
+            "name": "record"
         },
         {
-            "name": "storage",
-            "description": "manages files, uploads, downloads"
+            "name": "storage"
         }
     ],
     "host": "dre.amida-demo.com:3000",
@@ -57,34 +42,6 @@
     "produces": [
         "application/json"
     ],
-    "parameters": {
-        "component": {
-            "name": "component",
-            "in": "path",
-            "description": "area of health",
-            "type": "string"
-        },
-        "record_id": {
-            "name": "record_id",
-            "in": "path",
-            "description": "Identifier within component",
-            "type": "string"
-        },
-        "record_index": {
-            "name": "record_index",
-            "in": "path",
-            "description": "Index for entry in record component",
-            "type": "string"
-        },
-        "username": {
-            "name": "username",
-            "in": "body",
-            "description": "username",
-            "schema": {
-                "$ref": "#/definitions/userSchema"
-            }
-        }
-    },
     "paths": {
         "/account_history": {
             "post": {
@@ -150,18 +107,13 @@
                 "tags": [
                     "storage"
                 ],
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/username"
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "files returned",
                         "schema": {
-                            "storage": {
-                                "type": "array",
-                                "items": {
+                            "type": "array",
+                            "items": {
+                                "schema": {
                                     "type": "file"
                                 }
                             }
@@ -173,19 +125,6 @@
                 "summary": "Uploads a file",
                 "description": "Upload, match, merge",
                 "operationId": "processUpload",
-                "consumes": [
-                    "multipart/form-data"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/username"
-                    },
-                    {
-                        "name": "file",
-                        "in": "formData",
-                        "type": "file"
-                    }
-                ],
                 "tags": [
                     "storage"
                 ],
@@ -207,16 +146,10 @@
                 "tags": [
                     "storage"
                 ],
-                "produces": [
-                    "multipart/form-data"
-                ],
                 "parameters": [
                     {
-                        "$ref": "#/parameters/username"
-                    },
-                    {
                         "name": "identifier",
-                        "description": "File indentifier",
+                        "description": "Event to be added",
                         "in": "path",
                         "type": "string",
                         "required": true
@@ -224,49 +157,25 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "file retrieved",
-                        "schema": {
-                            "newFile": {
-                                "type": "file"
-                            }
-                        }
+                        "description": "file"
                     }
                 }
             }
         },
         "/account": {
-            "parameters": [
-                {
-                    "$ref": "#/definitions/userSchema"
-                }
-            ],
             "get": {
                 "tags": [
                     "account"
                 ],
                 "responses": {
                     "200": {
-                        "description": "Account is authenticated",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Error - account unauthenticated",
-                        "schema": {
-                            "type": "string"
-                        }
+                        "description": "Account is authenticated"
                     }
                 }
             }
         },
         "/account/register": {
             "post": {
-                "parameters": [
-                    {
-                        "$ref": "#/definitions/userSchema"
-                    }
-                ],
                 "tags": [
                     "account"
                 ],
@@ -279,11 +188,6 @@
         },
         "/account/login": {
             "post": {
-                "parameters": [
-                    {
-                        "$ref": "#/definitions/userSchema"
-                    }
-                ],
                 "tags": [
                     "account"
                 ],
@@ -295,11 +199,6 @@
             }
         },
         "/account/logout": {
-            "parameters": [
-                {
-                    "$ref": "#/definitions/userSchema"
-                }
-            ],
             "post": {
                 "tags": [
                     "account"
@@ -321,8 +220,27 @@
                 }
             }
         },
-        "/record/demographics": {
-            "get": null
+        "/record/{component}": {
+            "get": {
+                "tags": [
+                    "record"
+                ],
+                "summary": "View entries for component",
+                "parameters": [
+                    {
+                        "name": "component",
+                        "description": "area of health",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "component retrieved"
+                    }
+                }
+            }
         },
         "/record/master": {
             "get": {
@@ -336,31 +254,21 @@
                 }
             }
         },
-        "/record/{component}": {
-            "get": {
-                "tags": [
-                    "record"
-                ],
-                "summary": "View entries for component",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/component"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "component retrieved"
-                    }
-                }
-            }
-        },
         "/matches/{component}/{record_id}": {
             "parameters": [
                 {
-                    "$ref": "#/parameters/component"
+                    "name": "component",
+                    "in": "path",
+                    "description": "area of health",
+                    "type": "string",
+                    "required": true
                 },
                 {
-                    "$ref": "#/parameters/record_id"
+                    "name": "record_id",
+                    "in": "path",
+                    "description": "ID for component",
+                    "type": "string",
+                    "required": true
                 }
             ],
             "get": {
@@ -387,13 +295,23 @@
         "/matches/{component}/{record_id}/{record_index}": {
             "parameters": [
                 {
-                    "$ref": "#/parameters/component"
+                    "name": "component",
+                    "in": "path",
+                    "description": "area of health",
+                    "type": "string",
+                    "required": true
                 },
                 {
-                    "$ref": "#/parameters/record_id"
+                    "name": "record_id",
+                    "in": "path",
+                    "description": "ID for component",
+                    "type": "string"
                 },
                 {
-                    "$ref": "#/parameters/record_index"
+                    "name": "record_index",
+                    "in": "path",
+                    "description": "specific ID entry",
+                    "type": "string"
                 }
             ],
             "post": {
@@ -425,7 +343,11 @@
                 "description": "Get merges by component",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/component"
+                        "name": "component",
+                        "description": "area of health",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -477,7 +399,11 @@
                 ],
                 "parameters": [
                     {
-                        "$ref": "#/parameters/component"
+                        "name": "component",
+                        "description": "area of health",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -489,22 +415,6 @@
         }
     },
     "definitions": {
-        "userSchema": {
-            "required": [
-                "username"
-            ],
-            "properties": {
-                "username": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                }
-            }
-        },
         "eventSchema": {
             "required": [
                 "userID",
