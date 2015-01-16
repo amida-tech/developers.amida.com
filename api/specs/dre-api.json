@@ -10,7 +10,7 @@
             "name": "account"
         },
         {
-            "name": "history",
+            "name": "history"
         },
         {
             "name": "matches"
@@ -451,3 +451,4 @@
         }
     }
 }
+
