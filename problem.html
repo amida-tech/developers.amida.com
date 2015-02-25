@@ -244,13 +244,14 @@ body {
         "status": {
             "type": "object",
             "properties": {
-                "code": {
+                "name": {
                     "type": "string"
                 },
-                "status": {
-                    "type": "string"
+                "date_time": {
+                    "$ref": "cda_date"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "source_list_identifiers": {
             "type": "array",
