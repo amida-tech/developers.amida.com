@@ -160,37 +160,37 @@ body {
 
                   <h3>Blue Button (JSON) Data Model </h3>
           <ul class="nav nav-sidebar">
-            
+
                <li><a href="document_model.html">Main</a></li>
-            
+
                <li><a href="common_models.html">Shared Schemas</a></li>
-            
+
                <li><a href="demographics.html">Demographics</a></li>
-            
+
                <li><a href="allergy.html">Allergies</a></li>
-            
+
                <li><a href="encounter.html">Encounters</a></li>
-            
+
                <li><a href="immunization.html">Immunizations</a></li>
-            
+
                <li><a href="medication.html">Medications</a></li>
-            
+
                <li><a href="problem.html">Problems</a></li>
-            
+
                <li><a href="procedure.html">Procedures</a></li>
-            
+
                <li><a href="result.html">Results</a></li>
-            
+
                <li><a href="social_history_entry.html">Social History</a></li>
-            
+
                <li><a href="plan_of_care_entry.html">Plan of Care</a></li>
-            
+
                <li><a href="vital.html">Vitals</a></li>
-            
+
                <li><a href="payer.html">Payers</a></li>
-            
+
                <li><a href="claim.html">Claims</a></li>
-                      
+
           </ul>
 
         </div>
@@ -267,6 +267,9 @@ body {
                     "type": "string"
                 },
                 "version": {
+                    "type": "string"
+                },
+                "confidentiality": {
                     "type": "string"
                 }
             },
@@ -2277,7 +2280,8 @@ body {
             "procedures",
             "plan_of_care",
             "payers"
-        ]
+        ],
+        "confidentiality": "Normal"
     },
     "errors": [
         "nullFlavor alert:  missing but required street_lines in Address -> Patient -> CCD",
