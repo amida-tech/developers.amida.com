@@ -983,7 +983,6 @@
             }
         },
         "formatSchema": {
-            "required": "format",
             "properties": {
                 "format": {
                     "type": "string",
