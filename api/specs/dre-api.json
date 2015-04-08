@@ -387,15 +387,6 @@
                 "tags": [
                     "record"
                 ],
-                "parameters": [{
-                    "name": "format",
-                    "description": "Defaults to CCDA format",
-                    "in": "path",
-                    "schema": {
-                        "$ref": "#/definitions/formatSchema"
-                    },
-                    "required": false
-                }],
                 "responses": {
                     "200": {
                         "description": "Master health record downloaded in Blue Button or CCDA format"
