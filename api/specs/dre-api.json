@@ -394,14 +394,11 @@
                     "schema": {
                         "$ref": "#/definitions/formatSchema"
                     },
-                    "required": true
+                    "required": false
                 }],
                 "responses": {
                     "200": {
-                        "description": "Master health record downloaded in format {format}",
-                        "schema": {
-                            "type": "file"
-                        }
+                        "description": "Master health record downloaded in Blue Button or CCDA format"
                     },
                     "400": {
                         "description": "Event error while saving event"
