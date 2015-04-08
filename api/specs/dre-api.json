@@ -983,9 +983,7 @@
             }
         },
         "formatSchema": {
-            "required": [
-                "format"
-            ],
+            "required": "format",
             "properties": {
                 "format": {
                     "type": "string",
