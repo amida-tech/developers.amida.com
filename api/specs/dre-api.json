@@ -108,18 +108,13 @@
                     "description": "File to be uploaded",
                     "in": "formData",
                     "type": "file",
-                    "schema": {
-                        "type": "formData"
-                    },
                     "required": true
                 }, {
                     "name": "check",
                     "description": "Save file without importing entries or update Master Health Record",
-                    "in": "body",
+                    "in": "formData",
                     "type": "boolean",
-                    "schema": {
-                        "type": "boolean"
-                    }
+                    "required": true
                 }],
                 "responses": {
                     "200": {
@@ -154,10 +149,7 @@
                 }],
                 "responses": {
                     "200": {
-                        "description": "file",
-                        "schema": {
-                            "type": "file"
-                        }
+                        "description": "file"
                     },
                     "400": {
                         "description": "Event error"
@@ -332,11 +324,13 @@
                     "record"
                 ],
                 "parameters": [{
-                    "name": "record ID",
+                    "name": "profileInfo",
                     "description": "Profile section information and database ID",
                     "in": "body",
-                    "type": "string",
-                    "required": true
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/bodySchema"
+                    }
                 }],
                 "summary": "Update profile information",
                 "responses": {
@@ -389,7 +383,7 @@
                 }
             }
         },
-        "/master_health_record/": {
+        "/master_health_record/{format}": {
             "get": {
                 "summary": "Download Master Health Record",
                 "description": "Retrieve all components and download",
@@ -405,7 +399,7 @@
                     "enum":  [
                         "json",
                         "string"
-                    ]
+                    ],
                     "required": true
                 }],
                 "responses": {
@@ -1012,12 +1006,12 @@
                 }
             }
         },
-        "formatSchema": {
+        "bodySchema": {
             "required": [
-                "format"
+                "data"
             ],
             "properties": {
-                "format": {
+                "data": {
                     "type": "string"
                 }
             }
