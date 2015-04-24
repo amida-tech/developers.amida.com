@@ -361,9 +361,19 @@
                     "name": "component",
                     "description": "area of health",
                     "in": "path",
-                    "schema": {
-                        "$ref": "#/definitions/recordSchema"
-                    },
+                    "type": "string",
+                    "enum": [
+                        "demographics",
+                        "medications",
+                        "results",
+                        "encounters",
+                        "vitals",
+                        "immunizations",
+                        "allergies",
+                        "conditions",
+                        "procedures",
+                        "social"
+                    ],
                     "required": true
                 }],
                 "responses": {
@@ -441,9 +451,19 @@
                     "name": "component",
                     "description": "area of health",
                     "in": "path",
-                    "schema": {
-                        "$ref": "#/definitions/recordSchema"
-                    },
+                    "type": "string",
+                    "enum": [
+                        "demographics",
+                        "medications",
+                        "results",
+                        "encounters",
+                        "vitals",
+                        "immunizations",
+                        "allergies",
+                        "conditions",
+                        "procedures",
+                        "social"
+                    ],
                     "required": true
                 }],
                 "responses": {
@@ -464,9 +484,19 @@
                 "name": "component",
                 "in": "path",
                 "description": "area of health",
-                "schema": {
-                    "$ref": "#/definitions/recordSchema"
-                },
+                "type": "string",
+                "enum": [
+                    "demographics",
+                    "medications",
+                    "results",
+                    "encounters",
+                    "vitals",
+                    "immunizations",
+                    "allergies",
+                    "conditions",
+                    "procedures",
+                    "social"
+                ],
                 "required": true
             }, {
                 "name": "record_id",
@@ -500,9 +530,19 @@
                 "name": "component",
                 "in": "path",
                 "description": "area of health",
-                "schema": {
-                    "$ref": "#/definitions/recordSchema"
-                },
+                "type": "string",
+                "enum": [
+                    "demographics",
+                    "medications",
+                    "results",
+                    "encounters",
+                    "vitals",
+                    "immunizations",
+                    "allergies",
+                    "conditions",
+                    "procedures",
+                    "social"
+                ],
                 "required": true
             }, {
                 "name": "record_id",
@@ -536,9 +576,19 @@
                 "name": "component",
                 "in": "path",
                 "description": "area of health",
-                "schema": {
-                    "$ref": "#/definitions/recordSchema"
-                },
+                "type": "string",
+                "enum": [
+                    "demographics",
+                    "medications",
+                    "results",
+                    "encounters",
+                    "vitals",
+                    "immunizations",
+                    "allergies",
+                    "conditions",
+                    "procedures",
+                    "social"
+                ],
                 "required": true
             }, {
                 "name": "record_id",
@@ -596,9 +646,19 @@
                     "name": "component",
                     "description": "area of health",
                     "in": "path",
-                    "schema": {
-                        "$ref": "#/definitions/recordSchema"
-                    },
+                    "type": "string",
+                    "enum": [
+                        "demographics",
+                        "medications",
+                        "results",
+                        "encounters",
+                        "vitals",
+                        "immunizations",
+                        "allergies",
+                        "conditions",
+                        "procedures",
+                        "social"
+                    ],
                     "required": true
                 }],
                 "responses": {
@@ -948,16 +1008,6 @@
                     "type": "string"
                 },
                 "username": {
-                    "type": "string"
-                }
-            }
-        },
-        "recordSchema": {
-            "required": [
-                "component"
-            ],
-            "properties": {
-                "component": {
                     "type": "string"
                 }
             }
