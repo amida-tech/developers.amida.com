@@ -391,10 +391,12 @@
                     "name": "format",
                     "description": "Defaults to CCDA format",
                     "in": "path",
-                    "schema": {
-                        "$ref": "#/definitions/formatSchema"
-                    },
-                    "required": false
+                    "type": "string",
+                    "enum":  [
+                        "json",
+                        "string"
+                    ]
+                    "required": true
                 }],
                 "responses": {
                     "200": {
@@ -789,17 +791,7 @@
                     "type": "string"
                 },
                 "event_type": {
-                    "type": "string",
-                    "enum": [
-                        "initAccount",
-                        "loggedIn",
-                        "loggedOut",
-                        "fileUploaded",
-                        "fileDownloaded",
-                        "labResults",
-                        "passwordChange",
-                        "infoUpdate"
-                    ]
+                    "type": "string"
                 },
                 "note": {
                     "type": "string"
@@ -966,30 +958,17 @@
             ],
             "properties": {
                 "component": {
-                    "type": "string",
-                    "enum": [
-                        "demographics",
-                        "medications",
-                        "results",
-                        "encounters",
-                        "vitals",
-                        "immunizations",
-                        "allergies",
-                        "conditions",
-                        "procedures",
-                        "social"
-                    ]
+                    "type": "string"
                 }
             }
         },
         "formatSchema": {
+            "required": [
+                "format"
+            ],
             "properties": {
                 "format": {
-                    "type": "string",
-                    "enum": [
-                        "json",
-                        "ccda"
-                    ]
+                    "type": "string"
                 }
             }
         },
@@ -1004,19 +983,7 @@
             ],
             "properties": {
                 "section": {
-                    "type": "string",
-                    "enum": [
-                        "demographics",
-                        "medications",
-                        "results",
-                        "encounters",
-                        "vitals",
-                        "immunizations",
-                        "allergies",
-                        "conditions",
-                        "procedures",
-                        "social"
-                    ]
+                    "type": "string"
                 },
                 "_id": {
                     "type": "string"
