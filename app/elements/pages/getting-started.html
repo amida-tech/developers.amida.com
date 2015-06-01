@@ -1,0 +1,54 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="getting-started">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <p>
+      Amida strives to make health data accessible to modern developers by
+      abstracting away the complex nuances of historical formats.
+    </p>
+    <p>
+      The purpose of the Data Reconciliation Engine (DRE) is to take personal health data
+      in a variety of formats (starting with BlueButton/CCDA) from multiple
+      sources and parse/normalize/de-duplicate/merge it into a single Patient's
+      Master Health Record (with patient assistance), although most of hard
+      work will be done automatically.
+    </p>
+    <p>
+      DRE relies heavily on the blue-button family of libraries to parse health
+      record data in variety of formats into unified data model (JSON based),
+      so information can be readily utilized for any application.
+    </p>
+
+    
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'getting-started',
+
+    properties: {
+      foo: {
+        type: String,
+        value: 'bar',
+        notify: true
+      }
+    }
+  });
+})();
+</script>
