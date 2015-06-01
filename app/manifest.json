@@ -1,6 +1,6 @@
 {
-  "name": "Polymer Starter Kit",
-  "short_name": "Polymer Starter Kit",
+  "name": "Amida Developer Console",
+  "short_name": "Amida Developer Console",
   "icons": [{
         "src": "images/touch/icon-128x128.png",
         "sizes": "128x128"
