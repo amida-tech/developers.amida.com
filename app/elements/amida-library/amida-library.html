@@ -1,0 +1,83 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="amida-library">
+  <style>
+    :host {
+      display: block;
+      /*@apply(--layout-vertical)*/
+    }
+    paper-material{
+      margin: 8px 8px;
+      padding: 8px 8px;
+    }
+    paper-button{
+      background: rgba(180,180,180,.8);
+      /*font-size: 1.2em;*/
+      /*@apply(--layout-flex);*/
+      max-width:30%;
+      min-width: 30%;
+    }
+    paper-button::shadow paper-ripple{
+      color: white;
+    }
+    paper-material{
+      @apply(--layout-horizontal);
+      /*@apply(--layout-justified);*/
+    }
+    span{
+      @apply(--layout-self-center);
+    }
+    #description{
+      font-size:.8em;
+    }
+    a{
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1" animated>
+
+      <!-- <a href="{{url}}"> -->
+        <paper-button on-tap="onClick">{{name}}</paper-button>
+        <!-- </a> -->
+      <span id="description">{{description}}</span>
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'amida-library',
+
+    properties: {
+      foo: {
+        type: String,
+        value: 'bar'
+      },
+      name: String,
+      url: String,
+      description: String
+    },
+    _computeTitle: function(name, description){
+      return name + " - " + description;
+    },
+    created: function(){
+      console.log("sup")
+    },
+    onClick: function(){
+      location.href = this.url;
+    }
+  });
+})();
+</script>
