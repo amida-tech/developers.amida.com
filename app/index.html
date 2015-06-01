@@ -68,19 +68,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
           <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}">
-              <a data-route="home" href="/">
+              <a data-route="getting_started" href="/">
                 <iron-icon icon="home"></iron-icon>
-                <span>Home</span>
+                <span>Getting Started</span>
               </a>
 
-              <a data-route="users" href="/users">
+              <a data-route="our_libraries" href="/our_libraries">
                 <iron-icon icon="info"></iron-icon>
-                <span>Users</span>
+                <span>Our Libraries</span>
               </a>
 
-              <a data-route="contact" href="/contact">
+              <a data-route="blue_button_data_model" href="/blue_button_data_model">
                 <iron-icon icon="mail"></iron-icon>
-                <span>Contact</span>
+                <span>Our Blue Button data model</span>
               </a>
           </paper-menu>
       </div>
@@ -105,7 +105,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Main Content -->
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-            <section data-route="home">
+            <section data-route="getting_started">
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
 
@@ -116,7 +116,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
-            <section data-route="users">
+            <section data-route="our_libraries">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Users</h2>
                 <p>This is the users section</p>
@@ -133,7 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
-            <section data-route="contact">
+            <section data-route="blue_button_data_model">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Contact</h2>
                 <p>This is the contact section</p>
