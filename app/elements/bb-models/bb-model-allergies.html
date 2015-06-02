@@ -11,14 +11,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="bb-model-allergies">
-  <style>
-    :host {
-      display: block;
-    }
-  </style>
-  <template>
-    <div>Hello from <span>{{foo}}</span></div>
-  </template>
+<style>
+  :host {
+    display: block;
+    /*margin 16px 16px;*/
+    @apply(--layout-horizontal);
+  }
+  .hljs-attribute{
+    color:red;
+  }
+  .hljs-string{
+      color:teal;
+  }
+  div{
+    @apply(--layout-flex);
+    @apply(--layout-vertical);
+  }
+  paper-material{
+    height:500px;
+    overflow-y:scroll;
+    margin: 16px 16px;
+    padding: 8px 8px;class="paper-font-display2";
+    background: rgba(222,222,222,.8);
+  }
+  h2{
+    @apply(--layout-center);
+    @apply(--layout-flex);
+  }
+</style>
+<template>
+  <div>
+    <h2 class="paper-font-display2">Schema</h2>
+    <paper-material elevation="1">
+      <pre><code>
+      </code></pre>
+    </paper-material>
+  </div>
+  <div>
+    <h2 class="paper-font-display2">Example</h2>
+    <paper-material elevation-"1">
+      <pre><code>
+      </code></pre>
+    </paper-material>
+  </div>
+</template>
 </dom-module>
 <script>
 (function() {
