@@ -7,6 +7,7 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 
 <style is="custom-style">
 
@@ -22,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 :root {
     --dark-primary-color: #303F9F;
-    --default-primary-color:#3F51B5;
+    --default-primary-color:#333333;
     --light-primary-color: #C5CAE9;
     --text-primary-color: #ffffff; /*text/icons*/
     --accent-color: #FF4081;
@@ -97,6 +98,35 @@ paper-menu a {
   padding: 0px 16px;
 }
 
+a {
+  text-decoration: none;
+  color: var(--drawer-menu-color);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  min-height: 48px;
+  padding: 0px 0px;
+}
+
+a paper-item{
+  padding: 0px 8px;
+}
+a.iron-selected{
+  background-color:#e7e7e7;
+  color: #555555;
+}
 #drawerToolbar {
   border-bottom: var(--drawer-toolbar-border-color);
   height: 120px;
@@ -110,6 +140,10 @@ paper-menu a {
   background-color: transparent;
   margin-right: 16px;
   padding: 8px;
+}
+
+paper-menu a paper-item{
+  @apply(--layout-horizontal);
 }
 
 /* Breakpoints */
