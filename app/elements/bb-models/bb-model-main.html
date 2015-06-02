@@ -1,0 +1,144 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="bb-model-main">
+  <style>
+    :host {
+      display: block;
+      /*margin 16px 16px;*/
+    }
+    .hljs-attribute{
+      color:red;
+    }
+    .hljs-string{
+        color:teal;
+    }
+    paper-material{
+      height:500px;
+      overflow-y:scroll;
+      margin: 16px 16px;
+      padding: 8px 8px;
+      background: rgba(222,222,222,.8);
+    }
+  </style>
+  <template>
+    <h2>Schema</h2>
+    <paper-material elevation="1">
+
+    <pre><code class="json hljs " style="font-size:10px;">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"document_model"</span></span>,
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">allergies</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"allergies"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">demographics</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"demographics"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">encounters</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"encounters"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">immunizations</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"immunizations"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">medications</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"medications"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">problems</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"problems"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">plan_of_care</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"plan_of_care"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">procedures</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"procedures"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">results</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"results"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">social_history</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"social_history"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">payers</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"payers"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">vitals</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"vitals"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">claims</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"claims"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">providers</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"providers"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">medical_devices</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"medical_devices"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">family_history</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"family_history"</span>
+                    </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">errors</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">meta</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">version</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">confidentiality</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                    </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+            </span>}
+        </span>}
+    </span>}</code></pre>
+  </paper-material>
+
+
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'bb-model-main',
+
+    properties: {
+      foo: {
+        type: String,
+        value: 'bb-model-main',
+        notify: true
+      }
+    },
+    created: function(){
+      // console.log(hljs)
+    },
+    ready: function(){
+      // console.log(hljs)
+
+    }
+  });
+})();
+</script>
