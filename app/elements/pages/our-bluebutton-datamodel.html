@@ -9,14 +9,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
 
 <dom-module id="our-bluebutton-datamodel">
   <style>
     :host {
       display: block;
+      @apply(--layout-horizontal);
+    }
+    paper-menu{
+      @apply(--layout-vertical);
+    }
+    paper-item.hover{
+      background: gray;
     }
   </style>
   <template>
+    <paper-material>
+      <paper-menu class="list">
+        <paper-item><span>Main</span></paper-item>
+        <paper-item>Shared Schemas</paper-item>
+        <paper-item>Demographics</paper-item>
+        <paper-item>Allergies</paper-item>
+        <paper-item>Encounters</paper-item>
+        <paper-item>Immunizations</paper-item>
+        <paper-item>Medications</paper-item>
+        <paper-item>Problems</paper-item>
+        <paper-item>Results</paper-item>
+        <paper-item>Procedures</paper-item>
+        <paper-item>Results</paper-item>
+        <paper-item>Social History</paper-item>
+        <paper-item>Plan of Care</paper-item>
+        <paper-item>Vitals</paper-item>
+        <paper-item>Payers</paper-item>
+        <paper-item>Claims</paper-item>
+      </paper-menu>
+    </paper-material>
     <div>Hello from <span>{{foo}}</span></div>
   </template>
 </dom-module>
@@ -31,6 +61,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
+    },
+    onMouseover: function(e){
+      console.log(e);
+      e.target.classList.add("hover");
+    },
+    onMouseout: function(e){
+      console.log("mouse out");
+      e.target.classList.remove("hover");
     }
   });
 })();
