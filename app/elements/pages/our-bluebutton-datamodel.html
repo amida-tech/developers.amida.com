@@ -18,38 +18,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
-      @apply(--layout-horizontal);
-    }
-    paper-menu{
       @apply(--layout-vertical);
     }
-    paper-item.hover{
-      background: gray;
+    iron-selector{
+      @apply(--layout-horizontal);
+      @apply(--layout-wrap);
+      /*@apply(--layout-center);*/
+      /*display:inline;*/
+    }
+    paper-item{
+      /*width: 200px;*/
+    }
+    paper-button.iron-selected{
+      background: #dddddd;
     }
     paper-material{
-      width:50%;
-      max-width:200px;
+      /*width:50%;*/
+      /*max-width:200px;*/
     }
   </style>
   <template>
     <paper-material elevation="1">
-      <paper-menu attr-for-selected="data-route" selected="{{selected}}" class="list">
-        <paper-item data-route="main">Main</paper-item>
-        <paper-item data-route="shared_schemas">Shared Schemas</paper-item>
-        <paper-item data-route="demographics">Demographics</paper-item>
-        <paper-item data-route="allergies">Allergies</paper-item>
-        <paper-item data-route="encounters">Encounters</paper-item>
-        <paper-item data-route="immunizations">Immunizations</paper-item>
-        <paper-item data-route="medications">Medications</paper-item>
-        <paper-item data-route="problems">Problems</paper-item>
-        <paper-item data-route="procedures">Procedures</paper-item>
-        <paper-item data-route="results">Results</paper-item>
-        <paper-item data-route="social_history">Social History</paper-item>
-        <paper-item data-route="plan_of_care">Plan of Care</paper-item>
-        <paper-item data-route="vitals">Vitals</paper-item>
-        <paper-item data-route="payers">Payers</paper-item>
-        <paper-item data-route="claims">Claims</paper-item>
-      </paper-menu>
+      <iron-selector attr-for-selected="data-route" selected="{{selected}}" class="">
+        <paper-button data-route="main">Main</paper-button>
+        <paper-button data-route="shared_schemas">Shared Schemas</paper-button>
+        <paper-button data-route="demographics">Demographics</paper-button>
+        <paper-button data-route="allergies">Allergies</paper-button>
+        <paper-button data-route="encounters">Encounters</paper-button>
+        <paper-button data-route="immunizations">Immunizations</paper-button>
+        <paper-button data-route="medications">Medications</paper-button>
+        <paper-button data-route="problems">Problems</paper-button>
+        <paper-button data-route="procedures">Procedures</paper-button>
+        <paper-button data-route="results">Results</paper-button>
+        <paper-button data-route="social_history">Social History</paper-button>
+        <paper-button data-route="plan_of_care">Plan of Care</paper-button>
+        <paper-button data-route="vitals">Vitals</paper-button>
+        <paper-button data-route="payers">Payers</paper-button>
+        <paper-button data-route="claims">Claims</paper-button>
+      </iron-selector>
     </paper-material>
     <iron-pages attr-for-selected="id" selected="{{selected}}">
       <bb-model-main id="main"></bb-model-main>
@@ -88,7 +94,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: String,
         value: 'main',
         notify: true,
-
       }
     }
   });
