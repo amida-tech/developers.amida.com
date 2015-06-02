@@ -43,15 +43,336 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <pre><code>
-        </code></pre>
+        <pre><code class="json hljs " style="font-size:10px;">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"claims"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"claim"</span>
+      </span>}
+  </span>}
+
+  {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"claim"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">number</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">diagnosis</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">payer</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">service</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">phone</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_phone"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">performer</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_performer"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">charges</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">insurance_paid</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">negotiated_price</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">patient_responsibility</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">price_billed</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">provider_paid</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">lines</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">line</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">charges</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">insurance_paid</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">negotiated_price</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">patient_responsibility</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">price_billed</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">provider_paid</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">drug</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">modifier</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                                  </span>}</span>,
+                                  "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                                  </span>}</span>,
+                                  "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                                  </span>}
+                              </span>}</span>,
+                              "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                          </span>}
+                      </span>}</span>,
+                      "<span class="hljs-attribute">number</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">place_of_service</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">procedure</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">quantity</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">value</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">unit</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">performer</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_performer"</span>
+                          </span>}
+                      </span>}</span>,
+                      "<span class="hljs-attribute">revenue</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                              "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}</span>,
+                              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                              </span>}
+                          </span>}</span>,
+                          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">type_of_service_code</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">type_of_service</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+                      </span>}
+                  </span>}</span>,
+                  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+              </span>}
+          </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+  </span>}</code></pre>
       </paper-material>
     </div>
     <div>
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
-        <pre><code>
-        </code></pre>
+        <pre><code class="json hljs " style="font-size:10px;">{
+    "<span class="hljs-attribute">payer</span>": <span class="hljs-value">[
+        <span class="hljs-string">"medicare"</span>
+    ]</span>,
+    "<span class="hljs-attribute">number</span>": <span class="hljs-value"><span class="hljs-string">"1234567890000"</span></span>,
+    "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">low</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2012-10-18T00:00:00.000Z"</span></span>,
+            "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">high</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2012-10-18T00:00:00.000Z"</span></span>,
+            "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+        </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">lines</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">line</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+            "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">low</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2012-10-18T00:00:00.000Z"</span></span>,
+                    "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">high</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2012-10-18T00:00:00.000Z"</span></span>,
+                    "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+                </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">procedure</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"98941"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Chiropractic Manipulative Treatment (Cmt); Spinal, Three To Four Regions"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">quantity</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"line"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">modifier</span>": <span class="hljs-value">[
+                {
+                    "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"AT"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Acute Treatment (This Modifier Should Be Used When Reporting Service 98940, 98941, 98942)"</span>
+                </span>}
+            ]</span>,
+            "<span class="hljs-attribute">charges</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">price_billed</span>": <span class="hljs-value"><span class="hljs-string">"$60.00"</span></span>,
+                "<span class="hljs-attribute">insurance_paid</span>": <span class="hljs-value"><span class="hljs-string">"$34.00"</span></span>,
+                "<span class="hljs-attribute">patient_responsibility</span>": <span class="hljs-value"><span class="hljs-string">"$26.00"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">place_of_service</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"11"</span></span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Office"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Medical Care"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">performer</span>": <span class="hljs-value">[
+                {
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"rendering provider"</span></span>,
+                    "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
+                        {
+                            "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"2.16.840.1.113883.4.6"</span></span>,
+                            "<span class="hljs-attribute">extension</span>": <span class="hljs-value"><span class="hljs-string">"123456789"</span>
+                        </span>}
+                    ]
+                </span>}
+            ]
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">charges</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">price_billed</span>": <span class="hljs-value"><span class="hljs-string">"$60.00"</span></span>,
+        "<span class="hljs-attribute">insurance_paid</span>": <span class="hljs-value"><span class="hljs-string">"$34.00"</span></span>,
+        "<span class="hljs-attribute">provider_paid</span>": <span class="hljs-value"><span class="hljs-string">"$27.20"</span></span>,
+        "<span class="hljs-attribute">patient_responsibility</span>": <span class="hljs-value"><span class="hljs-string">"$6.80"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"medicare PartB"</span>
+    ]</span>,
+    "<span class="hljs-attribute">diagnosis</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"3534"</span>
+        </span>},
+        {
+            "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"7393"</span>
+        </span>},
+        {
+            "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"7392"</span>
+        </span>},
+        {
+            "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"3533"</span>
+        </span>}
+    ]
+</span>}</code></pre>
       </paper-material>
     </div>
   </template>

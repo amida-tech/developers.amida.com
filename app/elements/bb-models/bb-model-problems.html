@@ -43,15 +43,153 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <pre><code>
-        </code></pre>
+        <pre><code class="json hljs " style="font-size:10px;">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"problems"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+    "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"problem"</span>
+    </span>}
+</span>}
+
+{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"problem"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
+            </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">problem</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">severity</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
+                        </span>}</span>,
+                        "<span class="hljs-attribute">interpretation</span>": <span class="hljs-value">{
+                            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
+                        </span>}
+                    </span>}</span>,
+                    "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">negation_indicator</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">onset_age</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">onset_age_unit</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">patient_status</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
+                </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">source_list_identifiers</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
+            </span>}
+        </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"problem"</span>
+    ]
+</span>}</code></pre>
       </paper-material>
     </div>
     <div>
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
-        <pre><code>
-        </code></pre>
+        <pre><code class="json hljs " style="font-size:10px;">{
+      "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">low</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2008-01-03T00:00:00.000Z"</span></span>,
+              "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">high</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2008-01-03T00:00:00.000Z"</span></span>,
+              "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+          </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
+          {
+              "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"ab1791b0-5c71-11db-b0de-0800200c9a66"</span>
+          </span>}
+      ]</span>,
+      "<span class="hljs-attribute">problem</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Pneumonia"</span></span>,
+              "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"233604007"</span></span>,
+              "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"SNOMED CT"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">low</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2008-01-03T00:00:00.000Z"</span></span>,
+                  "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">high</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2008-01-03T00:00:00.000Z"</span></span>,
+                  "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">severity</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Low"</span></span>,
+                  "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"L"</span>
+              </span>}
+          </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">onset_age</span>": <span class="hljs-value"><span class="hljs-string">"57"</span></span>,
+      "<span class="hljs-attribute">onset_age_unit</span>": <span class="hljs-value"><span class="hljs-string">"Year"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Resolved"</span></span>,
+          "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">low</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2008-01-03T00:00:00.000Z"</span></span>,
+                  "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">high</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2009-02-27T08:00:00.000Z"</span></span>,
+                  "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"second"</span>
+              </span>}
+          </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">patient_status</span>": <span class="hljs-value"><span class="hljs-string">"Alive and well"</span></span>,
+      "<span class="hljs-attribute">source_list_identifiers</span>": <span class="hljs-value">[
+          {
+              "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"</span>
+          </span>}
+      ]
+  </span>}</code></pre>
       </paper-material>
     </div>
   </template>

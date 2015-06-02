@@ -43,15 +43,81 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <pre><code>
-        </code></pre>
+        <pre><code class="json hljs " style="font-size:10px;">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"vitals"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"vital"</span>
+      </span>}
+  </span>}
+
+  {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"vital"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">vital</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">interpretations</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">value</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">unit</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"vital"</span>
+      ]
+  </span>}</code></pre>
       </paper-material>
     </div>
     <div>
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
-        <pre><code>
-        </code></pre>
+        <pre><code class="json hljs " style="font-size:10px;">{
+    "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"c6f88321-67ad-11db-bd13-0800200c9a66"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">vital</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Height"</span></span>,
+        "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"8302-2"</span></span>,
+        "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"LOINC"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"completed"</span></span>,
+    "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">point</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"1999-11-14T00:00:00.000Z"</span></span>,
+            "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
+        </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">interpretations</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Normal"</span>
+    ]</span>,
+    "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-number">177</span></span>,
+    "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"cm"</span>
+</span>}</code></pre>
       </paper-material>
     </div>
   </template>
