@@ -1,0 +1,122 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.1",
+        "title": "Account History for PHR/DRE",
+        "description": "Manages events in a user's account history"
+    },
+    "tags": [{
+        "name": "history",
+        "description": "DRE account history methods"
+    }],
+
+    "host": "localhost:3005",
+    "basePath": "/api/v1",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/accountEvents/add": {
+            "get": {
+                "summary": "Add an event to a user's account history",
+                "description": "Save event for register, log in/out, up/download file, lab results, password change, personal information changed",
+                "operationId": "addEvent",
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": ["history"],
+                "parameters": [{
+                    "name": "userID",
+                    "in": "query",
+                    "type": "string",
+                    "description": "user identifier",
+                    "required": true
+                }, {
+                    "name": "event_type",
+                    "in": "query",
+                    "type": "string",
+                    "description": "user identifier",
+                    "required": true
+                }, {
+                    "name": "note",
+                    "in": "query",
+                    "type": "string",
+                    "description": "additional info for event",
+                    "required": false
+                }, {
+                    "name": "fileRef",
+                    "in": "query",
+                    "type": "string",
+                    "description": "file reference string",
+                    "required": false
+                }],
+                "responses": {
+                    "200": {
+                        "description": "event succesfully added",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/accountEvents/all": {
+            "get": {
+                "summary": "Returns all events in a user's account history",
+                "description": "Shows registered, logged in/out, file up/downloaded, lab results received, password changed, info updated",
+                "operationId": "allEventsInOrder",
+                "tags": ["history"],
+                "responses": {
+                    "200": {
+                        "description": "event history returned",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/eventSchema"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "definitions": {
+        "eventSchema": {
+            "required": [
+                "userID",
+                "event_type"
+            ],
+            "properties": {
+                "userID": {
+                    "type": "string"
+                },
+                "event_type": {
+                    "type": "string",
+                    "enum": [
+                        "initAccount",
+                        "loggedIn",
+                        "loggedOut",
+                        "fileUploaded",
+                        "fileDownloaded",
+                        "labResults",
+                        "passwordChange",
+                        "infoUpdate"
+                    ]
+                },
+                "note": {
+                    "type": "string"
+                },
+                "fileRef": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

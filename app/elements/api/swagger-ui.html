@@ -1,0 +1,56 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="index.html">
+
+<dom-module id="swagger-ui">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <div class="swagger-section">
+    <div id='header'>
+      <div class="swagger-ui-wrap">
+        <a id="logo" href="http://developers.amida-tech.com">Developers</a>
+        <form id='api_selector'>
+          <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
+          <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+          <div class='input'><a id="explore" href="#">Explore</a></div>
+        </form>
+      </div>
+    </div>
+
+    <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    </div>
+    <!-- <div>Hello from <span>{{foo}}</span></div> -->
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'swagger-ui',
+
+    properties: {
+      foo: {
+        type: String,
+        value: 'bar',
+        notify: true
+      }
+    },
+    ready: function(){
+      console.log("dre console ready");
+    }
+  });
+})();
+</script>
