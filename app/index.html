@@ -102,16 +102,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Toolbar icons -->
           <iron-selector class="layout horizontal" selected="0">
-            <a href="/blue_button_data_model" data-route="blue_button_data_model">
+            <a href="/" data-route="Main">
               <paper-item>MAIN</paper-item>
             </a>
-            <a href="/" data-route="getting_started">
+            <a href="/GettingStarted" data-route="GettingStarted">
               <paper-item>GETTING STARTED</paper-item>
             </a>
-            <a href="/our_libraries" data-route="our_libraries">
+            <a href="/Repositories" data-route="Repositories">
               <paper-item class="paper-font-display1">REPOSITORIES/OPEN SOURCE</paper-item>
             </a>
-            <a href="/dre_api_console" data-route="dre_api_console">
+            <a href="/APIs" data-route="APIs">
               <paper-item>APIs</paper-item>
             </a>
           </iron-selector>
@@ -119,16 +119,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="appname middle paper-font-display2">Developers</div>
           <div class="middle flex"></div>
           <iron-selector class="layout horizontal middle">
-            <a href="/" data-route="getting_started">
+            <a href="/BlueButtonDataModel" data-route="BlueButtonDataModel">
               <paper-item>BLUE BUTTON DATA MODEL</paper-item>
             </a>
-            <a href="/our_libraries" data-route="our_libraries">
+            <a href="/DRE" data-route="DRE">
               <paper-item class="paper-font-display1">DRE</paper-item>
             </a>
-            <a href="/blue_button_data_model" data-route="blue_button_data_model">
+            <a href="/HealthTerminology" data-route="HealthTerminology">
               <paper-item>HEALTH TERMINOLOGY</paper-item>
             </a>
-            <a href="/dre_api_console" data-route="dre_api_console">
+            <a href="/Contributing" data-route="Contributing">
               <paper-item>CONTRIBUTING</paper-item>
             </a>
           </iron-selector>
@@ -137,56 +137,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-toolbar>
 
         <!-- Main Content -->
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+        <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-            <section data-route="getting_started">
-              <paper-material elevation="1">
-                <getting-started></getting-started>
-                <!-- <my-greeting></my-greeting>
+          <section data-route="GettingStarted">
+            <paper-material elevation="1">
+              <getting-started></getting-started>
+            </paper-material>
+          </section>
 
-                <p class="paper-font-subhead">You now have:</p>
-                <my-list></my-list>
+          <section data-route="Repositories">
+            <paper-material elevation="0">
+              <our-libraries></our-libraries>
+            </paper-material>
+          </section>
 
-                <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p> -->
-              </paper-material>
-            </section>
+          <section data-route="BlueButtonDataModel">
+              <our-bluebutton-datamodel></our-bluebutton-datamodel>
+          </section>
 
-            <section data-route="our_libraries">
-              <paper-material elevation="0">
-                <our-libraries></our-libraries>
-                <!-- <h2 class="paper-font-display2">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a></p> -->
-              </paper-material>
-            </section>
+          <section data-route="DRE">
+            <swagger-ui></swagger-ui>
+          </section>
 
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
-                </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
-              </paper-material>
-            </section>
-
-            <section data-route="blue_button_data_model">
-              <!-- <paper-material elevation="1"> -->
-                <our-bluebutton-datamodel></our-bluebutton-datamodel>
-                <!-- <h2 class="paper-font-display2">Contact</h2>
-                <p>This is the contact section</p> -->
-              <!-- </paper-material> -->
-            </section>
-
-            <section data-route="dre_api_console">
-              <swagger-ui></swagger-ui>
-              <!-- <paper-material elevation="1">
-                <h2 class="paper-font-display2">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material> -->
-            </section>
-
-          </iron-pages>
-          </paper-header-panel>
+        </iron-pages>
+      </paper-header-panel>
     </paper-drawer-panel>
 
     <paper-toast id="caching-complete"
