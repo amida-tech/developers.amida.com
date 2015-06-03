@@ -101,7 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <span class="flex"></span>
 
           <!-- Toolbar icons -->
-          <iron-selector class="layout horizontal" selected="0">
+          <iron-selector class="layout horizontal" attr-for-selected="data-route" selected="{{route}}">
             <a href="/" data-route="Main">
               <paper-item>MAIN</paper-item>
             </a>
@@ -118,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Application name -->
           <div class="appname middle paper-font-display2">Developers</div>
           <div class="middle flex"></div>
-          <iron-selector class="layout horizontal middle">
+          <iron-selector class="layout horizontal middle" attr-for-selected="data-route" selected="{{route}}">
             <a href="/BlueButtonDataModel" data-route="BlueButtonDataModel">
               <paper-item>BLUE BUTTON DATA MODEL</paper-item>
             </a>
