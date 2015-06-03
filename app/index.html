@@ -102,24 +102,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Toolbar icons -->
           <iron-selector class="layout horizontal" selected="0">
+            <a href="/blue_button_data_model" data-route="blue_button_data_model">
+              <paper-item>MAIN</paper-item>
+            </a>
             <a href="/" data-route="getting_started">
               <paper-item>GETTING STARTED</paper-item>
             </a>
             <a href="/our_libraries" data-route="our_libraries">
-              <paper-item class="paper-font-display1">OUR LIBRARIES</paper-item>
-            </a>
-            <a href="/blue_button_data_model" data-route="blue_button_data_model">
-              <paper-item>OUR MODELS</paper-item>
+              <paper-item class="paper-font-display1">REPOSITORIES/OPEN SOURCE</paper-item>
             </a>
             <a href="/dre_api_console" data-route="dre_api_console">
-              <paper-item>DRE API CONSOLE</paper-item>
+              <paper-item>APIs</paper-item>
+            </a>
+          </iron-selector>
+          <!-- Application name -->
+          <div class="appname middle paper-font-display2">Developers</div>
+          <div class="middle flex"></div>
+          <iron-selector class="layout horizontal middle">
+            <a href="/" data-route="getting_started">
+              <paper-item>BLUE BUTTON DATA MODEL</paper-item>
+            </a>
+            <a href="/our_libraries" data-route="our_libraries">
+              <paper-item class="paper-font-display1">DRE</paper-item>
+            </a>
+            <a href="/blue_button_data_model" data-route="blue_button_data_model">
+              <paper-item>HEALTH TERMINOLOGY</paper-item>
+            </a>
+            <a href="/dre_api_console" data-route="dre_api_console">
+              <paper-item>CONTRIBUTING</paper-item>
             </a>
           </iron-selector>
 
-          <div class="middle"></div>
-
-          <!-- Application name -->
-          <div class="appname middle paper-font-display2">Developers</div>
 
         </paper-toolbar>
 
