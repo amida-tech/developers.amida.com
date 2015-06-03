@@ -68,12 +68,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     handleResponse: function(e){
 
         if (this.amida === undefined){
-          console.log('assigning "this.amida"');
+          // console.log('assigning "this.amida"');
           this.amida = e.detail.response;
           this.endpoint = '/users/amida-tech/repos';
         }
         else if(this.amidaRepos === undefined){
-          console.log('assigning "this.amida.repos"');
+          // console.log('assigning "this.amida.repos"');
           // this.amidaRepos = [];
           this.amidarepos = e.detail.response;
         }
@@ -84,10 +84,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       return base + end;
     },
     _amidaChanged: function(newVal,oldVal,el){
-      console.log("github-api.amida changed",newVal);
+      // console.log("github-api.amida changed",newVal);
     },
     _amidareposChanged: function(newVal,oldVal,el){
-      console.log("github-api.amidarepos changed",newVal);
+      // console.log("github-api.amidarepos changed",newVal);
     }
   });
 })();
