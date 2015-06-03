@@ -21,10 +21,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="swagger-section">
     <div id='header'>
       <div class="swagger-ui-wrap">
-        <a id="logo" href="http://developers.amida-tech.com">Developers</a>
+        <!-- <a id="logo" href="http://developers.amida-tech.com">Developers</a> -->
         <form id='api_selector'>
           <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
           <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+
           <div class='input'><a id="explore" href="#">Explore</a></div>
         </form>
       </div>
@@ -33,8 +34,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
     <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
     </div>
-    <!-- <div>Hello from <span>{{foo}}</span></div> -->
-  </template>
+    <div id="swag-bag">
+
+    </div>
+    </template>
 </dom-module>
 <script>
 (function() {
@@ -46,10 +49,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: String,
         value: 'bar',
         notify: true
-      }
+      },
+      swag: Object
     },
     ready: function(){
-      console.log("dre console ready");
+      this.url = "elements/api/spects/dre-api.json";
+      this.dom_id = "swag-bag";
+      this.docExpansion = "none";
+      this.sorter = "alpha";
+      this.supportedSubmitMethods = ['get', 'post', 'put', 'delete'];
+
+      this.swag = new SwaggerUi({
+        url: this.url,
+        dom_id: this.dom_id,
+        supportedSubmitMethods: this.supportedSubmitMethods,
+        onComplete: this.onComplete,
+        onFailure: this.onFailure,
+        docExpansion: this.docExpansion,
+        sorter: this.sorter
+      });
+      console.log(this.swag);
+      this.swag.load();
+    },
+    onComplete: function(){
+      console.log('Swag Unlocked');
+    },
+    onFailure: function(){
+      console.log('No Swag for You');
     }
   });
 })();
