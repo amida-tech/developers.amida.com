@@ -18,7 +18,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <div>Hello from <span>{{tagName}}</span></div>
+    <div>Hello from <span>{{name}}</span></div>
+    <iron-ajax id="ajax"
+      auto
+      url="{{_computeUrl(baseUrl,endpoint)}}"
+      handle-as="json"
+      on-response="handleResponse"
+      ></iron-ajax>
   </template>
 </dom-module>
 <script>
@@ -27,11 +33,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     is: 'github-api',
 
     properties: {
-      tagName: {
+      name: {
         type: String,
         value: 'github-api',
         notify: true
+      },
+      baseUrl:{
+        type: String,
+        value: 'https://api.github.com',
+        notify: true
+      },
+      endpoint:{
+        type: String,
+        value:"/",
+        notify: true
+      },
+      amida:{
+        type: Object,
+        notify: true,
+        observer: '_amidaChanged',
+        reflectToAttribute: true
+      },
+      amidarepos:{
+        type: Array,
+        notify: true,
+        reflectToAttribute: true,
+        observer: '_amidareposChanged',
       }
+    },
+    /**
+     * [handleResponse description]
+     * @param {event} e [description]
+     */
+    handleResponse: function(e){
+
+        if (this.amida === undefined){
+          console.log('assigning "this.amida"');
+          this.amida = e.detail.response;
+          this.endpoint = '/users/amida-tech/repos';
+        }
+        else if(this.amidaRepos === undefined){
+          console.log('assigning "this.amida.repos"');
+          // this.amidaRepos = [];
+          this.amidarepos = e.detail.response;
+        }
+
+      // console.log('reponse',e.detail.response);
+    },
+    _computeUrl: function(base,end){
+      return base + end;
+    },
+    _amidaChanged: function(newVal,oldVal,el){
+      console.log("github-api.amida changed",newVal);
+    },
+    _amidareposChanged: function(newVal,oldVal,el){
+      console.log("github-api.amidarepos changed",newVal);
     }
   });
 })();

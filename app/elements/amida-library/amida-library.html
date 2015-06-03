@@ -16,6 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: block;
       /*@apply(--layout-vertical)*/
+      width:250px;
     }
     paper-material{
       margin: 8px 8px;
@@ -25,18 +26,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background: rgba(180,180,180,.8);
       /*font-size: 1.2em;*/
       /*@apply(--layout-flex);*/
-      max-width:30%;
-      min-width: 30%;
+      /*max-width:30%;
+      min-width: 30%;*/
     }
     paper-button::shadow paper-ripple{
       color: white;
     }
     paper-material{
-      @apply(--layout-horizontal);
+      /*@apply(--layout-horizontal);*/
       /*@apply(--layout-justified);*/
     }
     span{
-      @apply(--layout-self-center);
+      @apply(--layout-center);
     }
     #description{
       font-size:.8em;
@@ -46,11 +47,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <paper-material elevation="1" animated>
-
-      <!-- <a href="{{url}}"> -->
-        <paper-button on-tap="onClick">{{name}}</paper-button>
-        <!-- </a> -->
+    <paper-material elevation="1" animated class="layout vertical">
+      <paper-button on-tap="onClick">{{name}}</paper-button>
       <span id="description">{{description}}</span>
     </paper-material>
   </template>
