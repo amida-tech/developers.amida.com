@@ -1,0 +1,105 @@
+{
+"A":  "",
+"ADT":  "HL7 Admin Discharge Transfer feeds",
+"AHRQ":  "Agency for Healthcare Research and Quality",
+"API":  "Application Programming Interface",
+"ASTM":  "todo",
+
+"B":  "",
+"Blue Button":  "is a button",
+"Blue Donut":  "is an inside joke",
+
+"C":  "",
+"C32":  "VA code",
+"CCDA":  "todo",
+"CCD":  "todo",
+"CCR":  "todo",
+"CDA":  "todo",
+"CDT":  "dental codes",
+"COB":  "Close of Business",
+
+"D": "",
+"DIRECT":  "is not an acronym! a way to communicate securely",
+"DICOM":  "The Digital Imaging and Communications in Medicine http://dicom.nema.org/",
+
+"E":  ""
+"ETL":  "Extract Transform Load"
+"EHR":  "Electronic Health Record (system in hospital that uses EMR)"
+"EMR":  "Electronic Medical Record (digital record vs paper record)"
+"EDI":  "Electronic Data Interchange"
+
+"F":  "",
+"FHIR":  "Fast Healthcare Interoperability Resources",
+"FYSA":  "For Your Situational Awareness",
+
+"G":  "",
+
+"H":  "",
+"HIE":,  "Health Information Exchange",
+"HISP":  "Health ISP (Internet Service Provider) usually providing DIRECT services",
+"HIPAA":  "Health Insurance Portability and Accountability Act",
+
+"I":  "",
+"ICD":  "disease codes (ICD-9 and ICD-10)",
+
+"J":  "",
+"JSON":  "JavaScript Object Notation",
+
+"K":  "",
+
+"L":  "",
+"LOINC":  "todo",
+
+"M":  "",
+"MPI":  "Master Patient Index",
+"MDM":  "Master Data Management (e.g. golden source of truth)",
+"MU":  "Meaningful Use",
+
+"N":  "",
+"NPI":  "National Provider Identifier",
+"NDC":  "drugs codes",
+"NCPDP":  "National Council for Prescription Drug Programs http://www.ncpdp.org/",
+"Rx":  "data format standard (used by SureScripts, etc)",
+
+"O",
+"OBE":  "(Overtaken By Events) In other words, 'too late'.",
+"OOB":  "does NOT stand for 'Out of Bed.' It stands for 'Open Of Business.' (Opposite of COB.)",
+
+"P":  "",
+"PHR":  "Personal Health Record",
+"PCP":  "Primary Care Physician",
+
+"Q":  "",
+"QRDA":  "todo",
+
+"R":  "",
+
+"S":  "",
+"SOAP":  "Simple Object Access protocol",
+"SNOMED" CT:  "Systematized Nomenclature of Medicine – Clinical Terms",
+
+"T":  "",
+
+"U":  "",
+"UMLS":  "Unified Medical Language System",
+
+"V":  "",
+"VDT":  "View Download Transmit (MU2 requirement for patient health record)",
+
+"W":  "",
+
+"X":  "",
+"X12":  "http://en.wikipedia.org/wiki/ASC_X12 ANSI X12",
+"X834":  "Benefit Enrollment and Maintenance",
+"X837":  "Health Care Claim",
+"X234":  "???",
+"XML":  "Extensible Markup Language",
+"XD-Lab":  "http://wiki.ihe.net/index.php?title=Sharing_Laboratory_Reports
+(could be:  HL7 v3 based)",
+
+"XDS XDM XDR (EHI)": "blah",
+
+"Y":  "",
+
+"Z":  "",
+}

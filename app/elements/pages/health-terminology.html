@@ -19,6 +19,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
   <template>
     <div>Hello from <span>{{name}}</span></div>
+    <div>
+
+    </div>
   </template>
 </dom-module>
 <script>
@@ -32,6 +35,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'health-terminology',
         notify: true
       }
+    },
+    ready: function(){
+      console.log(this.$$('div'))
     }
   });
 })();
