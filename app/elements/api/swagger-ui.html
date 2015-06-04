@@ -15,6 +15,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
+      background:black;
+    }
+    #resource_history > div > h2 > a{
+
+    }
+    div#swag-bag{
+      background-color: rba(222,222,222,1);
     }
   </style>
   <template>
@@ -22,21 +29,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div id='header'>
       <div class="swagger-ui-wrap">
         <!-- <a id="logo" href="http://developers.amida-tech.com">Developers</a> -->
-        <form id='api_selector'>
+        <!-- <form id='api_selector'>
           <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
           <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
 
           <div class='input'><a id="explore" href="#">Explore</a></div>
-        </form>
+        </form> -->
       </div>
     </div>
 
-    <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+    <!-- <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div> -->
     <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
     </div>
-    <div id="swag-bag">
-
-    </div>
+    <div id="swag_bag" class="swagger-ui-wrap"></div>
     </template>
 </dom-module>
 <script>
@@ -53,13 +58,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       swag: Object
     },
     ready: function(){
-      this.url = "elements/api/spects/dre-api.json";
-      this.dom_id = "swag-bag";
+      this.url = "elements/api/specs/dre-api.json";
+      this.dom_id = "swag_bag";
       this.docExpansion = "none";
       this.sorter = "alpha";
       this.supportedSubmitMethods = ['get', 'post', 'put', 'delete'];
 
-      this.swag = new SwaggerUi({
+      window.swaggerUi = new SwaggerUi({
         url: this.url,
         dom_id: this.dom_id,
         supportedSubmitMethods: this.supportedSubmitMethods,
@@ -68,8 +73,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         docExpansion: this.docExpansion,
         sorter: this.sorter
       });
-      console.log(this.swag);
-      this.swag.load();
+      // console.log(this.swag);
+      // console.log(this.$$('#swag-bag'))
+      swaggerUi.load();
+
+      this.async(function(){
+        console.log(this.$$('#swag_bag'))
+      },5000);
     },
     onComplete: function(){
       console.log('Swag Unlocked');
