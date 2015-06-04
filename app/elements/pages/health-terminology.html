@@ -10,17 +10,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 
 <dom-module id="health-terminology">
   <style>
     :host {
       display: block;
     }
+    #term{
+    }
+    paper-material{
+      padding: 16px 16px;
+    }
+    #def{
+      margin-left: 64px;
+    }
   </style>
   <template>
     <div>Hello from <span>{{name}}</span></div>
-    <div>
+    <iron-ajax id="ajax"
+      auto
+      url="health-terminology.json"
+      handle-as="json"
+      on-response="handleTermsResponse"></iron-ajax>
 
+    <div id="paginator" class="layout vertical">
+      <template is="dom-repeat" items="{{terms}}">
+        <template is="dom-if" if="{{isLabel(item.def)}}">
+          <h2>{{item.term}}</h2>
+        </template>
+        <template is="dom-if" if="{{!isLabel(item.def)}}">
+            <paper-material elevation="1" class="layout vertical">
+              <h3 id="term">{{item.term}}</h3>
+              <div id="def" class="layout horizontal reverse">{{item.def}}</div>
+            </paper-material>
+        </template>
+      </template>
     </div>
   </template>
 </dom-module>
@@ -34,10 +59,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: String,
         value: 'health-terminology',
         notify: true
+      },
+      terms:{
+        type: Array,
+        notify: true
       }
     },
     ready: function(){
-      console.log(this.$$('div'))
+      // console.log(this.$$('div'))
+    },
+    handleTermsResponse: function(e){
+      console.log(e.detail.response);
+      this.terms = e.detail.response.terms;
+      console.log(this.terms);
+      console.log(this.terms[0])
+    },
+    isLabel: function(def){
+      return def === "";
     }
   });
 })();
