@@ -20,9 +20,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <div>Hello from <span>{{name}}</span></div>
     <github-api
-      amidarepos="{{amidarepos}}"
-      lastResponse="{amida}" ></github-api>
-    <marked-element></marked-element>
+      drereadme="{{drereadme}}" ></github-api>
+    <marked-element markdown="{{drereadme}}"></marked-element>
   </template>
 </dom-module>
 <script>
@@ -36,6 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'dre-markdown',
         notify: true
       }
+
     }
   });
 })();

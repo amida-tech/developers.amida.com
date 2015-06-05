@@ -59,6 +59,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         notify: true,
         reflectToAttribute: true,
         observer: '_amidareposChanged',
+      },
+      drereadme:{
+        type: Array,
+        notify: true,
+        reflectToAttribute: true,
+        observer: '_drereadmeChanged',
       }
     },
     /**
@@ -72,10 +78,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.amida = e.detail.response;
           this.endpoint = '/users/amida-tech/repos';
         }
-        else if(this.amidaRepos === undefined){
+        else if(this.amidarepos === undefined){
           // console.log('assigning "this.amida.repos"');
           // this.amidaRepos = [];
           this.amidarepos = e.detail.response;
+          this.endpoint = '/repos/amida-tech/DRE/readme';
+        }
+        else if(this.drereadme === undefined){
+          // console.log(e.detail.response)
+          // console.log()
+          this.drereadme = atob(e.detail.response.content);
+        }
+        else{
+
         }
 
       // console.log('reponse',e.detail.response);
@@ -88,6 +103,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     _amidareposChanged: function(newVal,oldVal,el){
       // console.log("github-api.amidarepos changed",newVal);
+    },
+    _drereadmeChanged: function(newVal,oldVal,el){
+
     }
   });
 })();
