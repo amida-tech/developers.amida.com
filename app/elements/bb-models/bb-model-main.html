@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/marked-element/marked-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
 <dom-module id="bb-model-main">
   <style>
@@ -42,27 +43,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <iron-ajax id="schemaAjax"
+      auto
+      url="model-document-schema.json.html"
+      handleAs="text"
+      lastResponse="{{schemaText}}"
+      on-response="schemaResponse"></iron-ajax>
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <marked-element markdown="```json
-        {
-          some: 'json shit'
-        }
-        ```">
-          <script type="text/markdown">
-            Check out my markdown!
-
-            We can even embed elements without fear of the HTML parser mucking up their
-            textual representation:
-
-            ```html
-            <awesome-sauce>
-              <div>Oops, I'm about to forget to close this div.
-            </awesome-sauce>
-            ```
-          </script>
-        </marked-element>
+        <!-- <link rel="import" href="model-document-example.json.html"> -->
       </paper-material>
     </div>
     <div>
@@ -2139,14 +2129,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: String,
         value: 'bb-model-main',
         notify: true
+      },
+      schemaText:{
+        type: String,
+        notify:true,
+        observer: 'schemaTextChanged'
       }
+    },
+    schemaTextChanged:function(){
+      console.log(this.schemaText)
+    },
+    schemaResponse: function(e){
+      // console.log(e.detail.response);
+      console.log(this.$.schemaAjax.lastError)
     },
     created: function(){
       // console.log(hljs)
     },
     ready: function(){
       // console.log(hljs)
-
     }
   });
 })();
