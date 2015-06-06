@@ -32,33 +32,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       amidarepos="{{amidarepos}}"></github-api>
     <template is="dom-repeat" items="{{amidarepos}}" >
       <div>
-        <!-- <span>{{item.name}}</span>
-        <span>{{item.url}}</span>
-        <span>{{item.description}}</span> -->
-
         <amida-library name="{{item.name}}" url="{{item.html_url}}"
           description="{{item.description}}"></amida-library>
       </div>
     </template>
-    <!-- <amida-library name="DRE" url="https://github.com/amida-tech/DRE"
-      description="Data Reconciliation Engine "></amida-library>
-    <amida-library name="blue-button.js" url="https://github.com/amida-tech/blue-button"
-      description="type sensing and data parsing"></amida-library>
-    <amida-library name="blue-button-match.js" url="https://github.com/amida-tech/blue-button-match"
-      description="data matching"></amida-library>
-    <amida-library name="blue-button-record.js" url="https://github.com/amida-tech/blue-button-record"
-      description="master health record persistence (MongoDB)"></amida-library>
-    <amida-library name="blue-button-model.js" url="https://github.com/amida-tech/blue-button-model"
-      description="model schema definition and validation"></amida-library>
-    <amida-library name="blue-button-xml.js" url="https://github.com/amida-tech/blue-button-xml"
-      description="cml parsing, xpath support and xml to JSON conversion infrastructure"></amida-library>
-    <amida-library name="blue-button-generate.js" url="https://github.com/amida-tech/blue-button-generate"
-      description="CCDA generation from JSON"></amida-library>
-    <amida-library name="blue-button-cms.js" url="https://github.com/amida-tech/blue-button-cms"
-      description="cms parsing"></amida-library>
-    <amida-library name="blue-button-meta.js" url="https://github.com/amida-tech/blue-button-meta"
-      description="lookup informatino for our libraries"></amida-library> -->
-
   </template>
 </dom-module>
 <script>

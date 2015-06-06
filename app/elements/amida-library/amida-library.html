@@ -42,15 +42,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     #description{
       font-size:.8em;
     }
-    a{
-
+    #repo_name{
+      cursor: pointer;
+      cursor: hand;
     }
   </style>
   <template>
     <paper-material elevation="1" animated class="layout vertical">
-      <paper-button on-tap="onClick">{{name}}</paper-button>
+      <paper-item class="paper-font-display2" id="repo_name" on-tap="onClick"><h2>{{name}}</h2></paper-item>
       <iron-image src="{{travisPath(name)}}"></iron-image>
       <span id="description">{{description}}</span>
+      <iron-image preload placeholder="http://lorempixel.com/0/0" loading="{{loading}}" preventLoad=true src="{{npmPath(name)}}"></iron-image>
     </paper-material>
   </template>
 </dom-module>
@@ -60,9 +62,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     is: 'amida-library',
 
     properties: {
-      foo: {
-        type: String,
-        value: 'bar'
+      loading: {
+        type: Boolean,
+        notify: true
       },
       name: String,
       url: String,
@@ -80,6 +82,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // return 'https://travis-ci.org/amida-tech/' + DRE.svg
       return "https://travis-ci.org/amida-tech/"+ name + ".svg";
 
+    },
+    npmPath: function(name){
+      // return 'https://travis-ci.org/amida-tech/' + DRE.svg
+      return "https://nodei.co/npm/"+ name + ".png";
+
+    },
+    toTitleCase: function (str)
+    {
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
   });
 })();
