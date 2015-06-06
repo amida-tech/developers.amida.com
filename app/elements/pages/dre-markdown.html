@@ -15,13 +15,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
+      overflow-x: scroll;
+      padding: 128px 32px;
+    }
+    #readme{
+      margin: 128px 32px;
     }
   </style>
   <template>
-    <div>Hello from <span>{{name}}</span></div>
+    <!-- <div>Hello from <span>{{name}}</span></div> -->
     <github-api
       drereadme="{{drereadme}}" ></github-api>
-    <marked-element markdown="{{drereadme}}"></marked-element>
+    <marked-element id="readme" markdown="{{drereadme}}"></marked-element>
   </template>
 </dom-module>
 <script>
