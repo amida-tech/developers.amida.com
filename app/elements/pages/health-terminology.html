@@ -11,6 +11,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
 
 <dom-module id="health-terminology">
   <style>
@@ -18,6 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       display: block;
     }
     #term{
+      color:#4086b4;
     }
     paper-material{
       padding: 2px 16px;
@@ -27,10 +31,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     #def{
       margin-left: 64px;
     }
-    #letter{
+    span.letter{
       font-size:3em;
       margin-bottom:0px;
-
+    }
+    #paginator{
+      margin: 128px 64px;
+    }
+    #pageinatoritem{
+      font-size:2em;
+      cursor: pointer;
+      cursor:hand;
+    }
+    #list{
+      width:100%;
     }
   </style>
   <template>
@@ -40,13 +54,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       url="health-terminology.json"
       handle-as="json"
       on-response="handleTermsResponse"></iron-ajax>
-
-    <div id="paginator" class="layout vertical">
+    <div id="paginator" class="layout horizontal ">
+      <span class="flex-2"></span>
+      <iron-selector class=" flex-10 layout horizontal">
+        <template is="dom-repeat" items="{{alphabet}}">
+          <paper-item on-tap="pageClick" id="pageinatoritem" class="flex">{{item}}</paper-item>
+        </template>
+      </iron-selector>
+      <span class="flex-2"></span>
+    </div>
+    <paper-material id="list" class="layout vertical">
       <template is="dom-repeat" items="{{terms}}">
         <template is="dom-if" if="{{isLabel(item.def)}}">
           <div class="layout horizontal around-justified">
             <span class="flex"></span>
-            <span id="letter" class="flex">{{item.term}}</span>
+            <span id="{{item.term}}" class=" letter flex">{{item.term}}</span>
             <span class="flex"></span>
           </div>
         </template>
@@ -57,7 +79,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-material>
         </template>
       </template>
-    </div>
+    </paper-material>
   </template>
 </dom-module>
 <script>
@@ -76,8 +98,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         notify: true
       }
     },
+    pageClick: function(e){
+        console.log(e);
+        var id = '#' + e.target.innerText;
+        console.log(this.$$(id))
+        this.$$(id).scrollIntoView();
+    },
     ready: function(){
-      // console.log(this.$$('div'))
+      this.alphabet = [
+        'A','B','C','D','E','F','G','H','I','J','K','L','M','N',
+        'O','P','Q','R','S','T','U','V','W','X','Y','Z'
+      ];
     },
     handleTermsResponse: function(e){
       // console.log(e.detail.response);
