@@ -20,14 +20,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     #term{
     }
     paper-material{
-      padding: 16px 16px;
+      padding: 2px 16px;
+      width:500px;
+      background: #eeeeee;
     }
     #def{
       margin-left: 64px;
     }
+    #letter{
+      font-size:3em;
+      margin-bottom:0px;
+
+    }
   </style>
   <template>
-    <div>Hello from <span>{{name}}</span></div>
+    <!-- <div>Hello from <span>{{name}}</span></div> -->
     <iron-ajax id="ajax"
       auto
       url="health-terminology.json"
@@ -37,12 +44,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div id="paginator" class="layout vertical">
       <template is="dom-repeat" items="{{terms}}">
         <template is="dom-if" if="{{isLabel(item.def)}}">
-          <h2>{{item.term}}</h2>
+          <div class="layout horizontal around-justified">
+            <span class="flex"></span>
+            <span id="letter" class="flex">{{item.term}}</span>
+            <span class="flex"></span>
+          </div>
         </template>
         <template is="dom-if" if="{{!isLabel(item.def)}}">
-            <paper-material elevation="1" class="layout vertical">
+            <paper-material elevation="1" class="layout horizontal self-center">
               <h3 id="term">{{item.term}}</h3>
-              <div id="def" class="layout horizontal reverse">{{item.def}}</div>
+              <div id="def" class="self-center">{{item.def}}</div>
             </paper-material>
         </template>
       </template>
