@@ -49,6 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <paper-material elevation="1" animated class="layout vertical">
       <paper-button on-tap="onClick">{{name}}</paper-button>
+      <iron-image src="{{travisPath(name)}}"></iron-image>
       <span id="description">{{description}}</span>
     </paper-material>
   </template>
@@ -74,6 +75,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     onClick: function(){
       location.href = this.url;
+    },
+    travisPath: function(name){
+      // return 'https://travis-ci.org/amida-tech/' + DRE.svg
+      return "https://travis-ci.org/amida-tech/"+ name + ".svg";
+
     }
   });
 })();
