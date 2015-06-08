@@ -9,15 +9,74 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/prism-element/prism-import.html">
+<link rel="import" href="../../bower_components/prism-element/prism-highlighter.html">
 
 <dom-module id="getting-started">
   <style>
     :host {
       display: block;
+      @apply(--layout-vertical);
+    }
+    a{
+      text-decoration: none;
+      color: var(--accent-color);
+      cursor:auto;
+    }
+
+    .secondary-task{
+      margin-left:64px;
+      font-weight: normal;
+    }
+    paper-material{
+      padding: 1px 16px;
+      background: #eeeeee;
+      margin: 8px 0px;
+      max-width: 900px;
+
     }
   </style>
   <template>
+
+    <paper-material class="flex">
+      <a target="_blank"
+        href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">
+        <h2 class="paper-font-display2">Installing Node.js via package manager</h2>
+      </a>
+            <a target="_blank"
+              href="http://gruntjs.com/getting-started#installing-the-cli">
+              <h2 class="paper-font-display secondary-task">Installing Grunt.js</h2>
+            </a>
+            <a target="_blank"
+              href="http://bower.io/#install-bower">
+              <h2 class="paper-font-display secondary-task">Installing Bower.js</h2>
+            </a>
+    </paper-material>
+    <paper-material>
+      <a target="_blank"
+        href="https://www.ruby-lang.org/en/documentation/installation/">
+        <h2 class="paper-font-display2">Installing Ruby</h2>
+      </a>
+            <a target="_blank"
+              href="http://compass-style.org/install/">
+              <h2 class="paper-font-display secondary-task">Installing Compass</h2>
+            </a>
+    </paper-material>
+    <paper-material>
+      <a target="_blank"
+        href="http://docs.mongodb.org/manual/installation/#installation-guides">
+        <h2 class="paper-font-display2">Installing MongoDB</h2>
+      </a>
+    </paper-material>
+    <paper-material>
+      <a target="_blank"
+        href="http://redis.io/download#installation">
+        <h2 class="paper-font-display2">Installing Redis</h2>
+      </a>
+    </paper-material>
+    <pre>
+      <code id="code" class="language-javascript">
+      </code>
+    </pre>
     <p>
       Amida strives to make health data accessible to modern developers by
       abstracting away the complex nuances of historical formats.
@@ -57,7 +116,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     },
     ready: function(){
-      console.log(Prism)
+      // console.log(Prism)
+      this.$.code.innerText = "{this:'that'}"
     }
   });
 })();
