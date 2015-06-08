@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: block;
       /*@apply(--layout-vertical)*/
-      width:250px;
+      width:420px;
     }
     paper-material{
       margin: 8px 8px;
@@ -49,10 +49,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
   <template>
     <paper-material elevation="1" animated class="layout vertical">
+      <div class="layout horizontal">
       <paper-item class="paper-font-display2" id="repo_name" on-tap="onClick"><h2>{{name}}</h2></paper-item>
-      <iron-image src="{{travisPath(name)}}"></iron-image>
+        <iron-image class="self-center"src="{{travisPath(name)}}"></iron-image>
+      </div>
+      <a id="npm_link"href="{{npmjsPath(name)}}">
+        <img id="npm_img"
+
+          src="{{npmPath(name)}}"
+          on-error="imgError"></img>
+      </a>
       <span id="description">{{description}}</span>
-      <iron-image preload placeholder="http://lorempixel.com/0/0" loading="{{loading}}" preventLoad=true src="{{npmPath(name)}}"></iron-image>
     </paper-material>
   </template>
 </dom-module>
@@ -62,13 +69,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     is: 'amida-library',
 
     properties: {
+      loaded: {
+        type: Boolean,
+        notify: true,
+        observer: 'loadedChanged'
+      },
       loading: {
         type: Boolean,
-        notify: true
+        notify: true,
+        observer: 'loadingChanged'
       },
       name: String,
       url: String,
       description: String
+    },
+    imgError: function(e){
+      console.log(e)
+      e.target.style.display = "none";
     },
     _computeTitle: function(name, description){
       return name + " - " + description;
@@ -81,16 +98,76 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     travisPath: function(name){
       // return 'https://travis-ci.org/amida-tech/' + DRE.svg
       return "https://travis-ci.org/amida-tech/"+ name + ".svg";
-
     },
     npmPath: function(name){
       // return 'https://travis-ci.org/amida-tech/' + DRE.svg
       return "https://nodei.co/npm/"+ name + ".png";
+    },
+    npmjsPath: function(name){
+      // return 'https://travis-ci.org/amida-tech/' + DRE.svg
+      return "https://nodei.co/npm/"+ name ;
+    },
+    ready: function(){
+      // this.$.npm_img.style.display = "none";
+      // this.$.npm_link.style.display = "none";
+    },
+    loadingChanged: function(loading){
+      // console.log("loadingchange: ",loading);
+      // console.log("loaded: ",loaded);
+      // console.log(this.$.npm_img.src)
+    //   if(loading){
+    //     // this.$.npm_link.style.display = "none";
+    //     this.$.npm_img.style.display = "none";
+    //   } else {
+    //     this.$.npm_img.style.display = "display";
+    //   }
+      // this.checkFor404();
 
     },
-    toTitleCase: function (str)
-    {
-        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    loadedChanged: function(loaded){
+      // console.log("loadedchange: ",loaded);
+      if(loaded === true){
+        console.log("loaded: ",loaded);
+        console.log(this.$$('img'))
+        // this.$.npm_link.style.display = "none";
+        this.$.npm_img.style.display = "display";
+      }
+      // this.checkFor404();
+    },
+    checkFor404: function(){
+      // // if(this.loading && this.loaded){
+      // //   console.log(this.loading,this.loaded)
+      // //   // this.$.npm_img.style.display = "none";
+      // //   // this.$.npm_link.style.display = "none";
+      // //   console.log(this.$.npm_img.src)
+      // // }
+      // if(!this.loading && this.loaded){
+      //   console.log(this.loading,this.loaded)
+      //
+      //   this.$.npm_img.style.display = "display";
+      //   // this.$.npm_link.style.display = "display";
+      //   console.log(this.$.npm_img.src)
+      // }
+      // if(this.loading === true && this.loaded === false){
+      //   console.log(this.loading,this.loaded)
+      //
+      //   // this.$.npm_img.style.display = "none";
+      //   // this.$.npm_link.style.display = "none";
+      //   console.log(this.$.npm_img.src)
+      // }
+      // // if(this.loading && !this.loaded){
+      // //   console.log(this.loading,this.loaded)
+      // //
+      // //   // this.$.npm_img.style.display = "none";
+      // //   // this.$.npm_link.style.display = "none";
+      // //   console.log(this.$.npm_img.src)
+      // // }
+    },
+    calcImageWidth: function(){
+      console.log(loading)
+    },
+    calcImageHeight: function(){
+
     }
   });
 })();
