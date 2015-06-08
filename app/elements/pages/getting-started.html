@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/prism-element/prism-import.html">
 
 <dom-module id="getting-started">
   <style>
@@ -54,6 +55,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
+    },
+    ready: function(){
+      console.log(Prism)
     }
   });
 })();
