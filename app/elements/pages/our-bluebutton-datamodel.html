@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/prism-element/prism-import.html">
 
 <dom-module id="our-bluebutton-datamodel">
   <style>
@@ -38,6 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <prism-highlighter></prism-highlighter>
     <paper-material elevation="1">
       <iron-selector attr-for-selected="data-route" selected="{{selected}}" class="">
         <paper-button data-route="main">Main</paper-button>

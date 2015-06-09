@@ -9,13 +9,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/prism-element/prism-highlighter.html">
 
 <dom-module id="getting-started">
   <style>
     :host {
       display: block;
       @apply(--layout-vertical);
+      @apply(  --layout-center-justified);
     }
     a{
       text-decoration: none;
@@ -32,11 +32,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background: #eeeeee;
       margin: 8px 0px;
       max-width: 900px;
+      min-width: 700px;
 
     }
   </style>
   <template>
-
+    <div class="layout horizontal">
+      <div class="flex">      </div>
+      <div class="flex layout vertical">
+        <h1 class="paper-font-display2 flex">GETTING STARTED WITH DRE</h1>
+        <p>
+          Here are instructions on how to download and install DRE dependencies, straight from the vendors themselves.
+        </p>
+      </div>
+      <div class="flex">      </div>
+    </div>
+    <div class="layout horizontal">
+      <div class="flex">      </div>
     <paper-material class="flex">
       <a target="_blank"
         href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">
@@ -51,6 +63,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <h2 class="paper-font-display secondary-task">Installing Bower.js</h2>
             </a>
     </paper-material>
+      <div class="flex">      </div>
+    </div>
     <paper-material>
       <a target="_blank"
         href="https://www.ruby-lang.org/en/documentation/installation/">
@@ -117,7 +131,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     ready: function(){
       // console.log(Prism)
-      this.$.code.innerText = "{this:'that'}"
+      this.$.code.innerText = "{'this':'that'}"
     }
   });
 })();
