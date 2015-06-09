@@ -68,6 +68,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     },
+    ready: function(){
+      console.log(_)
+    },
     handleSpecResponse: function(e){
       this.spec = e.detail.response;
       console.log(this.spec);
