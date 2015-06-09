@@ -11,6 +11,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
+<dom-module id="api-definition">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <div>Hello from <span>{{name}}</span></div>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'api-definition',
+    properties: {
+      name: {
+        type: String,
+        notify: true
+      }
+    }
+  });
+})();
+</script>
+
 <dom-module id="dre-console">
   <style>
     :host {
@@ -24,6 +48,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       url="../api/specs/dre-api.json"
       handle-as="json"
       on-response="handleSpecResponse"></iron-ajax>
+
+  <template is="dom-repeat" items="{{definitions}}">
+    <api-definition
+      name="{{item.name}}"></api-definition>
+  </template>
   </template>
 </dom-module>
 <script>
@@ -37,9 +66,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
+
     },
     handleSpecResponse: function(e){
-      // console.log(e.detail.response)
+      this.spec = e.detail.response;
+      console.log(this.spec);
+      this.definitions = this.objToArr(this.spec.definitions);
+      this.paths = this.objToArr(this.spec.paths);
+      console.log(this.definitions)
+    },
+    objToArr: function(defs){
+      var ret = [];
+      for(var key in defs){
+        if( defs.hasOwnProperty(key)){
+          defs[key].name = key;
+          ret.push(defs[key])
+        }
+      }
+      return ret;
     }
   });
 })();
