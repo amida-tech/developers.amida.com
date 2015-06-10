@@ -9,23 +9,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 
 <dom-module id="getting-started">
   <style>
     :host {
       display: block;
       @apply(--layout-vertical);
-      @apply(  --layout-center-justified);
+      /*@apply(  --layout-center-justified);*/
     }
     a{
       text-decoration: none;
       color: var(--accent-color);
       cursor:auto;
-    }
-
-    .secondary-task{
-      margin-left:64px;
-      font-weight: normal;
+      padding-left: 24px;
     }
     paper-material{
       padding: 1px 16px;
@@ -35,58 +32,126 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       min-width: 700px;
 
     }
+    #header{
+      background-image: url("../../images/background/sunset-photo.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color:white;
+    }
+    .square-logo{
+      height:80px;
+    }
+    .word-logo{
+      height:50px;
+    }
   </style>
   <template>
-    <div class="layout horizontal">
-      <div class="flex">      </div>
-      <div class="flex layout vertical">
-        <h1 class="paper-font-display2 flex">GETTING STARTED WITH DRE</h1>
-        <p>
+    <div id="header" class="layout vertical flex">
+      <div  class="flex layout horizontal">
+        <div class="flex-2">      </div>
+        <h1 class="paper-font-display1 flex-8">GETTING STARTED WITH DRE</h1>
+        <div class="flex-2">      </div>
+      </div>
+      <div  class="flex layout horizontal">
+        <div class="flex-3">      </div>
+        <p class="flex-6">
           Here are instructions on how to download and install DRE dependencies, straight from the vendors themselves.
         </p>
+        <div class="flex-3">      </div>
       </div>
-      <div class="flex">      </div>
     </div>
-    <div class="layout horizontal">
-      <div class="flex">      </div>
-    <paper-material class="flex">
-      <a target="_blank"
-        href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">
-        <h2 class="paper-font-display2">Installing Node.js via package manager</h2>
-      </a>
-            <a target="_blank"
-              href="http://gruntjs.com/getting-started#installing-the-cli">
-              <h2 class="paper-font-display secondary-task">Installing Grunt.js</h2>
-            </a>
-            <a target="_blank"
-              href="http://bower.io/#install-bower">
-              <h2 class="paper-font-display secondary-task">Installing Bower.js</h2>
-            </a>
+
+    <paper-material class="flex layout vertical">
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center word-logo" src="../../images/vendor-logo/nodejs-light.png">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">
+          <h2 class="paper-font-display1">Installing Node.js via package manager</h2>
+        </a>
+      </div>
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center square-logo" src="../../images/vendor-logo/grunt-logo.png">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="http://gruntjs.com/getting-started#installing-the-cli">
+          <h2 class="paper-font-display1">Installing Grunt.js</h2>
+        </a>
+      </div>
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center square-logo" src="../../images/vendor-logo/bower-logo.png">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="http://bower.io/#install-bower">
+          <h2 class="paper-font-display1">Installing Bower.js</h2>
+        </a>
+      </div>
+
+
     </paper-material>
-      <div class="flex">      </div>
+
+    <paper-material>
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center square-logo" src="../../images/vendor-logo/ruby.png">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="https://www.ruby-lang.org/en/documentation/installation/">
+        <h2 class="paper-font-display1">Installing Ruby</h2>
+        </a>
+      </div>
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center word-logo" src="../../images/vendor-logo/compass-style-logo.png">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="http://compass-style.org/install/">
+        <h2 class="paper-font-display1">Installing Compass</h2>
+        </a>
+      </div>
+    </paper-material>
+
+    <paper-material>
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center word-logo" src="../../images/vendor-logo/mongodb-logo.jpeg">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="http://docs.mongodb.org/manual/installation/#installation-guides">
+        <h2 class="paper-font-display1">Installing MongoDB</h2>
+        </a>
+      </div>
+    </paper-material>
+    <paper-material>
+      <div class="layout horizontal">
+        <iron-icon class="flex-2 self-center word-logo" src="../../images/vendor-logo/redis-logo.svg">      </iron-icon>
+        <a class="flex-10" target="_blank"
+          href="http://redis.io/download#installation">
+        <h2 class="paper-font-display1">Installing Redis</h2>
+        </a>
+      </div>
+    </paper-material>
+
+    <div id="" class="layout vertical flex">
+      <div  class="flex layout horizontal">
+        <div class="flex-2">      </div>
+        <h1 class="paper-font-display1 flex-8">GETTING STARTED WITH DRE</h1>
+        <div class="flex-2">      </div>
+      </div>
+      <div  class="flex layout horizontal">
+        <div class="flex-3">      </div>
+        <p class="flex-6">
+          Here are instructions on how to download and install DRE dependencies, straight from the vendors themselves.
+        </p>
+        <div class="flex-3">      </div>
+      </div>
     </div>
-    <paper-material>
-      <a target="_blank"
-        href="https://www.ruby-lang.org/en/documentation/installation/">
-        <h2 class="paper-font-display2">Installing Ruby</h2>
-      </a>
-            <a target="_blank"
-              href="http://compass-style.org/install/">
-              <h2 class="paper-font-display secondary-task">Installing Compass</h2>
-            </a>
-    </paper-material>
-    <paper-material>
-      <a target="_blank"
-        href="http://docs.mongodb.org/manual/installation/#installation-guides">
-        <h2 class="paper-font-display2">Installing MongoDB</h2>
-      </a>
-    </paper-material>
-    <paper-material>
-      <a target="_blank"
-        href="http://redis.io/download#installation">
-        <h2 class="paper-font-display2">Installing Redis</h2>
-      </a>
-    </paper-material>
+
+    <div id="" class="layout vertical flex">
+      <div  class="flex layout horizontal">
+        <div class="flex-2">      </div>
+        <h1 class="paper-font-display1 flex-8">GETTING STARTED WITH DRE</h1>
+        <div class="flex-2">      </div>
+      </div>
+      <div  class="flex layout horizontal">
+        <div class="flex-3">      </div>
+        <p class="flex-6">
+          Here are instructions on how to download and install DRE dependencies, straight from the vendors themselves.
+        </p>
+        <div class="flex-3">      </div>
+      </div>
+    </div>
     <pre>
       <code id="code" class="language-javascript">
       </code>
