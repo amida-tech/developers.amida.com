@@ -1,11 +1,11 @@
-{
+[{
     "id": "allergies",
     "type": "array",
     "items": {
         "$ref": "allergy"
     }
 }
-
+,
 {
     "id": "allergy",
     "type": "object",
@@ -98,3 +98,4 @@
     },
     "additionalProperties": false
 }
+]

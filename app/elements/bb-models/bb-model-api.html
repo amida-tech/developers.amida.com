@@ -18,7 +18,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <div>Hello from <span>{{foo}}</span></div>
+    <iron-ajax id="schemaAjax"
+      url="{{schemaUrl}}"
+      handleAs="json"
+      on-response="schemaResponse"></iron-ajax>
+    <iron-ajax id="exampleAjax"
+      url="{{exampleUrl}}"
+      handleAs="json"
+      on-response="exampleResponse"></iron-ajax>
   </template>
 </dom-module>
 <script>
@@ -31,7 +38,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: String,
         value: 'bar',
         notify: true
+      },
+      schemaUrl: {
+        type: String,
+        notify: true,
+        observer: "schemaUrlChanged"
+      },
+      exampleUrl: {
+        type: String,
+        notify: true,
+        observer: "exampleUrlChanged"
+      },
+      modelType: {
+        type: String,
+        notify: true,
+        observer: "modelTypeChanged"
       }
+    },
+    modelTypeChanged: function(mtype){
+      console.log(mtype)
+      this.schemaUrl = "elements/bb-models/model-" + mtype + "-schema.json";
+      this.exampleUrl = "elements/bb-models/model-" + mtype + "-example.json";
+    },
+    ready:function(){
+      this.parent = Polymer.dom(this).getOwnerRoot().host;
+      // this.schemaUrl = ""
+    },
+    exampleUrlChanged: function(url){
+      console.log(url);
+      this.$.exampleAjax.generateRequest();
+    },
+    schemaUrlChanged: function(url){
+      console.log(url);
+      this.$.schemaAjax.generateRequest()
+    },
+    schemaResponse: function(e){
+      console.log(e.detail.response)
+      // console.log(this.parent.$.schemaCode)
+      this.parent.$.schemaCode.textContent = JSON.stringify( e.detail.response, null, 2 );
+      Prism.highlightAll()
+
+    },
+    exampleResponse: function(e){
+      this.parent.$.exampleCode.textContent = JSON.stringify( e.detail.response, null, 2 );
+      Prism.highlightAll()
+
     }
   });
 })();

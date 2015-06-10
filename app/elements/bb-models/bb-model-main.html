@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bb-model-api.html">
 
 <dom-module id="bb-model-main">
   <style>
@@ -36,18 +37,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <iron-ajax id="schemaAjax"
-      auto
-      url="model-document-schema.json"
-      handleAs="json"
-      lastResponse="{{schemaJson}}"
-      on-response="schemaResponse"></iron-ajax>
-    <iron-ajax id="exampleAjax"
-      auto
-      url="model-document-example.json"
-      handleAs="json"
-      lastResponse="{{exampleJson}}"
-      on-response="exampleResponse"></iron-ajax>
+    <bb-model-api id="bb_model_api">
+    </bb-model-api>
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
@@ -101,7 +92,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // console.log(hljs)
     },
     ready: function(){
-      // console.log(hljs)
+      this.$.bb_model_api.modelType= "document";
+      // this.$.bb_model_api.schemaUrl="elements/bb-models/model-document-schema.json"
+      // this.$.bb_model_api.exampleUrl="elements/bb-models/model-document-example.json"
     }
   });
 })();

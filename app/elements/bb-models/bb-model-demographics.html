@@ -40,248 +40,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <bb-model-api id="bb_model_api">
+    </bb-model-api>
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <pre><code class="json hljs " style="font-size:10px;">{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"demographics"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_name"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">dob</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">gender</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
-            </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">marital_status</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">addresses</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_address"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">phone</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_phone"</span>
-            </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">email</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_email"</span>
-            </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">race</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">ethnicity</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">religion</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">birthplace</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">city</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">country</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">state</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">zip</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">use</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-            "<span class="hljs-attribute">minProperties</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                <span class="hljs-string">"city"</span>,
-                <span class="hljs-string">"country"</span>
-            ]
-        </span>}</span>,
-        "<span class="hljs-attribute">guardians</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">addresses</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_address"</span>
-                        </span>}
-                    </span>}</span>,
-                    "<span class="hljs-attribute">names</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_name"</span>
-                        </span>}
-                    </span>}</span>,
-                    "<span class="hljs-attribute">phone</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_phone"</span>
-                        </span>}
-                    </span>}</span>,
-                    "<span class="hljs-attribute">relation</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}
-                </span>}</span>,
-                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                    <span class="hljs-string">"names"</span>
-                ]</span>,
-                "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-                "<span class="hljs-attribute">minProperties</span>": <span class="hljs-value"><span class="hljs-number">1</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">languages</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">language</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">mode</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">preferred</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">proficiency</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}
-                </span>}</span>,
-                "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                    <span class="hljs-string">"language"</span>
-                ]
-            </span>}</span>,
-            "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span>
-        </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"name"</span>
-    ]
-</span>}</code></pre>
+        <pre>
+          <code id="schemaCode" class="language-javascript">
+
+          </code>
+        </pre>
       </paper-material>
     </div>
     <div>
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
-        <pre><code class="json hljs " style="font-size:10px;">{
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">middle</span>": <span class="hljs-value">[
-            <span class="hljs-string">"Isa"</span>
-        ]</span>,
-        "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Jones"</span></span>,
-        "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"Isabella"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">dob</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">point</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"1975-05-01T00:00:00.000Z"</span></span>,
-            "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
-        </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">gender</span>": <span class="hljs-value"><span class="hljs-string">"Female"</span></span>,
-    "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"2.16.840.1.113883.19.5.99999.2"</span></span>,
-            "<span class="hljs-attribute">extension</span>": <span class="hljs-value"><span class="hljs-string">"998991"</span>
-        </span>},
-        {
-            "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"2.16.840.1.113883.4.1"</span></span>,
-            "<span class="hljs-attribute">extension</span>": <span class="hljs-value"><span class="hljs-string">"111-00-2330"</span>
-        </span>}
-    ]</span>,
-    "<span class="hljs-attribute">marital_status</span>": <span class="hljs-value"><span class="hljs-string">"Married"</span></span>,
-    "<span class="hljs-attribute">addresses</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">street_lines</span>": <span class="hljs-value">[
-                <span class="hljs-string">"1357 Amber Drive"</span>
-            ]</span>,
-            "<span class="hljs-attribute">city</span>": <span class="hljs-value"><span class="hljs-string">"Beaverton"</span></span>,
-            "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"OR"</span></span>,
-            "<span class="hljs-attribute">zip</span>": <span class="hljs-value"><span class="hljs-string">"97867"</span></span>,
-            "<span class="hljs-attribute">country</span>": <span class="hljs-value"><span class="hljs-string">"US"</span></span>,
-            "<span class="hljs-attribute">use</span>": <span class="hljs-value"><span class="hljs-string">"primary home"</span>
-        </span>}
-    ]</span>,
-    "<span class="hljs-attribute">phone</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">number</span>": <span class="hljs-value"><span class="hljs-string">"(816)276-6909"</span></span>,
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"primary home"</span>
-        </span>}
-    ]</span>,
-    "<span class="hljs-attribute">race</span>": <span class="hljs-value"><span class="hljs-string">"White"</span></span>,
-    "<span class="hljs-attribute">ethnicity</span>": <span class="hljs-value"><span class="hljs-string">"Not Hispanic or Latino"</span></span>,
-    "<span class="hljs-attribute">languages</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">language</span>": <span class="hljs-value"><span class="hljs-string">"en"</span></span>,
-            "<span class="hljs-attribute">preferred</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-            "<span class="hljs-attribute">mode</span>": <span class="hljs-value"><span class="hljs-string">"Expressed spoken"</span></span>,
-            "<span class="hljs-attribute">proficiency</span>": <span class="hljs-value"><span class="hljs-string">"Good"</span>
-        </span>}
-    ]</span>,
-    "<span class="hljs-attribute">religion</span>": <span class="hljs-value"><span class="hljs-string">"Christian (non-Catholic, non-specific)"</span></span>,
-    "<span class="hljs-attribute">birthplace</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">city</span>": <span class="hljs-value"><span class="hljs-string">"Beaverton"</span></span>,
-        "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"OR"</span></span>,
-        "<span class="hljs-attribute">zip</span>": <span class="hljs-value"><span class="hljs-string">"97867"</span></span>,
-        "<span class="hljs-attribute">country</span>": <span class="hljs-value"><span class="hljs-string">"US"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">guardians</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">relation</span>": <span class="hljs-value"><span class="hljs-string">"Parent"</span></span>,
-            "<span class="hljs-attribute">addresses</span>": <span class="hljs-value">[
-                {
-                    "<span class="hljs-attribute">street_lines</span>": <span class="hljs-value">[
-                        <span class="hljs-string">"1357 Amber Drive"</span>
-                    ]</span>,
-                    "<span class="hljs-attribute">city</span>": <span class="hljs-value"><span class="hljs-string">"Beaverton"</span></span>,
-                    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"OR"</span></span>,
-                    "<span class="hljs-attribute">zip</span>": <span class="hljs-value"><span class="hljs-string">"97867"</span></span>,
-                    "<span class="hljs-attribute">country</span>": <span class="hljs-value"><span class="hljs-string">"US"</span></span>,
-                    "<span class="hljs-attribute">use</span>": <span class="hljs-value"><span class="hljs-string">"primary home"</span>
-                </span>}
-            ]</span>,
-            "<span class="hljs-attribute">names</span>": <span class="hljs-value">[
-                {
-                    "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Jones"</span></span>,
-                    "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"Ralph"</span>
-                </span>}
-            ]</span>,
-            "<span class="hljs-attribute">phone</span>": <span class="hljs-value">[
-                {
-                    "<span class="hljs-attribute">number</span>": <span class="hljs-value"><span class="hljs-string">"(816)276-6909"</span></span>,
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"primary home"</span>
-                </span>}
-            ]
-        </span>}
-    ]
-</span>}</code></pre>
+        <pre>
+          <code id="exampleCode" class="language-javascript"></code>
+        </pre>
       </paper-material>
     </div>
   </template>
@@ -297,6 +73,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
+    },
+    ready: function(){
+      this.$.bb_model_api.modelType = "demographics";
     }
   });
 })();

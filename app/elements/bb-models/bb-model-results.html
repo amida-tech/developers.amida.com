@@ -40,206 +40,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <bb-model-api id="bb_model_api">
+    </bb-model-api>
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <pre><code class="json hljs " style="font-size:10px;">{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"results"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-    "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"result"</span>
-    </span>}
-</span>}
+        <pre>
+          <code id="schemaCode" class="language-javascript">
 
-{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"result"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">result_set</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">results</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
-                        </span>}
-                    </span>}</span>,
-                    "<span class="hljs-attribute">interpretations</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                        </span>}
-                    </span>}</span>,
-                    "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">unit</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">value</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">text</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                    </span>}</span>,
-                    "<span class="hljs-attribute">reference_range</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-                        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                            "<span class="hljs-attribute">text</span>": <span class="hljs-value">{
-                                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                            </span>}</span>,
-                            "<span class="hljs-attribute">low_value</span>": <span class="hljs-value">{
-                                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                            </span>}</span>,
-                            "<span class="hljs-attribute">low_unit</span>": <span class="hljs-value">{
-                                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                            </span>}</span>,
-                            "<span class="hljs-attribute">high_value</span>": <span class="hljs-value">{
-                                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                            </span>}</span>,
-                            "<span class="hljs-attribute">high_unit</span>": <span class="hljs-value">{
-                                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                            </span>}
-                        </span>}
-                    </span>}
-                </span>}</span>,
-                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                    <span class="hljs-string">"result"</span>,
-                    <span class="hljs-string">"date_time"</span>,
-                    <span class="hljs-string">"status"</span>
-                ]</span>,
-                "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-            </span>}
-        </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"results"</span>
-    ]
-</span>}</code></pre>
+          </code>
+        </pre>
       </paper-material>
     </div>
     <div>
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
-        <pre><code class="json hljs " style="font-size:10px;">{
-    "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"7d5a02b0-67a4-11db-bd13-0800200c9a66"</span>
-        </span>}
-    ]</span>,
-    "<span class="hljs-attribute">result_set</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"CBC WO DIFFERENTIAL"</span></span>,
-        "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"43789009"</span></span>,
-        "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"SNOMED CT"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">results</span>": <span class="hljs-value">[
-        {
-            "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-                {
-                    "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"107c2dc0-67a5-11db-bd13-0800200c9a66"</span>
-                </span>}
-            ]</span>,
-            "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"HGB"</span></span>,
-                "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"30313-1"</span></span>,
-                "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"LOINC"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">point</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2000-03-23T00:00:00.000Z"</span></span>,
-                    "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"completed"</span></span>,
-            "<span class="hljs-attribute">reference_range</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">range</span>": <span class="hljs-value"><span class="hljs-string">"M 13-18 g/dl; F 12-16 g/dl"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">interpretations</span>": <span class="hljs-value">[
-                <span class="hljs-string">"Normal"</span>
-            ]</span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-number">13.2</span></span>,
-            "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"g/dl"</span>
-        </span>},
-        {
-            "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-                {
-                    "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"107c2dc0-67a5-11db-bd13-0800200c9a66"</span>
-                </span>}
-            ]</span>,
-            "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"WBC"</span></span>,
-                "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"33765-9"</span></span>,
-                "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"LOINC"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">point</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2000-03-23T00:00:00.000Z"</span></span>,
-                    "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"completed"</span></span>,
-            "<span class="hljs-attribute">reference_range</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">low</span>": <span class="hljs-value"><span class="hljs-string">"4.3"</span></span>,
-                "<span class="hljs-attribute">high</span>": <span class="hljs-value"><span class="hljs-string">"10.8"</span></span>,
-                "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"10+3/ul"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">interpretations</span>": <span class="hljs-value">[
-                <span class="hljs-string">"Normal"</span>
-            ]</span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-number">6.7</span></span>,
-            "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"10+3/ul"</span>
-        </span>},
-        {
-            "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-                {
-                    "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"107c2dc0-67a5-11db-bd13-0800200c9a66"</span>
-                </span>}
-            ]</span>,
-            "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"PLT"</span></span>,
-                "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"26515-7"</span></span>,
-                "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"LOINC"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">point</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2000-03-23T00:00:00.000Z"</span></span>,
-                    "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"day"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"completed"</span></span>,
-            "<span class="hljs-attribute">reference_range</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">low</span>": <span class="hljs-value"><span class="hljs-string">"150"</span></span>,
-                "<span class="hljs-attribute">high</span>": <span class="hljs-value"><span class="hljs-string">"350"</span></span>,
-                "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"10+3/ul"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">interpretations</span>": <span class="hljs-value">[
-                <span class="hljs-string">"Low"</span>
-            ]</span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-number">123</span></span>,
-            "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"10+3/ul"</span>
-        </span>}
-    ]
-</span>}</code></pre>
+        <pre>
+          <code id="exampleCode" class="language-javascript"></code>
+        </pre>
       </paper-material>
     </div>
   </template>
@@ -255,6 +73,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
+    },
+    ready: function(){
+      this.$.bb_model_api.modelType = "results";
     }
   });
 })();

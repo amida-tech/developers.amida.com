@@ -40,188 +40,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <bb-model-api id="bb_model_api">
+    </bb-model-api>
     <div>
       <h2 class="paper-font-display2">Schema</h2>
       <paper-material elevation="1">
-        <pre><code class="json hljs " style="font-size:10px;">{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"immunizations"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-    "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"immunization"</span>
-    </span>}
-</span>}
+        <pre>
+          <code id="schemaCode" class="language-javascript">
 
-{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"immunization"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_date"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_id"</span>
-            </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">sequence_number</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">administration</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">dose</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_physical_quantity"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">route</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">body_site</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">form</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">product</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">lot_number</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">manufacturer</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">product</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                <span class="hljs-string">"product"</span>
-            ]</span>,
-            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">performer</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_performer"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">instructions</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">free_text</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"cda_coded_entry"</span>
-                </span>}
-            </span>}</span>,
-            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">refusal_reason</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-        </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"status"</span>,
-        <span class="hljs-string">"product"</span>
-    ]
-</span>}</code></pre>
+          </code>
+        </pre>
       </paper-material>
     </div>
     <div>
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
-        <pre><code class="json hljs " style="font-size:10px;">{
-      "<span class="hljs-attribute">date_time</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">point</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"1999-11-01T00:00:00.000Z"</span></span>,
-              "<span class="hljs-attribute">precision</span>": <span class="hljs-value"><span class="hljs-string">"month"</span>
-          </span>}
-      </span>}</span>,
-      "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-          {
-              "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92"</span>
-          </span>}
-      ]</span>,
-      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"complete"</span></span>,
-      "<span class="hljs-attribute">product</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">product</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Influenza virus vaccine"</span></span>,
-              "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"88"</span></span>,
-              "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"CVX"</span></span>,
-              "<span class="hljs-attribute">translations</span>": <span class="hljs-value">[
-                  {
-                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Influenza, seasonal, injectable"</span></span>,
-                      "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"141"</span></span>,
-                      "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"CVX"</span>
-                  </span>}
-              ]
-          </span>}</span>,
-          "<span class="hljs-attribute">lot_number</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-          "<span class="hljs-attribute">manufacturer</span>": <span class="hljs-value"><span class="hljs-string">"Health LS - Immuno Inc."</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">administration</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">route</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Intramuscular injection"</span></span>,
-              "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"C28161"</span></span>,
-              "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"Medication Route FDA"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">dose</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-number">50</span></span>,
-              "<span class="hljs-attribute">unit</span>": <span class="hljs-value"><span class="hljs-string">"mcg"</span>
-          </span>}
-      </span>}</span>,
-      "<span class="hljs-attribute">performer</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-              {
-                  "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"2.16.840.1.113883.19.5.9999.456"</span></span>,
-                  "<span class="hljs-attribute">extension</span>": <span class="hljs-value"><span class="hljs-string">"2981824"</span>
-              </span>}
-          ]</span>,
-          "<span class="hljs-attribute">name</span>": <span class="hljs-value">[
-              {
-                  "<span class="hljs-attribute">last</span>": <span class="hljs-value"><span class="hljs-string">"Assigned"</span></span>,
-                  "<span class="hljs-attribute">first</span>": <span class="hljs-value"><span class="hljs-string">"Amanda"</span>
-              </span>}
-          ]</span>,
-          "<span class="hljs-attribute">address</span>": <span class="hljs-value">[
-              {
-                  "<span class="hljs-attribute">street_lines</span>": <span class="hljs-value">[
-                      <span class="hljs-string">"1021 Health Drive"</span>
-                  ]</span>,
-                  "<span class="hljs-attribute">city</span>": <span class="hljs-value"><span class="hljs-string">"Ann Arbor"</span></span>,
-                  "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"MI"</span></span>,
-                  "<span class="hljs-attribute">zip</span>": <span class="hljs-value"><span class="hljs-string">"99099"</span></span>,
-                  "<span class="hljs-attribute">country</span>": <span class="hljs-value"><span class="hljs-string">"US"</span>
-              </span>}
-          ]</span>,
-          "<span class="hljs-attribute">organization</span>": <span class="hljs-value">[
-              {
-                  "<span class="hljs-attribute">identifiers</span>": <span class="hljs-value">[
-                      {
-                          "<span class="hljs-attribute">identifier</span>": <span class="hljs-value"><span class="hljs-string">"2.16.840.1.113883.19.5.9999.1394"</span>
-                      </span>}
-                  ]</span>,
-                  "<span class="hljs-attribute">name</span>": <span class="hljs-value">[
-                      <span class="hljs-string">"Good Health Clinic"</span>
-                  ]
-              </span>}
-          ]
-      </span>}</span>,
-      "<span class="hljs-attribute">instructions</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"immunization education"</span></span>,
-              "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"171044003"</span></span>,
-              "<span class="hljs-attribute">code_system_name</span>": <span class="hljs-value"><span class="hljs-string">"SNOMED CT"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">free_text</span>": <span class="hljs-value"><span class="hljs-string">"Possible flu-like symptoms for three days."</span>
-      </span>}
-  </span>}</code></pre>
+        <pre>
+          <code id="exampleCode" class="language-javascript"></code>
+        </pre>
       </paper-material>
     </div>
   </template>
@@ -237,6 +73,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
+    },
+    ready: function(){
+      this.$.bb_model_api.modelType = "immunizations";
     }
   });
 })();
