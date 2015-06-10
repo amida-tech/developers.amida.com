@@ -11,9 +11,7 @@
         "name": "history"
     }, {
         "name": "matches"
-    }, {
-        "name": "match"
-    }, {
+    },  {
         "name": "merges"
     }, {
         "name": "notes"
@@ -38,6 +36,7 @@
     "paths": {
         "/account_history/mostRecent": {
             "get": {
+                "endpoint":"/account_history/mostRecent",
                 "summary": "Returns most recent events in a user's account history",
                 "description": "Return event for register, log in/out, up/download file, lab results, password change, personal information changed",
                 "operationId": "addEvent",
@@ -56,6 +55,7 @@
         },
         "/account_history/all": {
             "get": {
+              "endpoint":"/account_history/all",
                 "summary": "Returns all events in a user's account history",
                 "description": "Shows registered, logged in/out, file up/downloaded, lab results received, password changed, info updated",
                 "operationId": "allEventsInOrder",
@@ -77,6 +77,7 @@
         },
         "/storage": {
             "get": {
+              "endpoint":"/storage",
                 "summary": "Get list of files in user's storage",
                 "description": "Files and metadata from My Files",
                 "operationId": "allFiles",
@@ -96,6 +97,7 @@
                 }
             },
             "put": {
+              "endpoint": "/storage",
                 "summary": "Uploads a file",
                 "description": "Upload, match, merge or save to my files without importing using check flag",
                 "operationId": "processUpload",
@@ -139,6 +141,7 @@
         },
         "/storage/record/{identifier}": {
             "get": {
+                "endpoint":"/storage/record/{identifier}",
                 "summary": "Downloads a file",
                 "description": "Retrieves a specific file for download",
                 "operationId": "getSource",
@@ -167,6 +170,7 @@
         },
         "/account": {
             "get": {
+                "endpoint":"/account",
                 "summary": "Authentication check",
                 "description": "Check if user is authenticated",
                 "operationId": "authenticated",
@@ -185,6 +189,7 @@
         },
         "/users": {
             "get": {
+              "endpoint":"/users",
                 "summary": "Retrieve list of users",
                 "description": "Retrieve list of all users",
                 "operationId": "getUsers",
@@ -206,6 +211,7 @@
         },
         "/register": {
             "post": {
+              "endpoint":"/register",
                 "summary": "Register a new user",
                 "description": "Create a new account and save registration information",
                 "operationId": "register",
@@ -233,6 +239,7 @@
         },
         "/login": {
             "post": {
+                "endpoint":"/login",
                 "summary": "Log in",
                 "description": "Registered user logs into account",
                 "operationId": "login",
@@ -264,6 +271,7 @@
         },
         "/logout": {
             "post": {
+                "endpoint":"/logout",
                 "summary": "Log out",
                 "description": "Registered user logs out of account",
                 "operationId": "logout",
@@ -280,6 +288,7 @@
                 }
             },
             "get": {
+                "endpoint":"/logout",
                 "summary": "Get log out",
                 "description": "Log out with GET",
                 "operationId": "getLogout",
@@ -298,6 +307,7 @@
         },
         "/changepassword": {
             "post": {
+                "endpoint":"/changepassword",
                 "summary": "Change password",
                 "description": "Logged in user changes password",
                 "operationId": "changePassword",
@@ -325,6 +335,7 @@
         },
         "/record/demographics": {
             "post": {
+                "endpoint": "/record/demographics",
                 "summary": "Save profile information",
                 "description": "Save profile information to demographics section",
                 "operationId": "saveProfile",
@@ -351,6 +362,7 @@
         },
         "/record/{component}": {
             "get": {
+                "endpoint": "/record/{component}",
                 "summary": "View entries for component",
                 "description": "Retrieve specific component from Master Health Record",
                 "operationId": "getComponent",
@@ -381,6 +393,7 @@
         },
         "/master_health_record/{format}": {
             "get": {
+                "endpoint": "/master_health_record/{format}",
                 "summary": "Download Master Health Record",
                 "description": "Retrieve all components and download",
                 "operationId": "getMHR",
@@ -411,6 +424,7 @@
         },
         "/get_record": {
             "get": {
+                "endpoint": "/get_record",
                 "summary": "Retrieve entire record",
                 "description": "Retrieve all components and download",
                 "operationId": "getRecord",
@@ -429,6 +443,7 @@
         },
         "/matches/{component}": {
             "get": {
+                "endpoint": "/matches/{component}",
                 "summary": "Retrieve matches",
                 "description": "Retrieve all matches for one components",
                 "operationId": "getMatches",
@@ -474,6 +489,7 @@
                 "required": true
             }],
             "get": {
+                "endpoint":"/match/{component/{record_id}}",
                 "summary": "Retrieve a single match",
                 "description": "Retrieve a single match from a component",
                 "operationId": "getMatch",
@@ -510,6 +526,7 @@
                 "required": true
             }],
             "post": {
+                "endpoint":"/matches/{component/{record_id}}",
                 "summary": "Post update",
                 "description": "Post partial record updates",
                 "operationId": "saveMatches",
@@ -550,6 +567,7 @@
                 "type": "string"
             }],
             "post": {
+                "endpoint":"/matches/{component}/{record_id}/{record_index}",
                 "summary": "Post update",
                 "description": "Post partial record update",
                 "operationId": "saveMatch",
@@ -571,6 +589,7 @@
         },
         "/merges": {
             "get": {
+                "endpoint":"/merges",
                 "summary": "Get all merges",
                 "description": "Retrieve merges for all components",
                 "tags": [
@@ -588,6 +607,7 @@
         },
         "/merges/{component}": {
             "get": {
+                "endpoint":"/merges/{component}",
                 "summary": "Get merges by component",
                 "description": "Get merges by component",
                 "parameters": [{
@@ -617,6 +637,7 @@
         },
         "/notification": {
             "get": {
+                "endpoint":"/notification",
                 "summary": "All notifications",
                 "description": "includes new record count from merge",
                 "responses": {
@@ -640,6 +661,7 @@
         },
         "/notes/all": {
             "get": {
+                "endpoint": "/notes/all",
                 "summary": "Retrieve all notes",
                 "description": "Retrieve all notes in chronological order",
                 "tags": [
@@ -663,6 +685,7 @@
         },
         "/notes/add": {
             "post": {
+                "endpoint":"/note/add",
                 "summary": "Save a note",
                 "description": "Add and save a new note",
                 "tags": [
@@ -692,6 +715,7 @@
         },
         "/notes/star": {
             "post": {
+                "endpoint":"/notes/star",
                 "summary": "Star a note",
                 "description": "Star a note to mark as important",
                 "tags": [
@@ -721,6 +745,7 @@
         },
         "/notes/edit": {
             "post": {
+                "endpoint":"/notes/edit",
                 "summary": "Edit a note",
                 "description": "Edit a note that already exists",
                 "tags": [
@@ -750,6 +775,7 @@
         },
         "/notes/delete": {
             "post": {
+                "endpoint":"/notes/delete",
                 "summary": "Delete a note",
                 "description": "Locate a note using ID and delete",
                 "tags": [

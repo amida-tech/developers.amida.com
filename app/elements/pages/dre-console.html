@@ -10,26 +10,206 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
 
-<dom-module id="api-definition">
+<dom-module id="api-operation">
   <style>
     :host {
       display: block;
+      /*margin: 8px 0px;*/
+      @apply(--layout-vertical);
+    }
+    .clickable{
+      cursor: hand;
+      cursor:pointer;
+    }
+    .method{
+      color:white;
+      text-align:center;
+      margin-right: 24px;
+    }
+    /*#method[]*/
+    #GET{
+      background: blue;
+    }
+    #POST{
+      background: green;
+    }
+    #PUT{
+      background: gold;
     }
   </style>
   <template>
-    <div>Hello from <span>{{name}}</span></div>
+    <template is="dom-repeat" items="{{methods}}">
+      <paper-item class="layout horizontal">
+        <span id="{{item.method}}" class="flex-1 clickable method">{{item.method}}</span>
+        <span class="flex-5 clickable">{{endpoint}}</span>
+        <span class="flex-6 clickable">{{item.description}}</span>
+      </paper-item>
+    </template>
   </template>
 </dom-module>
 <script>
 (function() {
   Polymer({
-    is: 'api-definition',
+    is: 'api-operation',
     properties: {
       name: {
         type: String,
         notify: true
+      },
+      path:{
+        type: Object,
+        notify: true,
+        observer: "pathReady"
+      },
+      endpoint:{
+        type: String,
+        notify: true,
+        observer: "endpointChanged"
+      },
+      methods:{
+        type: Array,
+        notify: true,
+        observer: "methodsChanged"
       }
+    },
+    methodsChanged: function(mtds){
+      // console.log("methods", mtds)
+    },
+    pathReady: function(path){
+      // console.log("paths Ready", paths)
+      // console.log("path ready",path)
+      this.endpoint = Object.keys(this.path)[0];
+      var methods=[];
+      var ep = this.endpoint;
+      Object.keys(path[this.endpoint]).forEach(function(curr){
+        if(curr !== "parameters"){
+
+          // console.log((path[ep])[curr])
+          // console.log(curr)
+          methods.push({
+            method: curr.toUpperCase(),
+            description: (path[ep])[curr].description
+          });
+        }
+      },methods,path,ep);
+      this.methods = methods;
+      // console.log(this.methods)
+      // console.log(Object.keys(path[this.endpoint]))
+      // if(this.tag){ this.getRelevantPaths() }
+    },
+    endpointChanged: function(ep){
+      // console.log("endpoint", ep)
+    },
+    toggleExpand: function(e){
+      console.log(e)
+    },
+    hideOperations: function(e){
+      console.log(e)
+    },
+    showOperations: function(e){
+      console.log(e)
+    }
+  });
+})();
+</script>
+<dom-module id="api-path">
+  <style>
+    :host {
+      display: block;
+      margin: 8px 0px;
+    }
+    .clickable{
+      cursor: hand;
+      cursor:pointer;
+    }
+    #toggleBtn{
+      font-size: .5em;
+    }
+  </style>
+  <template>
+    <paper-toolbar id="toolbar">
+      <span id="name" class="flex clickable" on-tap="toggleExpand">{{tag.name}}</span>
+      <paper-button id="toggleBtn" on-tap="toggleExpand">Show/Hide</paper-button>
+      <paper-button id="toggleBtn" on-tap="hideOperations">List Operations</paper-button>
+      <paper-button id="toggleBtn" on-tap="showOperations">Expand Operations</paper-button>
+    </paper-toolbar>
+    <div class="layout vertical" id="mainContainer">
+      <template is="dom-repeat" items="{{paths}}" >
+        <api-operation path="{{item}}"></api-operation>
+      </template>
+    </div>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'api-path',
+    properties: {
+      name: {
+        type: String,
+        notify: true
+      },
+      tag:{
+        type: Object,
+        notify: true,
+        observer: "tagReady"
+      },
+      paths:{
+        type: Object,
+        notify: true,
+        observer: "pathsReady"
+      }
+    },
+    _getPathEndpoint: function(pathObj){
+      // console.log(pathObj);
+      return "sup";
+    },
+    getRelevantPaths: function(){
+      // console.log(this.tag.name)
+      // console.log(this.paths)
+      var t;
+      this.paths.forEach(function(curr){
+        if(curr.hasOwnProperty('post')){
+          t = curr.post.tags[0];
+          // console.log(t)
+        } else if(curr.hasOwnProperty('get')){
+          t = curr.get.tags[0];
+          // console.log(this.tags)
+        } else {
+          // console.log('neither')
+        }
+        // console.log(this.tag.name == t)
+        if(this.tag.name == t){
+          this.relevantPaths = this.relevantPaths || [];
+          this.relevantPaths.push(curr)
+        }
+      },this)
+      console.log(this.relevantPaths)
+    },
+    pathsReady: function(paths){
+      // console.log("paths Ready", paths)
+      // console.log("path ready",path)
+      // if(this.tag){ this.getRelevantPaths() }
+    },
+    tagReady: function(tag){
+      // if(this.paths){ this.getRelevantPaths() }
+      // console.log("tag ready",tag)
+      // this.methods =
+    },
+    toggleExpand: function(e){
+      console.log(e)
+    },
+    hideOperations: function(e){
+      console.log(e)
+    },
+    showOperations: function(e){
+      console.log(e)
     }
   });
 })();
@@ -39,19 +219,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
+      padding-top:64px;
     }
   </style>
   <template>
-    <div>Hello from <span>{{foo}}</span></div>
     <iron-ajax id="ajax"
       auto
-      url="../api/specs/dre-api.json"
+      url="../api/specs/dre-api2.json"
       handle-as="json"
       on-response="handleSpecResponse"></iron-ajax>
 
-  <template is="dom-repeat" items="{{definitions}}">
-    <api-definition
-      name="{{item.name}}"></api-definition>
+  <template is="dom-repeat" items="{{tags}}">
+    <api-path
+      tag="{{item}}"
+      paths="{{item.paths}}"></api-path>
   </template>
   </template>
 </dom-module>
@@ -66,23 +247,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: 'bar',
         notify: true
       }
-
     },
     ready: function(){
-      console.log(_)
     },
     handleSpecResponse: function(e){
       this.spec = e.detail.response;
       console.log(this.spec);
-      this.definitions = this.objToArr(this.spec.definitions);
-      this.paths = this.objToArr(this.spec.paths);
-      console.log(this.definitions)
+      this.tags = this.spec.tags;
+      // this.paths = this.objToArr(this.spec.paths);
+      console.log(this.tags)
     },
     objToArr: function(defs){
       var ret = [];
       for(var key in defs){
         if( defs.hasOwnProperty(key)){
-          defs[key].name = key;
           ret.push(defs[key])
         }
       }
