@@ -1,11 +1,11 @@
-{
+[{
     "id": "procedures",
     "type": "array",
     "items": {
         "$ref": "procedure"
     }
 }
-
+,
 {
     "id": "procedure",
     "type": "object",
@@ -72,3 +72,4 @@
     ],
     "additionalProperties": false
 }
+]

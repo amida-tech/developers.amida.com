@@ -1,11 +1,11 @@
-{
+[{
     "id": "plan_of_care",
     "type": "array",
     "items": {
         "$ref": "plan_of_care_entry"
     }
 }
-
+,
 {
     "id": "plan_of_care_entry",
     "type": "object",
@@ -35,3 +35,4 @@
     ],
     "additionalProperties": false
 }
+]

@@ -1,11 +1,11 @@
-{
+[{
     "id": "payers",
     "type": "array",
     "items": {
         "$ref": "payer"
     }
 }
-
+,
 {
     "id": "payer",
     "type": "object",
@@ -153,3 +153,4 @@
     ],
     "additionalProperties": false
 }
+]

@@ -1,11 +1,11 @@
-{
+[{
     "id": "social_history",
     "type": "array",
     "items": {
         "$ref": "social_history_entry"
     }
 }
-
+,
 {
     "id": "social_history_entry",
     "type": "object",
@@ -34,3 +34,4 @@
     ],
     "additionalProperties": false
 }
+]

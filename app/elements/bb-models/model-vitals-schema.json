@@ -1,11 +1,11 @@
-{
+[{
     "id": "vitals",
     "type": "array",
     "items": {
         "$ref": "vital"
     }
 }
-
+,
 {
     "id": "vital",
     "type": "object",
@@ -44,3 +44,4 @@
         "vital"
     ]
 }
+]

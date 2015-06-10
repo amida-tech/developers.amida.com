@@ -1,11 +1,11 @@
-{
+[{
     "id": "results",
     "type": "array",
     "items": {
         "$ref": "result"
     }
 }
-
+,
 {
     "id": "result",
     "type": "object",
@@ -91,3 +91,4 @@
         "results"
     ]
 }
+]

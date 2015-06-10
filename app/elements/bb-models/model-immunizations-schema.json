@@ -1,11 +1,11 @@
-{
+[{
     "id": "immunizations",
     "type": "array",
     "items": {
         "$ref": "immunization"
     }
 }
-
+,
 {
     "id": "immunization",
     "type": "object",
@@ -86,3 +86,4 @@
         "product"
     ]
 }
+]
