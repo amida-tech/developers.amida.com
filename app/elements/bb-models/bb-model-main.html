@@ -62,8 +62,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2 class="paper-font-display2">Example</h2>
       <paper-material elevation-"1">
         <pre>
-          <code id="exampleCode" class="language-javascript">
-          </code>
+          <code id="exampleCode" class="language-javascript"></code>
         </pre>
       </paper-material>
     </div>
@@ -87,12 +86,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     schemaResponse: function(e){
       // console.log(e.detail.response);
-      // var json = JSON.stringify(e.detail.response, null, 2);
-      // this.$.schemaCode.textContent = json;
+      var json = JSON.stringify(e.detail.response, null, 2);
+      this.$.schemaCode.textContent = json;
+      Prism.highlightAll();
+      console.log(Prism)
     },
     exampleResponse: function(e){
       // console.log(e.detail.response);
-      this.$.exampleCode.innerText = JSON.stringify( e.detail.response, null, 3 );
+      this.$.exampleCode.innerText = JSON.stringify( e.detail.response, null, 2 );
+      Prism.highlightAll();
+
     },
     created: function(){
       // console.log(hljs)

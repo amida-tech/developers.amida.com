@@ -1,81 +1,88 @@
 {
-    "id": "document_model",
+    "id": "immunizations",
+    "type": "array",
+    "items": {
+        "$ref": "immunization"
+    }
+}
+
+{
+    "id": "immunization",
     "type": "object",
     "properties": {
-        "data": {
-            "type": "object",
-            "properties": {
-                "allergies": {
-                    "$ref": "allergies"
-                },
-                "demographics": {
-                    "$ref": "demographics"
-                },
-                "encounters": {
-                    "$ref": "encounters"
-                },
-                "immunizations": {
-                    "$ref": "immunizations"
-                },
-                "medications": {
-                    "$ref": "medications"
-                },
-                "problems": {
-                    "$ref": "problems"
-                },
-                "plan_of_care": {
-                    "$ref": "plan_of_care"
-                },
-                "procedures": {
-                    "$ref": "procedures"
-                },
-                "results": {
-                    "$ref": "results"
-                },
-                "social_history": {
-                    "$ref": "social_history"
-                },
-                "payers": {
-                    "$ref": "payers"
-                },
-                "vitals": {
-                    "$ref": "vitals"
-                },
-                "claims": {
-                    "$ref": "claims"
-                },
-                "providers": {
-                    "$ref": "providers"
-                },
-                "medical_devices": {
-                    "$ref": "medical_devices"
-                },
-                "family_history": {
-                    "$ref": "family_history"
-                }
-            },
-            "additionalProperties": true
+        "date_time": {
+            "$ref": "cda_date"
         },
-        "errors": {
+        "identifiers": {
             "type": "array",
             "items": {
-                "type": "string"
+                "$ref": "cda_id"
             }
         },
-        "meta": {
+        "status": {
+            "type": "string"
+        },
+        "sequence_number": {
+            "type": "string"
+        },
+        "administration": {
             "type": "object",
             "properties": {
-                "type": {
-                    "type": "string"
+                "dose": {
+                    "$ref": "cda_physical_quantity"
                 },
-                "version": {
-                    "type": "string"
+                "route": {
+                    "$ref": "cda_coded_entry"
                 },
-                "confidentiality": {
-                    "type": "string"
+                "body_site": {
+                    "$ref": "cda_coded_entry"
+                },
+                "form": {
+                    "$ref": "cda_coded_entry"
                 }
             },
-            "additionalProperties": true
+            "additionalProperties": false
+        },
+        "product": {
+            "type": "object",
+            "properties": {
+                "lot_number": {
+                    "type": "string"
+                },
+                "manufacturer": {
+                    "type": "string"
+                },
+                "product": {
+                    "$ref": "cda_coded_entry"
+                }
+            },
+            "required": [
+                "product"
+            ],
+            "additionalProperties": false
+        },
+        "performer": {
+            "$ref": "cda_performer"
+        },
+        "instructions": {
+            "type": "object",
+            "properties": {
+                "free_text": {
+                    "type": "string"
+                },
+                "code": {
+                    "$ref": "cda_coded_entry"
+                }
+            },
+            "additionalProperties": false
+        },
+        "refusal_reason": {
+            "type": "string"
         }
-    }
+    },
+    "additionalProperties": false,
+    "required": [
+        "status",
+        "product"
+    ]
 }

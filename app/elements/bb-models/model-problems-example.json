@@ -1,81 +1,55 @@
 {
-    "id": "document_model",
-    "type": "object",
-    "properties": {
-        "data": {
-            "type": "object",
-            "properties": {
-                "allergies": {
-                    "$ref": "allergies"
-                },
-                "demographics": {
-                    "$ref": "demographics"
-                },
-                "encounters": {
-                    "$ref": "encounters"
-                },
-                "immunizations": {
-                    "$ref": "immunizations"
-                },
-                "medications": {
-                    "$ref": "medications"
-                },
-                "problems": {
-                    "$ref": "problems"
-                },
-                "plan_of_care": {
-                    "$ref": "plan_of_care"
-                },
-                "procedures": {
-                    "$ref": "procedures"
-                },
-                "results": {
-                    "$ref": "results"
-                },
-                "social_history": {
-                    "$ref": "social_history"
-                },
-                "payers": {
-                    "$ref": "payers"
-                },
-                "vitals": {
-                    "$ref": "vitals"
-                },
-                "claims": {
-                    "$ref": "claims"
-                },
-                "providers": {
-                    "$ref": "providers"
-                },
-                "medical_devices": {
-                    "$ref": "medical_devices"
-                },
-                "family_history": {
-                    "$ref": "family_history"
-                }
-            },
-            "additionalProperties": true
+    "date_time": {
+        "low": {
+            "date": "2008-01-03T00:00:00.000Z",
+            "precision": "day"
         },
-        "errors": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "meta": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
-                },
-                "confidentiality": {
-                    "type": "string"
-                }
-            },
-            "additionalProperties": true
+        "high": {
+            "date": "2008-01-03T00:00:00.000Z",
+            "precision": "day"
         }
-    }
+    },
+    "identifiers": [
+        {
+            "identifier": "ab1791b0-5c71-11db-b0de-0800200c9a66"
+        }
+    ],
+    "problem": {
+        "code": {
+            "name": "Pneumonia",
+            "code": "233604007",
+            "code_system_name": "SNOMED CT"
+        },
+        "date_time": {
+            "low": {
+                "date": "2008-01-03T00:00:00.000Z",
+                "precision": "day"
+            },
+            "high": {
+                "date": "2008-01-03T00:00:00.000Z",
+                "precision": "day"
+            }
+        }
+    },
+    "onset_age": "57",
+    "onset_age_unit": "Year",
+    "status": {
+        "name": "Resolved",
+        "date_time": {
+            "low": {
+                "date": "2008-01-03T00:00:00.000Z",
+                "precision": "day"
+            },
+            "high": {
+                "date": "2009-02-27T08:00:00.000Z",
+                "precision": "second"
+            }
+        }
+    },
+    "patient_status": "Alive and well",
+    "source_list_identifiers": [
+        {
+            "identifier": "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
+        }
+    ]
 }

@@ -70,9 +70,6 @@
                 },
                 "version": {
                     "type": "string"
-                },
-                "confidentiality": {
-                    "type": "string"
                 }
             },
             "additionalProperties": true

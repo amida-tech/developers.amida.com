@@ -1,0 +1,22 @@
+{
+    "date_time": {
+        "low": {
+            "date": "2005-05-01T00:00:00.000Z",
+            "precision": "day"
+        },
+        "high": {
+            "date": "2009-02-27T08:00:00.000Z",
+            "precision": "second"
+        }
+    },
+    "identifiers": [
+        {
+            "identifier": "2.16.840.1.113883.19",
+            "extension": "123456789"
+        }
+    ],
+    "code": {
+        "name": "Smoking Status"
+    },
+    "value": "Former smoker"
+}

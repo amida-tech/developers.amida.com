@@ -1,81 +1,68 @@
 {
-    "id": "document_model",
+    "id": "problems",
+    "type": "array",
+    "items": {
+        "$ref": "problem"
+    }
+}
+
+{
+    "id": "problem",
     "type": "object",
     "properties": {
-        "data": {
-            "type": "object",
-            "properties": {
-                "allergies": {
-                    "$ref": "allergies"
-                },
-                "demographics": {
-                    "$ref": "demographics"
-                },
-                "encounters": {
-                    "$ref": "encounters"
-                },
-                "immunizations": {
-                    "$ref": "immunizations"
-                },
-                "medications": {
-                    "$ref": "medications"
-                },
-                "problems": {
-                    "$ref": "problems"
-                },
-                "plan_of_care": {
-                    "$ref": "plan_of_care"
-                },
-                "procedures": {
-                    "$ref": "procedures"
-                },
-                "results": {
-                    "$ref": "results"
-                },
-                "social_history": {
-                    "$ref": "social_history"
-                },
-                "payers": {
-                    "$ref": "payers"
-                },
-                "vitals": {
-                    "$ref": "vitals"
-                },
-                "claims": {
-                    "$ref": "claims"
-                },
-                "providers": {
-                    "$ref": "providers"
-                },
-                "medical_devices": {
-                    "$ref": "medical_devices"
-                },
-                "family_history": {
-                    "$ref": "family_history"
-                }
-            },
-            "additionalProperties": true
+        "date_time": {
+            "$ref": "cda_date"
         },
-        "errors": {
+        "identifiers": {
             "type": "array",
             "items": {
-                "type": "string"
+                "$ref": "cda_id"
             }
         },
-        "meta": {
+        "problem": {
             "type": "object",
             "properties": {
-                "type": {
-                    "type": "string"
+                "code": {
+                    "$ref": "cda_coded_entry"
                 },
-                "version": {
-                    "type": "string"
-                },
-                "confidentiality": {
-                    "type": "string"
+                "date_time": {
+                    "$ref": "cda_date"
                 }
             },
-            "additionalProperties": true
+            "additionalProperties": false
+        },
+        "negation_indicator": {
+            "type": "boolean"
+        },
+        "onset_age": {
+            "type": "string"
+        },
+        "onset_age_unit": {
+            "type": "string"
+        },
+        "patient_status": {
+            "type": "string"
+        },
+        "status": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "source_list_identifiers": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_id"
+            }
         }
-    }
+    },
+    "additionalProperties": false,
+    "required": [
+        "problem"
+    ]
 }
