@@ -56,7 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     },
     modelTypeChanged: function(mtype){
-      console.log(mtype)
+      // console.log(mtype)
       this.schemaUrl = "elements/bb-models/model-" + mtype + "-schema.json";
       this.exampleUrl = "elements/bb-models/model-" + mtype + "-example.json";
     },
@@ -65,23 +65,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // this.schemaUrl = ""
     },
     exampleUrlChanged: function(url){
-      console.log(url);
+      // console.log(url);
       this.$.exampleAjax.generateRequest();
     },
     schemaUrlChanged: function(url){
-      console.log(url);
+      // console.log(url);
       this.$.schemaAjax.generateRequest()
     },
     schemaResponse: function(e){
-      console.log(e.detail.response)
+      console.log(hljs)
+      // console.log(e.detail.response)
       // console.log(this.parent.$.schemaCode)
-      this.parent.$.schemaCode.textContent = JSON.stringify( e.detail.response, null, 2 );
-      Prism.highlightAll()
+      this.parent.$.schemaCode.innerHTML = JSON.stringify( e.detail.response, null, 2 );
+      hljs.highlightBlock(this.parent.$.schemaCode);
+
+      // Prism.highlightAll()
 
     },
     exampleResponse: function(e){
-      this.parent.$.exampleCode.textContent = JSON.stringify( e.detail.response, null, 2 );
-      Prism.highlightAll()
+      this.parent.$.exampleCode.innerHTML = JSON.stringify( e.detail.response, null, 2 );
+      hljs.highlightBlock(this.parent.$.exampleCode);
+      // Prism.highlightAll()
 
     }
   });
