@@ -17,16 +17,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       display: block;
       overflow-x: scroll;
       padding: 128px 32px;
+      @apply(--layout-horizontal);
     }
     #readme{
       margin: 128px 32px;
+      /*overflow-x: scroll;*/
+    }
+    paper-material{
+      padding: 128px 32px;
+      /*overflow-x: scroll;*/
+
+    }
+    #content > p:nth-child(5) > img{
+      max-width: 1000px;
     }
   </style>
   <template>
-    <!-- <div>Hello from <span>{{name}}</span></div> -->
     <github-api
-      drereadme="{{drereadme}}" ></github-api>
-    <marked-element id="readme" markdown="{{drereadme}}"></marked-element>
+      drereadme="{{drereadme}}" >
+    </github-api>
+    <span class="flex-1"></span>
+    <paper-material elevation="0" class="flex-10">
+      <marked-element id="readme" markdown="{{drereadme}}"></marked-element>
+    </paper-material>
+    <span class="flex-1"></span>
   </template>
 </dom-module>
 <script>
