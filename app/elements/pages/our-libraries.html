@@ -16,26 +16,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
-      @apply(--layout-horizontal);
-      @apply(--layout-wrap);
+      @apply(--layout-vertical);
     }
   </style>
   <template>
-    <!-- <template is="dom-repeat" id="menu" items="{{repos}}">
-        <div>
-          <span>{{item}}</span> -->
-          <!-- <span>{{item.ordered}}</span>
-          <button on-click="order">Order</button>
-        </div>
-    </template> -->
     <github-api
-      amidarepos="{{amidarepos}}"></github-api>
-    <template is="dom-repeat" items="{{amidarepos}}" >
-      <div>
-        <amida-library name="{{item.name}}" url="{{item.html_url}}"
-          description="{{item.description}}"></amida-library>
-      </div>
-    </template>
+      amidarepos="{{amidarepos}}">
+    </github-api>
+    <div class="layout horizontal wrap self-center">
+      <template is="dom-repeat" items="{{amidarepos}}" >
+          <amida-library
+            name="{{item.name}}"
+            url="{{item.html_url}}"
+            description="{{item.description}}">
+          </amida-library>
+      </template>
+    </div>
   </template>
 </dom-module>
 <script>
