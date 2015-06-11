@@ -38,30 +38,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     #paginator{
       margin: 128px 64px;
     }
+    #paginator
+      max-width:900px;
     #pageinatoritem{
       font-size:2em;
       cursor: pointer;
       cursor:hand;
+      text-align:center;
+      /*padding:0px 4px;*/
     }
     #list{
       width:100%;
     }
   </style>
   <template>
-    <!-- <div>Hello from <span>{{name}}</span></div> -->
     <iron-ajax id="ajax"
       auto
       url="health-terminology.json"
       handle-as="json"
       on-response="handleTermsResponse"></iron-ajax>
-    <div id="paginator" class="layout horizontal ">
-      <span class="flex-2"></span>
-      <iron-selector class=" flex-10 layout horizontal">
+    <div id="paginator" class="layout vertical">
+      <iron-selector class=" flex layout horizontal self-center">
         <template is="dom-repeat" items="{{alphabet}}">
-          <paper-item on-tap="pageClick" id="pageinatoritem" class="flex">{{item}}</paper-item>
+          <span on-tap="pageClick" id="pageinatoritem" class="">{{item}}</span>
         </template>
       </iron-selector>
-      <span class="flex-2"></span>
     </div>
     <paper-material id="list" class="layout vertical">
       <template is="dom-repeat" items="{{terms}}">
