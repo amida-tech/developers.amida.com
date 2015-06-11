@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="bb-model-api.html">
 
-<dom-module id="bb-model-main">
+<dom-module id="bb-model-element">
   <style>
     :host {
       display: block;
@@ -45,12 +45,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <bb-model-api id="bb_model_api">
     </bb-model-api>
     <iron-selector class="layout horizontal  flex self-center" selected="{{selected}}">
-      <paper-button id="schemaBtn">show schema model</paper-button>
-      <paper-button id="exampleBtn">show example model</paper-button>
+      <paper-button id="schemaBtn">show <span>{{modelType}}</span> schema</paper-button>
+      <paper-button id="exampleBtn">show <span>{{modelType}}</span> example</paper-button>
     </iron-selector>
     <iron-pages class="flex" selected="{{selected}}">
     <div class="flex layout vertical">
-      <h2 class="paper-font-display1 flex self-center">Schema</h2>
+      <h2 class="paper-font-display1 flex self-center"><span>{{modelType}}</span> Schema</h2>
       <paper-material elevation="1" class=" flex self-center">
         <pre>
           <code id="schemaCode" class="json">
@@ -59,7 +59,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-material>
     </div>
     <div class="flex layout vertical">
-      <h2 class="paper-font-display1 flex self-center">Example</h2>
+      <h2 class="paper-font-display1 flex self-center"><span>{{modelType}}</span> Example</h2>
       <paper-material elevation-"1" class="flex self-center">
         <pre>
           <code id="exampleCode" class="json"></code>
@@ -67,19 +67,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-material>
     </div>
     </iron-pages>
-
   </template>
 </dom-module>
 <script>
 (function() {
   Polymer({
-    is: 'bb-model-main',
+    is: 'bb-model-element',
 
     properties: {
       foo: {
         type: String,
-        value: 'bb-model-main',
+        value: 'bar',
         notify: true
+      },
+      modelType: {
+        type: String,
+        notify: true,
+        reflectToAttribute: true
       }
     },
     schemaTextChanged:function(){
@@ -102,7 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // console.log(hljs)
     },
     ready: function(){
-      this.$.bb_model_api.modelType= "document";
+      this.$.bb_model_api.modelType= this.modelType;
       this.selected = "0";
       // this.$.bb_model_api.schemaUrl="elements/bb-models/model-document-schema.json"
       // this.$.bb_model_api.exampleUrl="elements/bb-models/model-document-example.json"

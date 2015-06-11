@@ -16,6 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../../bower_components/prism-element/prism-import.html">
+<link rel="import" href="../bb-models/bb-model-element.html">
 
 <dom-module id="our-bluebutton-datamodel">
   <style>
@@ -44,8 +45,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <prism-highlighter></prism-highlighter>
     <paper-material elevation="1">
       <iron-selector attr-for-selected="data-route" selected="{{selected}}" class="">
-        <paper-button data-route="main">Main</paper-button>
-        <paper-button data-route="shared_schemas">Shared Schemas</paper-button>
+        <paper-button data-route="document">Main</paper-button>
+        <paper-button data-route="shared">Shared Schemas</paper-button>
         <paper-button data-route="demographics">Demographics</paper-button>
         <paper-button data-route="allergies">Allergies</paper-button>
         <paper-button data-route="encounters">Encounters</paper-button>
@@ -54,15 +55,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-button data-route="problems">Problems</paper-button>
         <paper-button data-route="procedures">Procedures</paper-button>
         <paper-button data-route="results">Results</paper-button>
-        <paper-button data-route="social_history">Social History</paper-button>
-        <paper-button data-route="plan_of_care">Plan of Care</paper-button>
+        <paper-button data-route="social-history">Social History</paper-button>
+        <paper-button data-route="planofcare">Plan of Care</paper-button>
         <paper-button data-route="vitals">Vitals</paper-button>
         <paper-button data-route="payers">Payers</paper-button>
         <paper-button data-route="claims">Claims</paper-button>
       </iron-selector>
     </paper-material>
     <iron-pages attr-for-selected="id" selected="{{selected}}">
-      <bb-model-main id="main"></bb-model-main>
+      <template is="dom-repeat" items="{{modelTypes}}">
+        <bb-model-element id="{{item}}" model-type="{{item}}"></bb-model-element>
+      </template>
+      <!-- <bb-model-element id="main" modelType="document"></bb-model-element>
       <bb-model-shared-schemas id="shared_schemas"></bb-model-shared-schemas>
       <bb-model-demographics id="demographics"></bb-model-demographics>
       <bb-model-allergies id="allergies"></bb-model-allergies>
@@ -76,7 +80,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <bb-model-planofcare id="plan_of_care"></bb-model-planofcare>
       <bb-model-vitals id="vitals"></bb-model-vitals>
       <bb-model-payers id="payers"></bb-model-payers>
-      <bb-model-claims id="claims"></bb-model-claims>
+      <bb-model-claims id="claims"></bb-model-claims> -->
 
     </iron-pages>
     <!-- <div >Hello from <span>{{foo}}</span></div>
@@ -96,9 +100,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       selected:{
         type: String,
-        value: 'main',
+        value: 'document',
+        notify: true,
+      },
+      modelTypes:{
+        type: Array,
         notify: true,
       }
+    },
+    ready: function(){
+      this.modelTypes = [
+        "allergies", "claims", "demographics","encounters",
+        "immunizations","document","medications","payers",
+        "planofcare","problems","procedures","results","shared","social-history","vitals"];
     }
   });
 })();
