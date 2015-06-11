@@ -27,18 +27,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     iron-selector{
       @apply(--layout-horizontal);
       @apply(--layout-wrap);
-      /*@apply(--layout-center);*/
-      /*display:inline;*/
-    }
-    paper-item{
-      /*width: 200px;*/
     }
     paper-button.iron-selected{
       background: #dddddd;
-    }
-    paper-material{
-      /*width:50%;*/
-      /*max-width:200px;*/
     }
   </style>
   <template>
@@ -66,25 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <template is="dom-repeat" items="{{modelTypes}}">
         <bb-model-element id="{{item}}" model-type="{{item}}"></bb-model-element>
       </template>
-      <!-- <bb-model-element id="main" modelType="document"></bb-model-element>
-      <bb-model-shared-schemas id="shared_schemas"></bb-model-shared-schemas>
-      <bb-model-demographics id="demographics"></bb-model-demographics>
-      <bb-model-allergies id="allergies"></bb-model-allergies>
-      <bb-model-encounters id="encounters"></bb-model-encounters>
-      <bb-model-immunizations id="immunizations"></bb-model-immunizations>
-      <bb-model-medications id="medications"></bb-model-medications>
-      <bb-model-problems id="problems"></bb-model-problems>
-      <bb-model-procedures id="procedures"></bb-model-procedures>
-      <bb-model-results id="results"></bb-model-results>
-      <bb-model-social-history id="social_history"></bb-model-social-history>
-      <bb-model-planofcare id="plan_of_care"></bb-model-planofcare>
-      <bb-model-vitals id="vitals"></bb-model-vitals>
-      <bb-model-payers id="payers"></bb-model-payers>
-      <bb-model-claims id="claims"></bb-model-claims> -->
-
     </iron-pages>
-    <!-- <div >Hello from <span>{{foo}}</span></div>
-    <div>Hello from <span>{{foo}}</span></div> -->
   </template>
 </dom-module>
 <script>
