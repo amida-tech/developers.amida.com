@@ -17,46 +17,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
-      /*margin 16px 16px;*/
-      @apply(--layout-horizontal);
-    }
-    div{
-      @apply(--layout-flex);
+      margin: 16px 16px;
       @apply(--layout-vertical);
     }
     paper-material{
-      height:500px;
-      overflow-y:scroll;
+      width:900px;
       margin: 16px 16px;
-      padding: 8px 8px;class="paper-font-display2";
-      background: rgba(222,222,222,.8);
     }
-    h2{
-      @apply(--layout-center);
-      @apply(--layout-flex);
+    #exampleBtn.iron-selected{
+      color:white;
+      background:white;
+    }
+    #exampleBtn{
+      color:white;
+      background:#333333;
+    }
+    #schemaBtn.iron-selected{
+      color:white;
+      background:white;
+    }
+    #schemaBtn{
+      color:white;
+      background:#333333;
     }
   </style>
   <template>
     <bb-model-api id="bb_model_api">
     </bb-model-api>
-    <div>
-      <h2 class="paper-font-display2">Schema</h2>
-      <paper-material elevation="1">
+    <iron-selector class="layout horizontal  flex self-center" selected="{{selected}}">
+      <paper-button id="schemaBtn">show schema model</paper-button>
+      <paper-button id="exampleBtn">show example model</paper-button>
+    </iron-selector>
+    <iron-pages class="flex" selected="{{selected}}">
+    <div class="flex layout vertical">
+      <h2 class="paper-font-display1 flex self-center">Schema</h2>
+      <paper-material elevation="1" class=" flex self-center">
         <pre>
           <code id="schemaCode" class="json">
-
           </code>
         </pre>
       </paper-material>
     </div>
-    <div>
-      <h2 class="paper-font-display2">Example</h2>
-      <paper-material elevation-"1">
+    <div class="flex layout vertical">
+      <h2 class="paper-font-display1 flex self-center">Example</h2>
+      <paper-material elevation-"1" class="flex self-center">
         <pre>
           <code id="exampleCode" class="json"></code>
         </pre>
       </paper-material>
     </div>
+    </iron-pages>
 
   </template>
 </dom-module>
@@ -93,6 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     ready: function(){
       this.$.bb_model_api.modelType= "document";
+      this.selected = "0";
       // this.$.bb_model_api.schemaUrl="elements/bb-models/model-document-schema.json"
       // this.$.bb_model_api.exampleUrl="elements/bb-models/model-document-example.json"
     }
