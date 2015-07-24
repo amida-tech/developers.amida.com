@@ -24,7 +24,7 @@
     }, {
         "name": "storage"
     }],
-    "host": "latest.amida-demo.com:3000",
+    "host": "dre.amida-demo.com:3000",
     "basePath": "/api/v1",
     "schemes": [
         "http"
