@@ -1446,6 +1446,70 @@
                     "type": "integer"
                 }
             }
+        },
+        "deleteMedicationSchema": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "rxcuiSchema": {
+            "required": [
+                "rxcui"
+            ],
+            "properties": {
+                "rxcui": {
+                    "type": "string"
+                }
+            }
+        },
+        "rximageSchema": {
+            "required": [
+                "replyStatus",
+                "nlmRxImages"
+            ],
+            "properties": {
+                "replyStatus": {
+                    "type": "object"
+                },
+                "nlmRxImages": {
+                    "type": "array"
+                }
+            }
+        },
+        "mednameSchema": {
+            "required": [
+                "medname"
+            ],
+            "properties": {
+                "medname": {
+                    "type": "string"
+                }
+            }
+        },
+        "RxNormSchema": {
+            "required": [
+                "idGroup"
+            ],
+            "properties": {
+                "idGroup": {
+                    "type": "object"
+                }
+            }
+        },
+        "npiSchema": {
+            "required": [
+                "searchObj"
+            ],
+            "properties": {
+                "searchObj": {
+                    "type": "object"
+                }
+            }
         }
     }
 }
