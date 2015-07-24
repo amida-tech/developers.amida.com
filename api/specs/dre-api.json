@@ -920,6 +920,215 @@
                     }
                 }
             }
+        },
+        "/rximage": {
+            "post": {
+                "summary": "Look up image for an RxNorm code",
+                "description": "Retrieve image URL from NIH NLM RxImage database",
+                "tags": [
+                    "medapi"
+                ],
+                "parameters": [{
+                    "name": "RxCUI",
+                    "description": "RxNorm code",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/rxcuiSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get images",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/rximageSchema"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/rxnorm/name": {
+            "post": {
+                "summary": "Look up drug RxNorm code using name",
+                "description": "Retrieve RxCUI from RxNorm database",
+                "tags": [
+                    "medapi"
+                ],
+                "parameters": [{
+                    "name": "medname",
+                    "description": "drug name",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/mednameSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get RxNorm code",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/RxNormSchema"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/rxnorm/group": {
+            "post": {
+                "summary": "Look up multiple drugs in RxNorm database using name",
+                "description": "Retrieve RxCUI options from RxNorm database",
+                "tags": [
+                    "medapi"
+                ],
+                "parameters": [{
+                    "name": "medname",
+                    "description": "drug name",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/mednameSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get RxNorm code",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/openfda/name": {
+            "post": {
+                "summary": "Look up openFDA database",
+                "description": "Retrieve adverse events from openFDA.gov using drug name",
+                "tags": [
+                    "medapi"
+                ],
+                "parameters": [{
+                    "name": "medname",
+                    "description": "drug name",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/mednameSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get openFDA data",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/openfda/code": {
+            "post": {
+                "summary": "Look up openFDA database",
+                "description": "Retrieve adverse events from openFDA.gov using RxNorm code",
+                "tags": [
+                    "medapi"
+                ],
+                "parameters": [{
+                    "name": "rxcui",
+                    "description": "drug code",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/rxcuiSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get openFDA data",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/medlineplus": {
+            "post": {
+                "summary": "Look up drug information in MedlinePlus Connect",
+                "description": "Retrieve URLs for MedlinePlus information on drug using RxNorm code",
+                "tags": [
+                    "medapi"
+                ], 
+                "parameters": [{
+                    "name": "rxcui",
+                    "description": "drug code",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/rxcuiSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get MedlinePlus Connect URL",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/findnpi": {
+            "post": {
+                "summary": "Look up NPI information in bloomAPI",
+                "description": "Retrieve provider information",
+                "tags": [
+                    "npiapi"
+                ],
+                "parameters": [{
+                    "name": "searchObj",
+                    "description": "{'name':[{'first':'firstName', 'last':'lastName'}]}",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/npiSchema"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Get NPI data",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
         }
     },
     "definitions": {
