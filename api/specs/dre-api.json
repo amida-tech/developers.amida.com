@@ -176,24 +176,22 @@
             }
         },
         "/users": {
-            "post": {
-                "summary": "Check if username exists",
-                "description": "Check if username exists during registration",
-                "operationId": "checkUsername",
+            "get": {
+                "summary": "Retrieve list of users",
+                "description": "Retrieve list of all users",
+                "operationId": "getUsers",
                 "tags": [
                     "account"
                 ],
-                "parameters": [{
-                    "name": "username",
-                    "description": "Username",
-                    "in": "body",
-                    "type": "string",
-                    "required": true
-                }],
                 "responses": {
                     "200": {
-                        "description": "check if username exists",
-                        "type": "boolean"
+                        "description": "get list of users",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/userSchema"
+                            }
+                        }
                     }
                 }
             }
@@ -398,7 +396,7 @@
                     "description": "Defaults to CCDA format",
                     "in": "path",
                     "type": "string",
-                    "enum": [
+                    "enum":  [
                         "json",
                         "string"
                     ],
@@ -617,95 +615,6 @@
                 }
             }
         },
-        "/medications/all": {
-            "get": {
-                "summary": "Get all medications",
-                "description": "Retrieve all medications in chronological order",
-                "tags": [
-                    "medications"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Get all medications"
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/medications/add": {
-            "post": {
-                "summary": "Save a medication",
-                "description": "Add and save a new medication",
-                "tags": [
-                    "medications"
-                ],
-                "parameters": [{
-                    "name": "Medication",
-                    "description": "New medication entry",
-                    "in": "body",
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Medication added to account"
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/medications/edit": {
-            "post": {
-                "summary": "Edit a medication",
-                "description": "Edit a current medication",
-                "tags": [
-                    "medications"
-                ],
-                "parameters": [{
-                    "name": "Medication",
-                    "description": "Updated medication entry",
-                    "in": "body",
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Edited medication"
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/medications/delete": {
-            "post": {
-                "summary": "Delete a medication",
-                "description": "Delete a medication by its ID",
-                "tags": [
-                    "medications"
-                ],
-                "parameters": [{
-                    "name": "Medication ID",
-                    "description": "Medication identifier",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/deleteMedicationSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Medication successfully deleted"
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
         "/merges": {
             "get": {
                 "summary": "Get all merges",
@@ -914,215 +823,6 @@
                 "responses": {
                     "200": {
                         "description": "Note successfully deleted"
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/rximage": {
-            "post": {
-                "summary": "Look up image for an RxNorm code",
-                "description": "Retrieve image URL from NIH NLM RxImage database",
-                "tags": [
-                    "medapi"
-                ],
-                "parameters": [{
-                    "name": "RxCUI",
-                    "description": "RxNorm code",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/rxcuiSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get images",
-                        "schema": {
-                            "type": "object",
-                            "items": {
-                                "$ref": "#/definitions/rximageSchema"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/rxnorm/name": {
-            "post": {
-                "summary": "Look up drug RxNorm code using name",
-                "description": "Retrieve RxCUI from RxNorm database",
-                "tags": [
-                    "medapi"
-                ],
-                "parameters": [{
-                    "name": "medname",
-                    "description": "drug name",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/mednameSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get RxNorm code",
-                        "schema": {
-                            "type": "object",
-                            "items": {
-                                "$ref": "#/definitions/RxNormSchema"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/rxnorm/group": {
-            "post": {
-                "summary": "Look up multiple drugs in RxNorm database using name",
-                "description": "Retrieve RxCUI options from RxNorm database",
-                "tags": [
-                    "medapi"
-                ],
-                "parameters": [{
-                    "name": "medname",
-                    "description": "drug name",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/mednameSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get RxNorm code",
-                        "schema": {
-                            "type": "object"
-                        }
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/openfda/name": {
-            "post": {
-                "summary": "Look up openFDA database",
-                "description": "Retrieve adverse events from openFDA.gov using drug name",
-                "tags": [
-                    "medapi"
-                ],
-                "parameters": [{
-                    "name": "medname",
-                    "description": "drug name",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/mednameSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get openFDA data",
-                        "schema": {
-                            "type": "object"
-                        }
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/openfda/code": {
-            "post": {
-                "summary": "Look up openFDA database",
-                "description": "Retrieve adverse events from openFDA.gov using RxNorm code",
-                "tags": [
-                    "medapi"
-                ],
-                "parameters": [{
-                    "name": "rxcui",
-                    "description": "drug code",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/rxcuiSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get openFDA data",
-                        "schema": {
-                            "type": "object"
-                        }
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/medlineplus": {
-            "post": {
-                "summary": "Look up drug information in MedlinePlus Connect",
-                "description": "Retrieve URLs for MedlinePlus information on drug using RxNorm code",
-                "tags": [
-                    "medapi"
-                ], 
-                "parameters": [{
-                    "name": "rxcui",
-                    "description": "drug code",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/rxcuiSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get MedlinePlus Connect URL",
-                        "schema": {
-                            "type": "object"
-                        }
-                    },
-                    "400": {
-                        "description": "Error"
-                    }
-                }
-            }
-        },
-        "/findnpi": {
-            "post": {
-                "summary": "Look up NPI information in bloomAPI",
-                "description": "Retrieve provider information",
-                "tags": [
-                    "npiapi"
-                ],
-                "parameters": [{
-                    "name": "searchObj",
-                    "description": "{'name':[{'first':'firstName', 'last':'lastName'}]}",
-                    "in": "body",
-                    "schema": {
-                        "$ref": "#/definitions/npiSchema"
-                    },
-                    "required": true
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Get NPI data",
-                        "schema": {
-                            "type": "object"
-                        }
                     },
                     "400": {
                         "description": "Error"
@@ -1444,70 +1144,6 @@
                 },
                 "file_count": {
                     "type": "integer"
-                }
-            }
-        },
-        "deleteMedicationSchema": {
-            "required": [
-                "id"
-            ],
-            "properties": {
-                "id": {
-                    "type": "string"
-                }
-            }
-        },
-        "rxcuiSchema": {
-            "required": [
-                "rxcui"
-            ],
-            "properties": {
-                "rxcui": {
-                    "type": "string"
-                }
-            }
-        },
-        "rximageSchema": {
-            "required": [
-                "replyStatus",
-                "nlmRxImages"
-            ],
-            "properties": {
-                "replyStatus": {
-                    "type": "object"
-                },
-                "nlmRxImages": {
-                    "type": "array"
-                }
-            }
-        },
-        "mednameSchema": {
-            "required": [
-                "medname"
-            ],
-            "properties": {
-                "medname": {
-                    "type": "string"
-                }
-            }
-        },
-        "RxNormSchema": {
-            "required": [
-                "idGroup"
-            ],
-            "properties": {
-                "idGroup": {
-                    "type": "object"
-                }
-            }
-        },
-        "npiSchema": {
-            "required": [
-                "searchObj"
-            ],
-            "properties": {
-                "searchObj": {
-                    "type": "object"
                 }
             }
         }
