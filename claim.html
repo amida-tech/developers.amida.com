@@ -134,10 +134,10 @@ body {
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/index.html">
-		        <img style="max-width:100px; margin-top: -7px;"
-		             src="./logo-retina.png">
+            <img style="max-width:100px; margin-top: -7px;"
+                 src="./logo-retina.png">
 
-		             &nbsp; Developers</a>
+                 &nbsp; Developers</a>
 
         </div>
         <!--div class="navbar-collapse collapse">
@@ -158,12 +158,14 @@ body {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-                  <h3>Blue Button (JSON) Data Model </h3>
+                    <h3>Blue Button (JSON) Data Model </h3>
           <ul class="nav nav-sidebar">
             
                <li><a href="document_model.html">Main</a></li>
             
                <li><a href="common_models.html">Shared Schemas</a></li>
+            
+               <li><a href="header.html">Document Header</a></li>
             
                <li><a href="demographics.html">Demographics</a></li>
             
@@ -244,7 +246,7 @@ body {
                 "$ref": "cda_phone"
             }
         },
-        "performer": {
+        "performers": {
             "type": "array",
             "items": {
                 "$ref": "cda_performer"
@@ -377,7 +379,7 @@ body {
                         },
                         "additionalProperties": false
                     },
-                    "performer": {
+                    "performers": {
                         "type": "array",
                         "items": {
                             "$ref": "cda_performer"
@@ -483,7 +485,7 @@ body {
                 "code": "1",
                 "name": "Medical Care"
             },
-            "performer": [
+            "performers": [
                 {
                     "type": "rendering provider",
                     "identifiers": [

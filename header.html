@@ -199,148 +199,79 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
-    "id": "problems",
-    "type": "array",
-    "items": {
-        "$ref": "problem"
-    }
-}
-
-{
-    "id": "problem",
+    "id": "header",
     "type": "object",
     "properties": {
+        "identifiers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "cda_id"
+            }
+        },
         "date_time": {
             "$ref": "cda_date"
         },
-        "identifiers": {
+        "confidentiality_code": {
+            "$ref": "cda_coded_entry"
+        },
+        "code": {
+            "$ref": "cda_coded_entry"
+        },
+        "template": {
             "type": "array",
             "items": {
-                "$ref": "cda_id"
+                "type": "string"
             }
         },
-        "problem": {
+        "title": {
+            "type": "string"
+        },
+        "author": {
             "type": "object",
             "properties": {
+                "date_time": {
+                    "$ref": "cda_date"
+                },
+                "author": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_performer"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "data_enterer": {
+            "$ref": "cda_performer"
+        },
+        "informant": {
+            "$ref": "cda_performer"
+        },
+        "custodian": {
+            "$ref": "cda_performer"
+        },
+        "service_event": {
+            "type": "object",
+            "properties": {
+                "date_time": {
+                    "$ref": "cda_date"
+                },
                 "code": {
                     "$ref": "cda_coded_entry"
                 },
-                "date_time": {
-                    "$ref": "cda_date"
-                },
-                "severity": {
-                    "type": "object",
-                    "properties": {
-                        "code": {
-                            "$ref": "cda_coded_entry"
-                        },
-                        "interpretation": {
-                            "$ref": "cda_coded_entry"
-                        }
-                    },
-                    "additionalProperties": false
+                "performer": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_performer"
+                    }
                 }
             },
             "additionalProperties": false
-        },
-        "negation_indicator": {
-            "type": "boolean"
-        },
-        "onset_age": {
-            "type": "string"
-        },
-        "onset_age_unit": {
-            "type": "string"
-        },
-        "patient_status": {
-            "type": "string"
-        },
-        "status": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "date_time": {
-                    "$ref": "cda_date"
-                }
-            },
-            "additionalProperties": false
-        },
-        "source_list_identifiers": {
-            "type": "array",
-            "items": {
-                "$ref": "cda_id"
-            }
         }
     },
     "additionalProperties": false,
     "required": [
-        "problem"
+        "title"
     ]
-}</code></pre></div><div class="col-sm-6"><h2>Example (problem)</h2><pre><code class="json" style="font-size:10px;">{
-    "date_time": {
-        "low": {
-            "date": "2008-01-03T00:00:00.000Z",
-            "precision": "day"
-        },
-        "high": {
-            "date": "2008-01-03T00:00:00.000Z",
-            "precision": "day"
-        }
-    },
-    "identifiers": [
-        {
-            "identifier": "ab1791b0-5c71-11db-b0de-0800200c9a66"
-        }
-    ],
-    "problem": {
-        "code": {
-            "name": "Pneumonia",
-            "code": "233604007",
-            "code_system_name": "SNOMED CT"
-        },
-        "date_time": {
-            "low": {
-                "date": "2008-01-03T00:00:00.000Z",
-                "precision": "day"
-            },
-            "high": {
-                "date": "2008-01-03T00:00:00.000Z",
-                "precision": "day"
-            }
-        }
-    },
-    "onset_age": "57",
-    "onset_age_unit": "Year",
-    "status": {
-        "name": "Resolved",
-        "date_time": {
-            "low": {
-                "date": "2008-01-03T00:00:00.000Z",
-                "precision": "day"
-            },
-            "high": {
-                "date": "2009-02-27T08:00:00.000Z",
-                "precision": "second"
-            }
-        }
-    },
-    "patient_status": "Alive and well",
-    "source_list_identifiers": [
-        {
-            "identifier": "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
-        }
-    ]
-}</code></pre></div></div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+}</code></pre></div>

@@ -134,10 +134,10 @@ body {
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/index.html">
-		        <img style="max-width:100px; margin-top: -7px;"
-		             src="./logo-retina.png">
+            <img style="max-width:100px; margin-top: -7px;"
+                 src="./logo-retina.png">
 
-		             &nbsp; Developers</a>
+                 &nbsp; Developers</a>
 
         </div>
         <!--div class="navbar-collapse collapse">
@@ -158,39 +158,41 @@ body {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-                  <h3>Blue Button (JSON) Data Model </h3>
+                    <h3>Blue Button (JSON) Data Model </h3>
           <ul class="nav nav-sidebar">
-
+            
                <li><a href="document_model.html">Main</a></li>
-
+            
                <li><a href="common_models.html">Shared Schemas</a></li>
-
+            
+               <li><a href="header.html">Document Header</a></li>
+            
                <li><a href="demographics.html">Demographics</a></li>
-
+            
                <li><a href="allergy.html">Allergies</a></li>
-
+            
                <li><a href="encounter.html">Encounters</a></li>
-
+            
                <li><a href="immunization.html">Immunizations</a></li>
-
+            
                <li><a href="medication.html">Medications</a></li>
-
+            
                <li><a href="problem.html">Problems</a></li>
-
+            
                <li><a href="procedure.html">Procedures</a></li>
-
+            
                <li><a href="result.html">Results</a></li>
-
+            
                <li><a href="social_history_entry.html">Social History</a></li>
-
+            
                <li><a href="plan_of_care_entry.html">Plan of Care</a></li>
-
+            
                <li><a href="vital.html">Vitals</a></li>
-
+            
                <li><a href="payer.html">Payers</a></li>
-
+            
                <li><a href="claim.html">Claims</a></li>
-
+                      
           </ul>
 
         </div>
@@ -352,7 +354,11 @@ body {
             "precision": "day"
         }
     },
-    "gender": "Female",
+    "gender": {
+        "name": "Female",
+        "code": "F",
+        "code_system_name": "HL7 AdministrativeGender"
+    },
     "identifiers": [
         {
             "identifier": "2.16.840.1.113883.19.5.99999.2",
@@ -363,7 +369,11 @@ body {
             "extension": "111-00-2330"
         }
     ],
-    "marital_status": "Married",
+    "marital_status": {
+        "name": "Married",
+        "code": "M",
+        "code_system_name": "HL7 Marital Status"
+    },
     "addresses": [
         {
             "street_lines": [
@@ -382,17 +392,39 @@ body {
             "type": "primary home"
         }
     ],
-    "race": "White",
-    "ethnicity": "Not Hispanic or Latino",
+    "race": {
+        "name": "White",
+        "code": "2106-3",
+        "code_system_name": "Race and Ethnicity - CDC"
+    },
+    "ethnicity": {
+        "name": "Not Hispanic or Latino",
+        "code": "2186-5",
+        "code_system_name": "Race and Ethnicity - CDC"
+    },
     "languages": [
         {
-            "language": "en",
+            "language": {
+                "code": "en"
+            },
             "preferred": true,
-            "mode": "Expressed spoken",
-            "proficiency": "Good"
+            "mode": {
+                "name": "Expressed spoken",
+                "code": "ESP",
+                "code_system_name": "LanguageAbilityMode"
+            },
+            "proficiency": {
+                "name": "Good",
+                "code": "G",
+                "code_system_name": "LanguageAbilityProficiency"
+            }
         }
     ],
-    "religion": "Christian (non-Catholic, non-specific)",
+    "religion": {
+        "name": "Christian (non-Catholic, non-specific)",
+        "code": "1013",
+        "code_system_name": "HL7 Religious Affiliation"
+    },
     "birthplace": {
         "city": "Beaverton",
         "state": "OR",
@@ -401,7 +433,11 @@ body {
     },
     "guardians": [
         {
-            "relation": "Parent",
+            "relation": {
+                "name": "Parent",
+                "code": "PRN",
+                "code_system_name": "HL7 Role"
+            },
             "addresses": [
                 {
                     "street_lines": [
