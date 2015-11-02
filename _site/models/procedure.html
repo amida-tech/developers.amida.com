@@ -164,6 +164,8 @@ body {
             
                <li><a href="common_models.html">Shared Schemas</a></li>
             
+               <li><a href="header.html">Document Header</a></li>
+            
                <li><a href="demographics.html">Demographics</a></li>
             
                <li><a href="allergy.html">Allergies</a></li>
@@ -251,7 +253,7 @@ body {
         "status": {
             "type": "string"
         },
-        "performer": {
+        "performers": {
             "type": "array",
             "items": {
                 "$ref": "cda_performer"
@@ -305,7 +307,7 @@ body {
             "code_system_name": "SNOMED CT"
         }
     },
-    "performer": [
+    "performers": [
         {
             "identifiers": [
                 {

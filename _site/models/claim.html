@@ -164,6 +164,8 @@ body {
             
                <li><a href="common_models.html">Shared Schemas</a></li>
             
+               <li><a href="header.html">Document Header</a></li>
+            
                <li><a href="demographics.html">Demographics</a></li>
             
                <li><a href="allergy.html">Allergies</a></li>
@@ -243,7 +245,7 @@ body {
                 "$ref": "cda_phone"
             }
         },
-        "performer": {
+        "performers": {
             "type": "array",
             "items": {
                 "$ref": "cda_performer"
@@ -376,7 +378,7 @@ body {
                         },
                         "additionalProperties": false
                     },
-                    "performer": {
+                    "performers": {
                         "type": "array",
                         "items": {
                             "$ref": "cda_performer"
@@ -482,7 +484,7 @@ body {
                 "code": "1",
                 "name": "Medical Care"
             },
-            "performer": [
+            "performers": [
                 {
                     "type": "rendering provider",
                     "identifiers": [

@@ -164,6 +164,8 @@ body {
             
                <li><a href="common_models.html">Shared Schemas</a></li>
             
+               <li><a href="header.html">Document Header</a></li>
+            
                <li><a href="demographics.html">Demographics</a></li>
             
                <li><a href="allergy.html">Allergies</a></li>
@@ -237,7 +239,10 @@ body {
                 "$ref": "cda_email"
             }
         },
-        "race_ethnicity": {
+        "race": {
+            "type": "string"
+        },
+        "ethnicity": {
             "type": "string"
         },
         "religion": {
@@ -348,7 +353,11 @@ body {
             "precision": "day"
         }
     },
-    "gender": "Female",
+    "gender": {
+        "name": "Female",
+        "code": "F",
+        "code_system_name": "HL7 AdministrativeGender"
+    },
     "identifiers": [
         {
             "identifier": "2.16.840.1.113883.19.5.99999.2",
@@ -359,7 +368,11 @@ body {
             "extension": "111-00-2330"
         }
     ],
-    "marital_status": "Married",
+    "marital_status": {
+        "name": "Married",
+        "code": "M",
+        "code_system_name": "HL7 Marital Status"
+    },
     "addresses": [
         {
             "street_lines": [
@@ -378,16 +391,39 @@ body {
             "type": "primary home"
         }
     ],
-    "race_ethnicity": "White",
+    "race": {
+        "name": "White",
+        "code": "2106-3",
+        "code_system_name": "Race and Ethnicity - CDC"
+    },
+    "ethnicity": {
+        "name": "Not Hispanic or Latino",
+        "code": "2186-5",
+        "code_system_name": "Race and Ethnicity - CDC"
+    },
     "languages": [
         {
-            "language": "en",
+            "language": {
+                "code": "en"
+            },
             "preferred": true,
-            "mode": "Expressed spoken",
-            "proficiency": "Good"
+            "mode": {
+                "name": "Expressed spoken",
+                "code": "ESP",
+                "code_system_name": "LanguageAbilityMode"
+            },
+            "proficiency": {
+                "name": "Good",
+                "code": "G",
+                "code_system_name": "LanguageAbilityProficiency"
+            }
         }
     ],
-    "religion": "Christian (non-Catholic, non-specific)",
+    "religion": {
+        "name": "Christian (non-Catholic, non-specific)",
+        "code": "1013",
+        "code_system_name": "HL7 Religious Affiliation"
+    },
     "birthplace": {
         "city": "Beaverton",
         "state": "OR",
@@ -396,7 +432,11 @@ body {
     },
     "guardians": [
         {
-            "relation": "Parent",
+            "relation": {
+                "name": "Parent",
+                "code": "PRN",
+                "code_system_name": "HL7 Role"
+            },
             "addresses": [
                 {
                     "street_lines": [

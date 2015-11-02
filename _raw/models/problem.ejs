@@ -27,6 +27,18 @@
                 },
                 "date_time": {
                     "$ref": "cda_date"
+                },
+                "severity": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "$ref": "cda_coded_entry"
+                        },
+                        "interpretation": {
+                            "$ref": "cda_coded_entry"
+                        }
+                    },
+                    "additionalProperties": false
                 }
             },
             "additionalProperties": false
@@ -46,13 +58,14 @@
         "status": {
             "type": "object",
             "properties": {
-                "code": {
+                "name": {
                     "type": "string"
                 },
-                "status": {
-                    "type": "string"
+                "date_time": {
+                    "$ref": "cda_date"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "source_list_identifiers": {
             "type": "array",

@@ -198,68 +198,79 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
-    "id": "plan_of_care",
-    "type": "array",
-    "items": {
-        "$ref": "plan_of_care_entry"
-    }
-}
-
-{
-    "id": "plan_of_care_entry",
+    "id": "header",
     "type": "object",
     "properties": {
-        "plan": {
-            "$ref": "cda_coded_entry"
-        },
-        "type": {
-            "type": "string"
+        "identifiers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "cda_id"
+            }
         },
         "date_time": {
             "$ref": "cda_date"
         },
-        "identifiers": {
+        "confidentiality_code": {
+            "$ref": "cda_coded_entry"
+        },
+        "code": {
+            "$ref": "cda_coded_entry"
+        },
+        "template": {
             "type": "array",
             "items": {
-                "$ref": "cda_id"
-            },
-            "minItems": 1
+                "type": "string"
+            }
         },
-        "status": {
+        "title": {
             "type": "string"
+        },
+        "author": {
+            "type": "object",
+            "properties": {
+                "date_time": {
+                    "$ref": "cda_date"
+                },
+                "author": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_performer"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "data_enterer": {
+            "$ref": "cda_performer"
+        },
+        "informant": {
+            "$ref": "cda_performer"
+        },
+        "custodian": {
+            "$ref": "cda_performer"
+        },
+        "service_event": {
+            "type": "object",
+            "properties": {
+                "date_time": {
+                    "$ref": "cda_date"
+                },
+                "code": {
+                    "$ref": "cda_coded_entry"
+                },
+                "performer": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "cda_performer"
+                    }
+                }
+            },
+            "additionalProperties": false
         }
     },
+    "additionalProperties": false,
     "required": [
-        "type"
-    ],
-    "additionalProperties": false
-}</code></pre></div><div class="col-sm-6"><h2>Example (plan_of_care_entry)</h2><pre><code class="json" style="font-size:10px;">{
-    "plan": {
-        "name": "Colonoscopy",
-        "code": "73761001",
-        "code_system_name": "SNOMED CT"
-    },
-    "identifiers": [
-        {
-            "identifier": "9a6d1bac-17d3-4195-89a4-1121bc809b4a"
-        }
-    ],
-    "date_time": {
-        "center": {
-            "date": "2012-05-12T00:00:00.000Z",
-            "precision": "day"
-        }
-    },
-    "type": "observation"
-}</code></pre></div></div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+        "title"
+    ]
+}</code></pre></div>

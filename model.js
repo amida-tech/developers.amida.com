@@ -9,6 +9,7 @@ var bbm = require('blue-button-model');
 meta.supported_sections = [
     {"id":"document_model", "title":"Main", "section":""},
     {"id":"common_models", "title":"Shared Schemas", "section":""},
+    {"id":"header", "title":"Document Header", "section":""},
     {"id":"demographics", "title":"Demographics", "section":"demographics"},
     {"id":"allergy", "title":"Allergies", "section":"allergies"},
     {"id":"encounter", "title":"Encounters", "section":"encounters"},
