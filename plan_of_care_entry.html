@@ -227,7 +227,7 @@ body {
             "minItems": 1
         },
         "status": {
-            "type": "string"
+            "$ref": "cda_coded_entry"
         }
     },
     "required": [
@@ -251,7 +251,10 @@ body {
             "precision": "day"
         }
     },
-    "type": "observation"
+    "type": "observation",
+    "status": {
+        "code": "new"
+    }
 }</code></pre></div></div>
         </div>
       </div>
