@@ -27,7 +27,14 @@
     "blue-button-model": "~1.8.0-beta.2",
     "escape-html": "^1.0.1",
     "marked": "^0.3.2",
-    "pretty-data": "^0.40.0"
+    "pretty-data": "^0.40.0",
+
+    "grunt": "0.4.x",
+    "grunt-env": "^0.4.4",
+    "grunt-exec": "^0.4.6",
+    "grunt-gh-pages": "^0.10.0",
+    "load-grunt-tasks": "^3.2.0"
+
   },
   "dependencies": {
     "ejs": "^1.0.0"

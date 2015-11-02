@@ -1,0 +1,324 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "claims",
+    "type": "array",
+    "items": {
+        "$ref": "claim"
+    }
+}
+
+{
+    "id": "claim",
+    "type": "object",
+    "properties": {
+        "number": {
+            "type": "string"
+        },
+        "diagnosis": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_coded_entry"
+            }
+        },
+        "name": {
+            "type": "string"
+        },
+        "payer": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "date_time": {
+            "$ref": "cda_date"
+        },
+        "service": {
+            "type": "string"
+        },
+        "type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "phone": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_phone"
+            }
+        },
+        "performers": {
+            "type": "array",
+            "items": {
+                "$ref": "cda_performer"
+            }
+        },
+        "charges": {
+            "type": "object",
+            "properties": {
+                "insurance_paid": {
+                    "type": "string"
+                },
+                "negotiated_price": {
+                    "type": "string"
+                },
+                "patient_responsibility": {
+                    "type": "string"
+                },
+                "price_billed": {
+                    "type": "string"
+                },
+                "provider_paid": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "lines": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "line": {
+                        "type": "string"
+                    },
+                    "charges": {
+                        "type": "object",
+                        "properties": {
+                            "insurance_paid": {
+                                "type": "string"
+                            },
+                            "negotiated_price": {
+                                "type": "string"
+                            },
+                            "patient_responsibility": {
+                                "type": "string"
+                            },
+                            "price_billed": {
+                                "type": "string"
+                            },
+                            "provider_paid": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "drug": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "modifier": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "number": {
+                        "type": "string"
+                    },
+                    "place_of_service": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "procedure": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "quantity": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "number"
+                            },
+                            "unit": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "performers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "cda_performer"
+                        }
+                    },
+                    "revenue": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "date_time": {
+                        "$ref": "cda_date"
+                    },
+                    "type": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "type_of_service_code": {
+                        "type": "string"
+                    },
+                    "type_of_service": {
+                        "type": "number"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false
+}</code></pre></div><div class="col-sm-6"><h2>Example (claim)</h2><pre><code class="json" style="font-size:10px;">{
+    "payer": [
+        "medicare"
+    ],
+    "number": "1234567890000",
+    "date_time": {
+        "low": {
+            "date": "2012-10-18T00:00:00.000Z",
+            "precision": "day"
+        },
+        "high": {
+            "date": "2012-10-18T00:00:00.000Z",
+            "precision": "day"
+        }
+    },
+    "lines": [
+        {
+            "line": "1",
+            "date_time": {
+                "low": {
+                    "date": "2012-10-18T00:00:00.000Z",
+                    "precision": "day"
+                },
+                "high": {
+                    "date": "2012-10-18T00:00:00.000Z",
+                    "precision": "day"
+                }
+            },
+            "procedure": {
+                "code": "98941",
+                "description": "Chiropractic Manipulative Treatment (Cmt); Spinal, Three To Four Regions"
+            },
+            "quantity": {
+                "value": 1,
+                "unit": "line"
+            },
+            "modifier": [
+                {
+                    "code": "AT",
+                    "description": "Acute Treatment (This Modifier Should Be Used When Reporting Service 98940, 98941, 98942)"
+                }
+            ],
+            "charges": {
+                "price_billed": "$60.00",
+                "insurance_paid": "$34.00",
+                "patient_responsibility": "$26.00"
+            },
+            "place_of_service": {
+                "code": "11",
+                "name": "Office"
+            },
+            "type": {
+                "code": "1",
+                "name": "Medical Care"
+            },
+            "performers": [
+                {
+                    "type": "rendering provider",
+                    "identifiers": [
+                        {
+                            "identifier": "2.16.840.1.113883.4.6",
+                            "extension": "123456789"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "charges": {
+        "price_billed": "$60.00",
+        "insurance_paid": "$34.00",
+        "provider_paid": "$27.20",
+        "patient_responsibility": "$6.80"
+    },
+    "type": [
+        "medicare PartB"
+    ],
+    "diagnosis": [
+        {
+            "code": "3534"
+        },
+        {
+            "code": "7393"
+        },
+        {
+            "code": "7392"
+        },
+        {
+            "code": "3533"
+        }
+    ]
+}</code></pre></div></div><% include _templates/foot %>

@@ -1,5 +1,208 @@
 {
     "data": {
+        "header": {
+            "identifiers": [{
+                "identifier": "2.16.840.1.113883.19.5.99999.1",
+                "extension": "TT988"
+            }],
+            "confidentiality_code": {
+                "code": "N",
+                "name": "Normal",
+                "code_system_name": "Confidentiality Code"
+            },
+            "code": {
+                "name": "Summarization of Episode Note",
+                "code": "34133-9",
+                "code_system_name": "LOINC"
+            },
+            "template": [
+                "2.16.840.1.113883.10.20.22.1.1",
+                "2.16.840.1.113883.10.20.22.1.2"
+            ],
+            "title": "Community Health and Hospitals: Health Summary",
+            "date_time": {
+                "point": {
+                    "date": "2012-09-15T04:00:00.000Z",
+                    "precision": "minute"
+                }
+            },
+            "author": {
+                "author": [{
+                    "identifiers": [{
+                        "identifier": "2.16.840.1.113883.4.6",
+                        "extension": "99999999"
+                    }],
+                    "name": [{
+                        "last": "Seven",
+                        "first": "Henry"
+                    }],
+                    "address": [{
+                        "street_lines": [
+                            "1002 Healthcare Drive"
+                        ],
+                        "city": "Portland",
+                        "state": "OR",
+                        "zip": "99123",
+                        "country": "US"
+                    }],
+                    "phone": [{
+                        "number": "555-555-1002",
+                        "type": "work place"
+                    }],
+                    "code": [{
+                        "name": "Allopathic & Osteopathic Physicians",
+                        "code": "200000000X"
+                    }]
+                }],
+                "date_time": {
+                    "point": {
+                        "date": "2005-03-29T17:44:11.000Z",
+                        "precision": "second"
+                    }
+                }
+            },
+            "data_enterer": {
+                "identifiers": [{
+                    "identifier": "2.16.840.1.113883.4.6",
+                    "extension": "999999943252"
+                }],
+                "name": [{
+                    "last": "Seven",
+                    "first": "Henry"
+                }],
+                "address": [{
+                    "street_lines": [
+                        "1001 Village Avenue"
+                    ],
+                    "city": "Portland",
+                    "state": "OR",
+                    "zip": "99123",
+                    "country": "US"
+                }],
+                "phone": [{
+                    "number": "555-555-1002",
+                    "type": "work place"
+                }]
+            },
+            "informant": {
+                "identifiers": [{
+                    "identifier": "2.16.840.1.113883.19.5",
+                    "extension": "KP00017"
+                }],
+                "name": [{
+                    "last": "Seven",
+                    "first": "Henry"
+                }],
+                "address": [{
+                    "street_lines": [
+                        "1001 Village Avenue"
+                    ],
+                    "city": "Portland",
+                    "state": "OR",
+                    "zip": "99123",
+                    "country": "US"
+                }],
+                "phone": [{
+                    "number": "555-555-1002",
+                    "type": "work place"
+                }]
+            },
+            "custodian": {
+                "identifiers": [{
+                    "identifier": "2.16.840.1.113883.4.6",
+                    "extension": "99999999"
+                }],
+                "name": [
+                    "Community Health and Hospitals"
+                ],
+                "address": [{
+                    "street_lines": [
+                        "1002 Healthcare Drive"
+                    ],
+                    "city": "Portland",
+                    "state": "OR",
+                    "zip": "99123",
+                    "country": "US",
+                    "use": "work place"
+                }],
+                "phone": [{
+                    "number": " 555-555-1002",
+                    "type": "work place"
+                }]
+            },
+            "service_event": {
+                "code": {
+                    "name": "Colonoscopy",
+                    "code": "73761001",
+                    "code_system_name": "SNOMED CT"
+                },
+                "date_time": {
+                    "low": {
+                        "date": "2012-09-08T04:00:00.000Z",
+                        "precision": "minute"
+                    },
+                    "high": {
+                        "date": "2012-09-15T04:00:00.000Z",
+                        "precision": "minute"
+                    }
+                },
+                "performer": [{
+                    "identifiers": [{
+                        "identifier": "2.16.840.1.113883.4.6",
+                        "extension": "PseudoMD-1"
+                    }],
+                    "name": [{
+                        "prefix": "Dr.",
+                        "last": "Seven",
+                        "first": "Henry"
+                    }],
+                    "address": [{
+                        "street_lines": [
+                            "1001 Village Avenue"
+                        ],
+                        "city": "Portland",
+                        "state": "OR",
+                        "zip": "99123",
+                        "country": "US"
+                    }],
+                    "phone": [{
+                        "number": "+1-555-555-5000",
+                        "type": "primary home"
+                    }],
+                    "organization": [{
+                        "identifiers": [{
+                            "identifier": "2.16.840.1.113883.19.5.9999.1393"
+                        }],
+                        "name": [
+                            "Community Health and Hospitals"
+                        ],
+                        "address": [{
+                            "street_lines": [
+                                "1001 Village Avenue"
+                            ],
+                            "city": "Portland",
+                            "state": "OR",
+                            "zip": "99123",
+                            "country": "US"
+                        }],
+                        "phone": [{
+                            "number": "+1-555-555-5000",
+                            "type": "primary home"
+                        }]
+                    }],
+                    "code": [{
+                        "name": "Gastroenterologist",
+                        "code": "207RG0100X",
+                        "code_system_name": "Provider Codes"
+                    }]
+                }],
+                "code": {
+                    "name": "Primary Performer",
+                    "code": "PP",
+                    "code_system_name": "Provider Role"
+                }
+            }
+        },
         "demographics": {
             "name": {
                 "middle": [
