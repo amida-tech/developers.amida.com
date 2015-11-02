@@ -471,9 +471,9 @@ body {
                         "precision": "minute"
                     }
                 },
-                "performers": [
+                "performer": [
                     {
-                        "performers": [
+                        "performer": [
                             {
                                 "identifiers": [
                                     {
@@ -543,13 +543,11 @@ body {
                                 ]
                             }
                         ],
-                        "code": [
-                            {
-                                "name": "Primary Performer",
-                                "code": "PP",
-                                "code_system_name": "Provider Role"
-                            }
-                        ]
+                        "code": {
+                            "name": "Primary Performer",
+                            "code": "PP",
+                            "code_system_name": "Provider Role"
+                        }
                     }
                 ]
             }
@@ -2571,7 +2569,7 @@ body {
         ]
     },
     "meta": {
-        "version": "1.8.0-beta.3",
+        "version": "1.8.0-beta.4",
         "identifiers": [
             {
                 "identifier": "2.16.840.1.113883.19.5.99999.1",

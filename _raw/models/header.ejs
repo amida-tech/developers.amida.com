@@ -63,7 +63,18 @@
                 "performer": {
                     "type": "array",
                     "items": {
-                        "$ref": "cda_performer"
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "$ref": "cda_coded_entry"
+                            },
+                            "performer": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "cda_performer"
+                                }
+                            }
+                        }
                     }
                 }
             },

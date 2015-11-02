@@ -9,7 +9,7 @@
             "$ref": "cda_date"
         },
         "gender": {
-            "type": "string"
+            "$ref": "cda_coded_entry"
         },
         "identifiers": {
             "type": "array",
@@ -19,7 +19,7 @@
             }
         },
         "marital_status": {
-            "type": "string"
+            "$ref": "cda_coded_entry"
         },
         "addresses": {
             "type": "array",
@@ -41,13 +41,13 @@
             }
         },
         "race": {
-            "type": "string"
+            "$ref": "cda_coded_entry"
         },
         "ethnicity": {
-            "type": "string"
+            "$ref": "cda_coded_entry"
         },
         "religion": {
-            "type": "string"
+            "$ref": "cda_coded_entry"
         },
         "birthplace": {
             "type": "object",
@@ -99,7 +99,7 @@
                         }
                     },
                     "relation": {
-                        "type": "string"
+                        "$ref": "cda_coded_entry"
                     }
                 },
                 "required": [
@@ -116,16 +116,16 @@
                 "type": "object",
                 "properties": {
                     "language": {
-                        "type": "string"
+                        "$ref": "cda_coded_entry"
                     },
                     "mode": {
-                        "type": "string"
+                        "$ref": "cda_coded_entry"
                     },
                     "preferred": {
                         "type": "boolean"
                     },
                     "proficiency": {
-                        "type": "string"
+                        "$ref": "cda_coded_entry"
                     }
                 },
                 "additionalProperties": false,
