@@ -376,6 +376,32 @@ body {
                         }
                     },
                     "additionalProperties": false
+                },
+                "product": {
+                    "type": "object",
+                    "properties": {
+                        "identifiers": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "cda_id"
+                            },
+                            "minItems": 1
+                        },
+                        "product": {
+                            "$ref": "cda_coded_entry"
+                        },
+                        "unencoded_name": {
+                            "type": "string"
+                        },
+                        "manufacturer": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "minProperties": 1,
+                    "required": [
+                        "product"
+                    ]
                 }
             },
             "additionalProperties": false
@@ -420,6 +446,32 @@ body {
                 },
                 "performer": {
                     "$ref": "cda_performer"
+                },
+                "product": {
+                    "type": "object",
+                    "properties": {
+                        "identifiers": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "cda_id"
+                            },
+                            "minItems": 1
+                        },
+                        "product": {
+                            "$ref": "cda_coded_entry"
+                        },
+                        "unencoded_name": {
+                            "type": "string"
+                        },
+                        "manufacturer": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "minProperties": 1,
+                    "required": [
+                        "product"
+                    ]
                 }
             },
             "additionalProperties": false
@@ -497,6 +549,27 @@ body {
                 "code_system_name": "2.16.840.1.113883.6.96",
                 "name": "immunization education"
             }
+        },
+        "product": {
+            "identifiers": [
+                {
+                    "identifier": "2a620155-9d11-439e-92b3-5d9815ff4ee8"
+                }
+            ],
+            "unencoded_name": "Proventil HFA",
+            "product": {
+                "name": "Proventil HFA",
+                "code": "219483",
+                "translations": [
+                    {
+                        "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                        "code": "573621",
+                        "code_system_name": "RXNORM"
+                    }
+                ],
+                "code_system_name": "RXNORM"
+            },
+            "manufacturer": "Medication Factory Inc."
         }
     },
     "administration": {
@@ -617,6 +690,27 @@ body {
                     ]
                 }
             ]
+        },
+        "product": {
+            "identifiers": [
+                {
+                    "identifier": "2a620155-9d11-439e-92b3-5d9815ff4ee8"
+                }
+            ],
+            "unencoded_name": "Proventil HFA",
+            "product": {
+                "name": "Proventil HFA",
+                "code": "219483",
+                "translations": [
+                    {
+                        "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                        "code": "573621",
+                        "code_system_name": "RXNORM"
+                    }
+                ],
+                "code_system_name": "RXNORM"
+            },
+            "manufacturer": "Medication Factory Inc."
         }
     }
 }</code></pre></div></div>
