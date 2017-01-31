@@ -207,90 +207,9 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
-    "id": "header",
-    "type": "object",
-    "properties": {
-        "identifiers": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "$ref": "cda_id"
-            }
-        },
-        "date_time": {
-            "$ref": "cda_date"
-        },
-        "confidentiality_code": {
-            "$ref": "cda_coded_entry"
-        },
-        "code": {
-            "$ref": "cda_coded_entry"
-        },
-        "template": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "title": {
-            "type": "string"
-        },
-        "author": {
-            "type": "object",
-            "properties": {
-                "date_time": {
-                    "$ref": "cda_date"
-                },
-                "author": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "cda_performer"
-                    }
-                }
-            },
-            "additionalProperties": false
-        },
-        "data_enterer": {
-            "$ref": "cda_performer"
-        },
-        "informant": {
-            "$ref": "cda_performer"
-        },
-        "custodian": {
-            "$ref": "cda_performer"
-        },
-        "service_event": {
-            "type": "object",
-            "properties": {
-                "date_time": {
-                    "$ref": "cda_date"
-                },
-                "code": {
-                    "$ref": "cda_coded_entry"
-                },
-                "performer": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "code": {
-                                "$ref": "cda_coded_entry"
-                            },
-                            "performer": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "cda_performer"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "additionalProperties": false
-        }
-    },
-    "additionalProperties": false,
-    "required": [
-        "title"
-    ]
+    "id": "hospital_discharge_medications",
+    "type": "array",
+    "items": {
+        "$ref": "medication"
+    }
 }</code></pre></div>

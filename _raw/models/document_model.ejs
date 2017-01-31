@@ -58,6 +58,18 @@
                 },
                 "family_history": {
                     "$ref": "family_history"
+                },
+                "functional_statuses": {
+                    "$ref": "functional_statuses"
+                },
+                "reason_for_referral": {
+                    "$ref": "reason_for_referral"
+                },
+                "hospital_discharge_instructions": {
+                    "$ref": "discharge_instructions"
+                },
+                "hospital_discharge_medications": {
+                    "$ref": "hospital_discharge_medications"
                 }
             },
             "additionalProperties": true
@@ -658,7 +670,11 @@
                             "range": "M 13-18 g/dl; F 12-16 g/dl"
                         },
                         "interpretations": [
-                            "Normal"
+                            {
+                                "code": "N",
+                                "name": "Normal",
+                                "code_system_name": "HL7 Result Interpretation"
+                            }
                         ],
                         "value": 13.2,
                         "unit": "g/dl"
@@ -687,7 +703,11 @@
                             "unit": "10+3/ul"
                         },
                         "interpretations": [
-                            "Normal"
+                            {
+                                "code": "N",
+                                "name": "Normal",
+                                "code_system_name": "HL7 Result Interpretation"
+                            }
                         ],
                         "value": 6.7,
                         "unit": "10+3/ul"
@@ -716,7 +736,11 @@
                             "unit": "10+3/ul"
                         },
                         "interpretations": [
-                            "Low"
+                            {
+                                "code": "L",
+                                "name": "Low",
+                                "code_system_name": "HL7 Result Interpretation"
+                            }
                         ],
                         "value": 123,
                         "unit": "10+3/ul"
@@ -784,6 +808,35 @@
                             "last": "Seven",
                             "first": "Henry"
                         }
+                    },
+                    "instructions": {
+                        "code": {
+                            "name": "instruction",
+                            "code": "409073007",
+                            "code_system_name": "SNOMED CT"
+                        },
+                        "free_text": "label in spanish"
+                    },
+                    "product": {
+                        "identifiers": [
+                            {
+                                "identifier": "2a620155-9d11-439e-92b3-5d9815ff4ee8"
+                            }
+                        ],
+                        "unencoded_name": "Proventil HFA",
+                        "product": {
+                            "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                            "code": "573621",
+                            "translations": [
+                                {
+                                    "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                                    "code": "573621",
+                                    "code_system_name": "RXNORM"
+                                }
+                            ],
+                            "code_system_name": "RXNORM"
+                        },
+                        "manufacturer": "Medication Factory Inc."
                     }
                 },
                 "administration": {
@@ -904,6 +957,27 @@
                                 ]
                             }
                         ]
+                    },
+                    "product": {
+                        "identifiers": [
+                            {
+                                "identifier": "2a620155-9d11-439e-92b3-5d9815ff4ee8"
+                            }
+                        ],
+                        "unencoded_name": "Proventil HFA",
+                        "product": {
+                            "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                            "code": "573621",
+                            "translations": [
+                                {
+                                    "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                                    "code": "573621",
+                                    "code_system_name": "RXNORM"
+                                }
+                            ],
+                            "code_system_name": "RXNORM"
+                        },
+                        "manufacturer": "Medication Factory Inc."
                     }
                 }
             }
@@ -2109,7 +2183,8 @@
                 "type": "observation",
                 "status": {
                     "code": "new"
-                }
+                },
+                "subType": "Request"
             },
             {
                 "plan": {
@@ -2131,7 +2206,8 @@
                 "type": "act",
                 "status": {
                     "code": "new"
-                }
+                },
+                "subType": "Request"
             },
             {
                 "plan": {
@@ -2153,7 +2229,8 @@
                 "type": "encounter",
                 "status": {
                     "code": "new"
-                }
+                },
+                "subType": "Intent"
             },
             {
                 "plan": {
@@ -2175,7 +2252,8 @@
                 "type": "procedure",
                 "status": {
                     "code": "new"
-                }
+                },
+                "subType": "Request"
             }
         ],
         "payers": [
@@ -2378,10 +2456,68 @@
                     }
                 }
             }
+        ],
+        "functional_statuses": [
+            {
+                "identifiers": [
+                    {
+                        "identifier": "08edb7c0-2111-43f2-a784-9a5fdfaa67f0"
+                    }
+                ],
+                "type": {
+                    "name": "Finding of Functional Performance and Activity",
+                    "code": "248536006",
+                    "code_system_name": "SNOMED CT"
+                },
+                "date_time": {
+                    "low": {
+                        "date": "2007-02-01T00:00:00.000Z",
+                        "precision": "month"
+                    },
+                    "high": {
+                        "date": "2007-04-01T00:00:00.000Z",
+                        "precision": "month"
+                    }
+                },
+                "code": {
+                    "name": "dyspnea",
+                    "code": "162891007",
+                    "code_system_name": "SNOMED CT"
+                },
+                "status": "completed"
+            },
+            {
+                "identifiers": [
+                    {
+                        "identifier": "08edb7c0-2111-43f2-a784-9a5fdfaa67f0"
+                    }
+                ],
+                "type": {
+                    "name": "Cognitive Function Finding",
+                    "code": "373930000",
+                    "code_system_name": "SNOMED CT"
+                },
+                "date_time": {
+                    "low": {
+                        "date": "2007-04-01T00:00:00.000Z",
+                        "precision": "month"
+                    },
+                    "high": {
+                        "date": "2007-06-01T00:00:00.000Z",
+                        "precision": "month"
+                    }
+                },
+                "code": {
+                    "name": "Memory impairment",
+                    "code": "386807006",
+                    "code_system_name": "SNOMED CT"
+                },
+                "status": "completed"
+            }
         ]
     },
     "meta": {
-        "version": "1.8.0-beta.5",
+        "version": "1.9.1-beta.4",
         "identifiers": [
             {
                 "identifier": "2.16.840.1.113883.19.5.99999.1",
@@ -2406,44 +2542,23 @@
             "problems",
             "procedures",
             "plan_of_care",
-            "payers"
+            "payers",
+            "functional_statuses"
         ]
     },
     "errors": [
-        "nullFlavor alert:  missing but required street_lines in Address -> assignedEntity -> Author -> Header -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> assignedEntity -> Author -> Header -> CCD",
         "cardinality error: found 2 when expecting 0..1 at //h:author",
-        "nullFlavor alert:  missing but required system in ConceptDescriptor -> LanguageCommunication -> Patient -> CCD",
         "nullFlavor alert:  missing but required street_lines in Address -> Patient -> CCD",
         "nullFlavor alert:  missing but required text in ResultObservation -> ResultsOrganizer -> resultsSection -> CCD",
         "nullFlavor alert:  missing but required text in ResultObservation -> ResultsOrganizer -> resultsSection -> CCD",
         "nullFlavor alert:  missing but required text in ResultObservation -> ResultsOrganizer -> resultsSection -> CCD",
         "cardinality error: found 2 when expecting 0..1 at h:entryRelationship[@typeCode='REFR']/h:supply",
-        "nullFlavor alert:  missing but required value in PhysicalQuantity -> MedicationAdministration -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required identifier in Identifier -> MedicationPerformer -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> MedicationPerformer -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> MedicationPerformer -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> MedicationPerformer -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> MedicationPerformer -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> MedicationPerformer -> MedicationDispense -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> MedicationPerformer -> MedicationDispense -> medicationActivity -> medicationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> assignedEntity -> ImmunizationActivity -> immunizationsSection -> CCD",
-        "nullFlavor alert:  missing but required location_type in serviceDeliveryLocation -> entry -> proceduresSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> assignedEntity -> entry -> proceduresSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> assignedEntity -> entry -> proceduresSection -> CCD",
-        "nullFlavor alert:  missing but required street_lines in Address -> Organization -> assignedEntity -> entry -> proceduresSection -> CCD",
-        "nullFlavor alert:  missing but required city in Address -> Organization -> assignedEntity -> entry -> proceduresSection -> CCD",
-        "nullFlavor alert:  missing but required system in ConceptDescriptor -> entry -> plan_of_care_section -> CCD",
-        "nullFlavor alert:  missing but required system in ConceptDescriptor -> entry -> plan_of_care_section -> CCD",
-        "nullFlavor alert:  missing but required system in ConceptDescriptor -> entry -> plan_of_care_section -> CCD",
-        "nullFlavor alert:  missing but required system in ConceptDescriptor -> entry -> plan_of_care_section -> CCD",
+        "nullFlavor alert:  missing but required location_type in serviceDeliveryLocation -> procedureProcedure -> procedureUnion -> proceduresSection -> CCD",
+        "nullFlavor alert:  missing but required value in PhysicalQuantity -> XsiTypedValue -> procedureObservation -> procedureUnion -> proceduresSection -> CCD",
+        "nullFlavor alert:  missing but required instructions in entry -> plan_of_care_section -> CCD",
+        "nullFlavor alert:  missing but required instructions in entry -> plan_of_care_section -> CCD",
+        "nullFlavor alert:  missing but required instructions in entry -> plan_of_care_section -> CCD",
+        "nullFlavor alert:  missing but required instructions in entry -> plan_of_care_section -> CCD",
         "cardinality error: found 2 when expecting 1..1 at h:performer",
         "nullFlavor alert:  missing but required code in participant -> entry -> payers_section -> CCD",
         "cardinality error: found 2 when expecting 1..1 at h:entryRelationship/h:act/h:participant"

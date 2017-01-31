@@ -22,7 +22,11 @@ meta.supported_sections = [
     {"id":"plan_of_care_entry", "title":"Plan of Care", "section":"plan_of_care"},
     {"id":"vital", "title":"Vitals", "section":"vitals"},
     {"id":"payer", "title":"Payers", "section":"payers"},
-    {"id":"claim", "title":"Claims", "section":"claims"}
+    {"id":"claim", "title":"Claims", "section":"claims"},
+    {"id":"discharge_instructions", "title":"Hospital Discharge Instructions", "section":"discharge_instructions"},
+    {"id":"hospital_discharge_medications", "title":"Hospital Discharge Medications", "section":"hospital_discharge_medications"},
+    {"id":"reason_for_referral", "title":"Reason for Referral", "section":"reason_for_referral"},
+    {"id":"functional", "title":"Functional Status", "section":"functional_statuses"}
 ]
 
 var ccda = fs.readFileSync("_samples/ccda.xml").toString();

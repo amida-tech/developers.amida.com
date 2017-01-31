@@ -23,7 +23,11 @@ var navs = {
         {"id":"models/social_history", "title":"Social History", "section":"social_history"},
         {"id":"models/vital", "title":"Vitals", "section":"vitals"},
         {"id":"models/insurance", "title":"Insurance", "section":"insurance"},
-        {"id":"models/claims", "title":"Claims", "section":"claims"}
+        {"id":"models/claims", "title":"Claims", "section":"claims"},
+        {"id":"models/discharge_instructions", "title":"Hospital Discharge Instructions", "section":"hospital_discharge_instructions"},
+        {"id":"models/hospital_discharge_medications", "title":"Hospital Discharge Medications", "section":"hospital_discharge_medications"},
+        {"id":"models/reason_for_referral", "title":"Reason for Referral", "section":"reason_for_referral"},
+        {"id":"models/functional_statuses", "title":"Functional Status", "section":"functional_statuses"}
     ],
     "parsers": [
         {"id":"parsers/ccda", "title":"CCDA", "section":""},

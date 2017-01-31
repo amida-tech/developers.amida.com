@@ -16,6 +16,19 @@
         "type": {
             "type": "string"
         },
+        "subType": {
+            "enum": [
+                "Intent",
+                "Appointment Request",
+                "Goal",
+                "Promise",
+                "Proposal",
+                "Request"
+            ]
+        },
+        "instructions": {
+            "type": "string"
+        },
         "date_time": {
             "$ref": "cda_date"
         },
@@ -54,5 +67,6 @@
     "type": "observation",
     "status": {
         "code": "new"
-    }
+    },
+    "subType": "Request"
 }</code></pre></div></div><% include _templates/foot %>

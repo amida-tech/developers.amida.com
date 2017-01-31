@@ -1,0 +1,34 @@
+<% include _templates/head %><div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
+    "id": "functional_statuses",
+    "type": "array",
+    "items": {
+        "$ref": "functional"
+    }
+}</code></pre></div><div class="col-sm-6"><h2>Example (functional_statuses)</h2><pre><code class="json" style="font-size:10px;">{
+    "identifiers": [
+        {
+            "identifier": "08edb7c0-2111-43f2-a784-9a5fdfaa67f0"
+        }
+    ],
+    "type": {
+        "name": "Finding of Functional Performance and Activity",
+        "code": "248536006",
+        "code_system_name": "SNOMED CT"
+    },
+    "date_time": {
+        "low": {
+            "date": "2007-02-01T00:00:00.000Z",
+            "precision": "month"
+        },
+        "high": {
+            "date": "2007-04-01T00:00:00.000Z",
+            "precision": "month"
+        }
+    },
+    "code": {
+        "name": "dyspnea",
+        "code": "162891007",
+        "code_system_name": "SNOMED CT"
+    },
+    "status": "completed"
+}</code></pre></div></div><% include _templates/foot %>

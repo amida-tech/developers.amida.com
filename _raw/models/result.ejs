@@ -38,7 +38,7 @@
                     "interpretations": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "cda_coded_entry"
                         }
                     },
                     "result": {
@@ -73,6 +73,23 @@
                             },
                             "high_unit": {
                                 "type": "string"
+                            },
+                            "value": {
+                                "type": "object",
+                                "properties": {
+                                    "code_system_name": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "interpretation": {
+                                        "type": "string"
+                                    }
+                                }
                             }
                         }
                     }
@@ -124,7 +141,11 @@
                 "range": "M 13-18 g/dl; F 12-16 g/dl"
             },
             "interpretations": [
-                "Normal"
+                {
+                    "code": "N",
+                    "name": "Normal",
+                    "code_system_name": "HL7 Result Interpretation"
+                }
             ],
             "value": 13.2,
             "unit": "g/dl"
@@ -153,7 +174,11 @@
                 "unit": "10+3/ul"
             },
             "interpretations": [
-                "Normal"
+                {
+                    "code": "N",
+                    "name": "Normal",
+                    "code_system_name": "HL7 Result Interpretation"
+                }
             ],
             "value": 6.7,
             "unit": "10+3/ul"
@@ -182,7 +207,11 @@
                 "unit": "10+3/ul"
             },
             "interpretations": [
-                "Low"
+                {
+                    "code": "L",
+                    "name": "Low",
+                    "code_system_name": "HL7 Result Interpretation"
+                }
             ],
             "value": 123,
             "unit": "10+3/ul"
