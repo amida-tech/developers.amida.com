@@ -192,6 +192,14 @@ body {
                <li><a href="payer.html">Payers</a></li>
             
                <li><a href="claim.html">Claims</a></li>
+            
+               <li><a href="discharge_instructions.html">Hospital Discharge Instructions</a></li>
+            
+               <li><a href="hospital_discharge_medications.html">Hospital Discharge Medications</a></li>
+            
+               <li><a href="reason_for_referral.html">Reason for Referral</a></li>
+            
+               <li><a href="functional.html">Functional Status</a></li>
                       
           </ul>
 
@@ -346,6 +354,18 @@ body {
                 "quantity": {
                     "type": "string"
                 },
+                "instructions": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "$ref": "cda_coded_entry"
+                        },
+                        "free_text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
                 "author": {
                     "type": "object",
                     "properties": {
@@ -364,18 +384,6 @@ body {
                         },
                         "organization": {
                             "$ref": "cda_organization"
-                        }
-                    },
-                    "additionalProperties": false
-                },
-                "instructions": {
-                    "type": "object",
-                    "properties": {
-                        "code": {
-                            "$ref": "cda_coded_entry"
-                        },
-                        "free_text": {
-                            "type": "string"
                         }
                     },
                     "additionalProperties": false
@@ -548,11 +556,11 @@ body {
         },
         "instructions": {
             "code": {
-                "code": "171044003",
-                "code_system_name": "2.16.840.1.113883.6.96",
-                "name": "immunization education"
+                "name": "instruction",
+                "code": "409073007",
+                "code_system_name": "SNOMED CT"
             },
-            "free_text": "Possible flu-like symptoms for three days."
+            "free_text": "label in spanish"
         },
         "product": {
             "identifiers": [
@@ -562,8 +570,8 @@ body {
             ],
             "unencoded_name": "Proventil HFA",
             "product": {
-                "name": "Proventil HFA",
-                "code": "219483",
+                "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                "code": "573621",
                 "translations": [
                     {
                         "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
@@ -703,8 +711,8 @@ body {
             ],
             "unencoded_name": "Proventil HFA",
             "product": {
-                "name": "Proventil HFA",
-                "code": "219483",
+                "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                "code": "573621",
                 "translations": [
                     {
                         "name": "Proventil 0.09 MG/ACTUAT inhalant solution",

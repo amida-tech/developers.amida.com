@@ -207,90 +207,77 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
-    "id": "header",
+    "id": "functional_statuses",
+    "type": "array",
+    "items": {
+        "$ref": "functional"
+    }
+}
+
+{
+    "id": "functional",
     "type": "object",
     "properties": {
         "identifiers": {
             "type": "array",
-            "minItems": 1,
             "items": {
                 "$ref": "cda_id"
-            }
+            },
+            "minItems": 1
+        },
+        "type": {
+            "$ref": "cda_coded_entry"
+        },
+        "status": {
+            "enum": [
+                "completed",
+                "negative"
+            ]
         },
         "date_time": {
             "$ref": "cda_date"
         },
-        "confidentiality_code": {
-            "$ref": "cda_coded_entry"
-        },
         "code": {
             "$ref": "cda_coded_entry"
-        },
-        "template": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "title": {
-            "type": "string"
-        },
-        "author": {
-            "type": "object",
-            "properties": {
-                "date_time": {
-                    "$ref": "cda_date"
-                },
-                "author": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "cda_performer"
-                    }
-                }
-            },
-            "additionalProperties": false
-        },
-        "data_enterer": {
-            "$ref": "cda_performer"
-        },
-        "informant": {
-            "$ref": "cda_performer"
-        },
-        "custodian": {
-            "$ref": "cda_performer"
-        },
-        "service_event": {
-            "type": "object",
-            "properties": {
-                "date_time": {
-                    "$ref": "cda_date"
-                },
-                "code": {
-                    "$ref": "cda_coded_entry"
-                },
-                "performer": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "code": {
-                                "$ref": "cda_coded_entry"
-                            },
-                            "performer": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "cda_performer"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "additionalProperties": false
         }
     },
-    "additionalProperties": false,
-    "required": [
-        "title"
-    ]
-}</code></pre></div>
+    "additionalProperties": false
+}</code></pre></div><div class="col-sm-6"><h2>Example (functional)</h2><pre><code class="json" style="font-size:10px;">{
+    "identifiers": [
+        {
+            "identifier": "08edb7c0-2111-43f2-a784-9a5fdfaa67f0"
+        }
+    ],
+    "type": {
+        "name": "Finding of Functional Performance and Activity",
+        "code": "248536006",
+        "code_system_name": "SNOMED CT"
+    },
+    "date_time": {
+        "low": {
+            "date": "2007-02-01T00:00:00.000Z",
+            "precision": "month"
+        },
+        "high": {
+            "date": "2007-04-01T00:00:00.000Z",
+            "precision": "month"
+        }
+    },
+    "code": {
+        "name": "dyspnea",
+        "code": "162891007",
+        "code_system_name": "SNOMED CT"
+    },
+    "status": "completed"
+}</code></pre></div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

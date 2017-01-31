@@ -134,17 +134,17 @@ body {
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/index.html">
-		        <img style="max-width:100px; margin-top: -7px;"
-		             src="./logo-retina.png">
+            <img style="max-width:100px; margin-top: -7px;"
+                 src="./logo-retina.png">
 
-		             &nbsp; Developers</a>
+                 &nbsp; Developers</a>
 
         </div>
         <!--div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/model.html">Data Model</a></li>
-            <li><a href="/parsers.html">Parsers</a></li>
-            <li><a href="/apis.html">APIs</a></li>
+            <li><a href="model.html">Data Model</a></li>
+            <li><a href="parsers.html">Parsers</a></li>
+            <li><a href="apis.html">APIs</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar-fixed-top/"> smth </a></li>
@@ -158,14 +158,14 @@ body {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-                    
-          <h3>Blue Button (JSON) Data Model </h3>
-                      
+                    <h3>Blue Button (JSON) Data Model </h3>
           <ul class="nav nav-sidebar">
             
                <li><a href="document_model.html">Main</a></li>
             
-               <li><a href="shared.html">Shared Schemas</a></li>
+               <li><a href="common_models.html">Shared Schemas</a></li>
+            
+               <li><a href="header.html">Document Header</a></li>
             
                <li><a href="demographics.html">Demographics</a></li>
             
@@ -183,13 +183,23 @@ body {
             
                <li><a href="result.html">Results</a></li>
             
-               <li><a href="social_history.html">Social History</a></li>
+               <li><a href="social_history_entry.html">Social History</a></li>
+            
+               <li><a href="plan_of_care_entry.html">Plan of Care</a></li>
             
                <li><a href="vital.html">Vitals</a></li>
             
-               <li><a href="insurance.html">Insurance</a></li>
+               <li><a href="payer.html">Payers</a></li>
             
-               <li><a href="claims.html">Claims</a></li>
+               <li><a href="claim.html">Claims</a></li>
+            
+               <li><a href="discharge_instructions.html">Hospital Discharge Instructions</a></li>
+            
+               <li><a href="hospital_discharge_medications.html">Hospital Discharge Medications</a></li>
+            
+               <li><a href="reason_for_referral.html">Reason for Referral</a></li>
+            
+               <li><a href="functional.html">Functional Status</a></li>
                       
           </ul>
 
@@ -197,69 +207,15 @@ body {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <div class="row"><div class="col-sm-6"><h2>Schema</h2><pre><code class="json" style="font-size:10px;">{
-    "type": "array",
-    "$schema": "http://json-schema.org/draft-04/schema",
-
-    "items": {
-        "type": "object",
-        "properties": {
-            "date_time": {
-                "$ref": "http://local.com/common_models#/properties/cda_date"
-            },
-            "value": {
-                "type": "string"
-            },
-            "code": {
-                "$ref": "http://local.com/common_models#/properties/cda_coded_entry"
-            },
-            "observation_value": {
-                "type": "string"
-            },
-            "identifiers": {
-                "type": "array",
-                "items": {
-                    "$ref": "http://local.com/common_models#/properties/cda_id"
-                }
-            }
+    "id": "reason_for_referral",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
         },
-        "required": [
-            "value"
-        ],
-        "additionalProperties": false
-    },
-
-    "additionalPropertes": true
-}
-</code></pre></div><div class="col-sm-6"><h2>Example</h2><pre><code class="json" style="font-size:10px;">{
-    "date_time": {
-        "low": {
-            "date": "2005-05-01T00:00:00Z",
-            "precision": "day"
-        },
-        "high": {
-            "date": "2009-02-27T13:00:00Z",
-            "precision": "second"
+        "text": {
+            "type": "string"
         }
     },
-    "identifiers": [
-        {
-            "identifier": "2.16.840.1.113883.19",
-            "extension": "123456789"
-        }
-    ],
-    "code": {
-        "name": "Smoking Status"
-    },
-    "value": "Former smoker"
-}</code></pre></div></div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+    "additionalProperties": false
+}</code></pre></div>

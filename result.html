@@ -192,6 +192,14 @@ body {
                <li><a href="payer.html">Payers</a></li>
             
                <li><a href="claim.html">Claims</a></li>
+            
+               <li><a href="discharge_instructions.html">Hospital Discharge Instructions</a></li>
+            
+               <li><a href="hospital_discharge_medications.html">Hospital Discharge Medications</a></li>
+            
+               <li><a href="reason_for_referral.html">Reason for Referral</a></li>
+            
+               <li><a href="functional.html">Functional Status</a></li>
                       
           </ul>
 
@@ -238,7 +246,7 @@ body {
                     "interpretations": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "cda_coded_entry"
                         }
                     },
                     "result": {
@@ -273,6 +281,23 @@ body {
                             },
                             "high_unit": {
                                 "type": "string"
+                            },
+                            "value": {
+                                "type": "object",
+                                "properties": {
+                                    "code_system_name": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "interpretation": {
+                                        "type": "string"
+                                    }
+                                }
                             }
                         }
                     }
@@ -324,7 +349,11 @@ body {
                 "range": "M 13-18 g/dl; F 12-16 g/dl"
             },
             "interpretations": [
-                "Normal"
+                {
+                    "code": "N",
+                    "name": "Normal",
+                    "code_system_name": "HL7 Result Interpretation"
+                }
             ],
             "value": 13.2,
             "unit": "g/dl"
@@ -353,7 +382,11 @@ body {
                 "unit": "10+3/ul"
             },
             "interpretations": [
-                "Normal"
+                {
+                    "code": "N",
+                    "name": "Normal",
+                    "code_system_name": "HL7 Result Interpretation"
+                }
             ],
             "value": 6.7,
             "unit": "10+3/ul"
@@ -382,7 +415,11 @@ body {
                 "unit": "10+3/ul"
             },
             "interpretations": [
-                "Low"
+                {
+                    "code": "L",
+                    "name": "Low",
+                    "code_system_name": "HL7 Result Interpretation"
+                }
             ],
             "value": 123,
             "unit": "10+3/ul"
