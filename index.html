@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,11 +19,11 @@
     <![endif]-->
 
     <!-- CDN //cdnjs.com/libraries/highlight.js/ -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/tomorrow.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/mono-blue.min.css">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/javascript.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/json.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/javascript.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/json.min.js"></script>
     <script>
     hljs.initHighlightingOnLoad();
     </script>
@@ -144,24 +144,27 @@
         <div class="row">
             <div class="col-sm-9 col-offset-3main">
             <br/>
-            <p class="lead">Amida strives to make health data accessible to modern developers by abstracting away the complex nuances of historical formats.  The purpose of the Data Reconciliation Engine (DRE) is to take personal health data in a variety of formats (starting with BlueButton/CCDA) from multiple sources and parse/normalize/de-duplicate/merge it into a single Patient's Master Health Record (with patient assistance), although most of hard work will be done automatically.
+            <p class="lead">Amida strives to make health data accessible to modern developers by abstracting away the complex nuances of historical formats.  
+                Using our extensive experience with Blue Button and FHIR, we have developed pipelines to help automate the process of parsing and normalizing the record as well as identifying duplicate records.  
             </p>
             <p class="lead">
-DRE relies heavily on the blue-button family of libraries to parse health record data in variety of formats into unified data model (JSON based), so information can be readily utilized for any application.
-</p>
+                Amida has also developed Orange Rx, an open source mobile application that is ready for implementation and integration with most modern architectures. 
+                Orange Rx makes it easy to take the right medication at the right time – or to remind and keep track of someone else's.
+            </p>
 
 
             <h2>Our code/libraries</h2>
 
-            <a href="https://github.com/amida-tech/DRE">DRE - Data Reconciliation Engine</a>
-            <br/>
-            <a href="https://github.com/amida-tech/blue-button">blue-button.js - type sensing and data parsing </a>
+            <a href="https://github.com/amida-tech/cda2r4">cda2r4 - CCD to FHIR R4 parser </a>
             <br/>
 
-            <a href="https://github.com/amida-tech/blue-button-match">blue-button-match.js - data matching</a>
+            <a href="https://github.com/amida-tech/hl7-v2-processor">hl7-v2-processor - HL7 to FHIR R4 pipeline </a>
+            <br/>           
+            
+            <a href="https://github.com/amida-tech/edi-processor">edi-processor - EDI to FHIR R4 pipeline </a>
             <br/>
 
-            <a href="https://github.com/amida-tech/blue-button-record">blue-button-record.js - master health record persistence (MongoDB)</a>
+            <a href="https://github.com/amida-tech/cms-connector">cms-connector - A stand-alone microservice for retrieving Blue Button records from CMS</a>
             <br/>
 
             <a href="https://github.com/amida-tech/blue-button-model">blue-button-model.js - model schema definition and validation</a>
@@ -176,14 +179,17 @@ DRE relies heavily on the blue-button family of libraries to parse health record
             <a href="https://github.com/amida-tech/blue-button-cms">blue-button-cms.js - cms parsing</a>
             <br/>
 
-            <a href="https://github.com/amida-tech/blue-button-meta">blue-button-meta.js - lookup information for our libraries</a>
+            <a href="https://github.com/amida-tech/orange">orange - Our medication compliance solution</a>
+            <br/>
 
-            <h2>Our Blue Button data model (JSON-based)</h2>
+            <a href="https://github.com/amida-tech/amida-survey-microservice">amida-survey-microservice - survey microservice to present questionnaires to a client</a>
+            <br/>
 
-            <img src="blue-button-js.png" width="5%" height="5%"/>
-            <a href="document_model.html">Documentation</a>
+            <a href="https://github.com/amida-tech/amida-message-microservice">amida-message-microservice - messaging  microservice for storing and presenting internal messages to users</a>
+            <br/>
 
-
+            <a href="https://github.com/amida-tech/amida-notification-microservice">amida-notification-microservice - notification  microservice for pushing messages to mobile devices</a>
+            <br/>
             </div>
         </div>
     </div>
@@ -192,7 +198,7 @@ DRE relies heavily on the blue-button family of libraries to parse health record
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
